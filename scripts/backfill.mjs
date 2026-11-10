@@ -3,9 +3,10 @@
 // 用法:DAYS=400 node scripts/backfill.mjs
 import { writeFileSync, mkdirSync, appendFileSync } from "node:fs";
 import { MARKETS, ROW_CAP, fetchWindow, toRawRows, addDays, isoDay } from "./lib/moa.mjs";
-import { assertEnv, upsert, count } from "./lib/supabase.mjs";
+import { assertEnv, assertWritable, upsert, count } from "./lib/supabase.mjs";
 
 assertEnv();
+await assertWritable();
 const DAYS = Number(process.env.DAYS || 400); // 52 週基準 + 現值 + 緩衝
 const WINDOW = 3;
 const CONCURRENCY = 4;
@@ -72,7 +73,7 @@ await Promise.all(
 const secs = ((Date.now() - t0) / 1000).toFixed(0);
 const total = await count("raw_prices");
 
-let md = `# 歷史資料補抓結果\n\n- 執行時間(UTC):${new Date().toISOString()}\n- 範圍:${isoDay(first)} 至 ${isoDay(twToday)}(${DAYS} 天,${WINDOW} 天視窗)\n- 視窗數:${jobs.length},失敗:${failures.length},耗時 ${secs} 秒\n- 資料庫 raw_prices 總列數:**${total.toLocaleString()}**\n- 結論:**${failures.length ? "有部分視窗失敗,重跑一次即可補上(upsert 不會重複)" : "全部成功"}**\n\n`;
+let md = `# 歷史資料補抓結果\n\n- 執行時間(UTC):${new Date().toISOString()}\n- 範圍:${isoDay(first)} 至 ${isoDay(twToday)}(${DAYS} 天,${WINDOW} 天視窗)\n- 視窗數:${jobs.length},失敗:${failures.length},耗時 ${secs} 秒\n- 資料庫 raw_prices 總列數:**${total.toLocaleString()}**\n- 結論:**${!failures.length ? "全部成功" : failures.length === jobs.length ? "全部失敗,看下方錯誤訊息" : "有部分視窗失敗,重跑一次即可補上(upsert 不會重複)"}**\n\n`;
 md += `| 市場 | API 呼叫 | 寫入列數 | 最早日期 | 最新日期 |\n|---|---|---|---|---|\n`;
 for (const m of MARKETS) {
   const s = stats[m];
