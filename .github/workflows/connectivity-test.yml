@@ -1,0 +1,42 @@
+name: 連線測試(農業部 API)
+
+on:
+  push:
+    paths:
+      - ".github/workflows/connectivity-test.yml"
+      - "scripts/connectivity-test.mjs"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: 網路層檢查(DNS / TLS / HTTP 狀態)
+        continue-on-error: true
+        run: |
+          getent hosts data.moa.gov.tw || echo "DNS 失敗"
+          curl -sS -o /dev/null -m 60 \
+            -w "http=%{http_code} ip=%{remote_ip} connect=%{time_connect}s tls=%{time_appconnect}s total=%{time_total}s\n" \
+            "https://data.moa.gov.tw/api/v1/AgriProductsTransType/?TcType=N04&MarketName=%E5%8F%B0%E5%8C%97%E4%B8%80" || echo "curl 失敗"
+          echo "runner 對外 IP:$(curl -sS -m 15 https://api.ipify.org || echo 未知)"
+
+      - name: 呼叫 API(5 市場 × 1 天視窗)
+        run: node scripts/connectivity-test.mjs
+
+      - name: 把結果 commit 回 repo
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898283+github-actions[bot]@users.noreply.github.com"
+          git add results/
+          git commit -m "連線測試結果 $(date -u +%Y-%m-%dT%H:%MZ)" || echo "沒有變更"
+          git push
