@@ -1,0 +1,171 @@
+{
+ "ranAt": "2026-11-10T04:19:05.535Z",
+ "verdict": "成功:5 個市場都拿到資料",
+ "results": [
+  {
+   "market": "台北一",
+   "found": {
+    "day": "115.11.07",
+    "rows": 243,
+    "valid": 243,
+    "ms": 1440,
+    "sample": {
+     "TransDate": "115.11.07",
+     "TcType": "N04",
+     "CropCode": "FA0",
+     "CropName": "其他花類",
+     "MarketCode": "109",
+     "MarketName": "台北一",
+     "Upper_Price": 90,
+     "Middle_Price": 90,
+     "Lower_Price": 90,
+     "Avg_Price": 90,
+     "Trans_Quantity": 55
+    }
+   },
+   "attempts": [
+    {
+     "day": "115.11.07",
+     "status": 200,
+     "ms": 1440,
+     "rows": 243,
+     "valid": 243,
+     "snippet": null,
+     "rs": "OK"
+    }
+   ]
+  },
+  {
+   "market": "台北二",
+   "found": {
+    "day": "115.11.07",
+    "rows": 239,
+    "valid": 239,
+    "ms": 910,
+    "sample": {
+     "TransDate": "115.11.07",
+     "TcType": "N04",
+     "CropCode": "FA1",
+     "CropName": "黃秋葵",
+     "MarketCode": "104",
+     "MarketName": "台北二",
+     "Upper_Price": 108.5,
+     "Middle_Price": 56.4,
+     "Lower_Price": 24.8,
+     "Avg_Price": 60.5,
+     "Trans_Quantity": 1665
+    }
+   },
+   "attempts": [
+    {
+     "day": "115.11.07",
+     "status": 200,
+     "ms": 910,
+     "rows": 239,
+     "valid": 239,
+     "snippet": null,
+     "rs": "OK"
+    }
+   ]
+  },
+  {
+   "market": "板橋區",
+   "found": {
+    "day": "115.11.07",
+    "rows": 182,
+    "valid": 182,
+    "ms": 783,
+    "sample": {
+     "TransDate": "115.11.07",
+     "TcType": "N04",
+     "CropCode": "FA1",
+     "CropName": "黃秋葵",
+     "MarketCode": "220",
+     "MarketName": "板橋區",
+     "Upper_Price": 59.5,
+     "Middle_Price": 27,
+     "Lower_Price": 13.6,
+     "Avg_Price": 30.8,
+     "Trans_Quantity": 1692.2
+    }
+   },
+   "attempts": [
+    {
+     "day": "115.11.07",
+     "status": 200,
+     "ms": 783,
+     "rows": 182,
+     "valid": 182,
+     "snippet": null,
+     "rs": "OK"
+    }
+   ]
+  },
+  {
+   "market": "三重區",
+   "found": {
+    "day": "115.11.07",
+    "rows": 151,
+    "valid": 151,
+    "ms": 1104,
+    "sample": {
+     "TransDate": "115.11.07",
+     "TcType": "N04",
+     "CropCode": "FA1",
+     "CropName": "黃秋葵",
+     "MarketCode": "241",
+     "MarketName": "三重區",
+     "Upper_Price": 92.5,
+     "Middle_Price": 39.7,
+     "Lower_Price": 20.5,
+     "Avg_Price": 46.4,
+     "Trans_Quantity": 745
+    }
+   },
+   "attempts": [
+    {
+     "day": "115.11.07",
+     "status": 200,
+     "ms": 1104,
+     "rows": 151,
+     "valid": 151,
+     "snippet": null,
+     "rs": "OK"
+    }
+   ]
+  },
+  {
+   "market": "桃農",
+   "found": {
+    "day": "115.11.07",
+    "rows": 160,
+    "valid": 160,
+    "ms": 1448,
+    "sample": {
+     "TransDate": "115.11.07",
+     "TcType": "N04",
+     "CropCode": "FA1",
+     "CropName": "黃秋葵",
+     "MarketCode": "338",
+     "MarketName": "桃農",
+     "Upper_Price": 72.9,
+     "Middle_Price": 60.8,
+     "Lower_Price": 37.9,
+     "Avg_Price": 58.6,
+     "Trans_Quantity": 460
+    }
+   },
+   "attempts": [
+    {
+     "day": "115.11.07",
+     "status": 200,
+     "ms": 1448,
+     "rows": 160,
+     "valid": 160,
+     "snippet": null,
+     "rs": "OK"
+    }
+   ]
+  }
+ ]
+}
