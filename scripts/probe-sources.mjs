@@ -7,21 +7,19 @@ const roc = (d) => `${d.getUTCFullYear() - 1911}.${pad(d.getUTCMonth() + 1)}.${p
 const ago = (n) => new Date(Date.now() + 8 * 3600_000 - n * 86400_000);
 const S = roc(ago(10)), E = roc(ago(3));
 
+const rocNoDot = (d) => roc(d).replaceAll(".", "");
+const S2 = rocNoDot(ago(10)), E2 = rocNoDot(ago(3));
+const V1 = "https://data.moa.gov.tw/api/v1/";
+// 第二輪:第一輪發現漁產與毛豬端點存在,但日期格式可能不同(毛豬回傳的 TransDate 是 1151110,沒有點)
 const CANDIDATES = [
-  // 對照組:已知可用的蔬菜 API
-  ["蔬菜(對照組)", `https://data.moa.gov.tw/api/v1/AgriProductsTransType/?Start_time=${E}&End_time=${E}&TcType=N04&MarketName=台北一`],
-  // 漁產(推測的名稱)
-  ["漁產品交易行情 A", `https://data.moa.gov.tw/api/v1/FisheryProductsTransType/?Start_time=${S}&End_time=${E}`],
-  ["漁產品交易行情 B", `https://data.moa.gov.tw/api/v1/AquaticTransType/?Start_time=${S}&End_time=${E}`],
-  ["漁產品交易行情 C", `https://data.moa.gov.tw/api/v1/FishTransType/?Start_time=${S}&End_time=${E}`],
-  // 畜產(推測的名稱)
-  ["毛豬交易行情 A", `https://data.moa.gov.tw/api/v1/PorkTransType/?Start_time=${S}&End_time=${E}`],
-  ["毛豬交易行情 B", `https://data.moa.gov.tw/api/v1/LivestockTransType/?Start_time=${S}&End_time=${E}`],
-  ["家禽交易行情", `https://data.moa.gov.tw/api/v1/PoultryTransType/?Start_time=${S}&End_time=${E}`],
-  // API 說明文件(若有,可直接看到全部端點清單)
-  ["API 說明 A", `https://data.moa.gov.tw/api/v1/swagger/docs/v1`],
-  ["API 說明 B", `https://data.moa.gov.tw/swagger/v1/swagger.json`],
-  ["API 說明 C", `https://data.moa.gov.tw/api.aspx`],
+  ["蔬菜(對照組)", `${V1}AgriProductsTransType/?Start_time=${E}&End_time=${E}&TcType=N04&MarketName=台北一`],
+  ["漁產:不帶參數", `${V1}FisheryProductsTransType/`],
+  ["漁產:日期無點", `${V1}FisheryProductsTransType/?Start_time=${S2}&End_time=${E2}`],
+  ["漁產:日期有點", `${V1}FisheryProductsTransType/?Start_time=${S}&End_time=${E}`],
+  ["漁產:單日無點", `${V1}FisheryProductsTransType/?Start_time=${E2}&End_time=${E2}`],
+  ["毛豬:不帶參數", `${V1}PorkTransType/`],
+  ["毛豬:日期無點", `${V1}PorkTransType/?Start_time=${S2}&End_time=${E2}`],
+  ["毛豬:日期無點+台北", `${V1}PorkTransType/?Start_time=${S2}&End_time=${E2}&MarketName=台北市`],
 ];
 
 const out = [];
@@ -50,7 +48,16 @@ for (const [label, url] of CANDIDATES) {
   }
 }
 
+let apiList = [];
+try {
+  const html = await (await fetch("https://data.moa.gov.tw/api.aspx", { signal: AbortSignal.timeout(60_000) })).text();
+  apiList = [...new Set([...html.matchAll(/api\/v1\/([A-Za-z0-9_]+)/g)].map((m) => m[1]))];
+  const titles = [...html.matchAll(/<(?:h\d|a|td|li)[^>]*>([^<]{2,40}(?:行情|價格|交易)[^<]{0,20})</g)].map((m) => m[1].trim());
+  apiList.push(...[...new Set(titles)].map((t) => "(標題)" + t));
+} catch (e) { apiList = ["抓取失敗:" + e.message]; }
+
 let md = `# 資料來源測試\n\n- 執行時間(UTC):${new Date().toISOString()}\n- 測試日期範圍:${S} 至 ${E}\n\n`;
+md += `## api.aspx 裡找到的端點與標題\n\n${apiList.length ? apiList.join("、") : "沒找到"}\n\n`;
 md += `| 項目 | HTTP | 列數 | 回應時間 |\n|---|---|---|---|\n` + out.map((o) => `| ${o.label} | ${o.status} | ${o.rows ?? "—"} | ${o.ms} ms |`).join("\n") + "\n";
 for (const o of out) {
   md += `\n## ${o.label}\n\n\`${o.url}\`\n\n`;
