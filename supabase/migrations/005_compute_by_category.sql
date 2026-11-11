@@ -3,6 +3,16 @@
 
 alter table crop_stats  add column if not exists category text not null default '蔬菜';
 alter table group_stats add column if not exists category text not null default '蔬菜';
+-- 品名出現情況加上類別(新品名提醒要知道是蔬菜還是海鮮)
+create or replace view crop_seen with (security_invoker = true) as
+select crop_name, max(crop_code) as crop_code, min(date) as first_seen, max(date) as last_seen,
+       count(distinct date) as trade_days, count(*) as market_days, sum(qty_kg) as qty_kg,
+       max(category) as category
+from raw_prices group by crop_name;
+revoke all on crop_seen from anon, authenticated;
+
+-- 群組是否判斷盛產(冷凍品等全年供應的設為 false)
+alter table groups add column if not exists seasonal boolean not null default true;
 
 create or replace function recompute_stats() returns jsonb
 language plpgsql
@@ -87,7 +97,8 @@ begin
 
     insert into group_stats (group_id, calc_date, window_start, role, category, price_lo, price_hi,
                              cur_price_kg, med_price_kg, delta_pct, is_season, season_share, vol_30d_kg, rank, is_top10)
-    with g as (select group_id, max(role) role from t_member group by 1),
+    with g as (select m.group_id, max(m.role) role, bool_and(gr.seasonal) seasonal
+               from t_member m join groups gr on gr.id = m.group_id group by 1),
     vote as (select m.group_id,
                     sum(cs.vol_30d_kg) filter (where cs.eligible)                 eligible_vol,
                     sum(cs.vol_30d_kg) filter (where cs.eligible and cs.is_season) season_vol,
@@ -106,7 +117,7 @@ begin
     select g.group_id, d, w_start, g.role, cat,
            round(rng.lo * 0.6), round(rng.hi * 0.6),
            gcur.p, gmed.p, gcur.p / nullif(gmed.p, 0) - 1,
-           case when g.role = '主食材' and coalesce(vote.eligible_vol, 0) > 0
+           case when g.role = '主食材' and g.seasonal and coalesce(vote.eligible_vol, 0) > 0
                 then coalesce(vote.season_vol, 0) / vote.eligible_vol >= 0.5 end,
            case when coalesce(vote.eligible_vol, 0) > 0 then coalesce(vote.season_vol, 0) / vote.eligible_vol end,
            coalesce(vote.vol30, 0), null, false

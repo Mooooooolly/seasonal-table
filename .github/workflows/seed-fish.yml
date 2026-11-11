@@ -1,0 +1,51 @@
+name: 匯入海鮮對照表並重算
+
+on:
+  push:
+    paths:
+      - "data/seed/fish-mapping.csv"
+  workflow_dispatch:
+    inputs:
+      overwrite:
+        description: "覆蓋已存在的品名歸類?(後台改過的會被蓋掉)"
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+
+concurrency:
+  group: db-write
+  cancel-in-progress: false
+
+jobs:
+  seed:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    env:
+      SUPABASE_URL: https://uahnndhsrztgdiwtkkyx.supabase.co
+      SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
+      SUPABASE_DB_URL: ${{ secrets.SUPABASE_DB_URL }}
+      PGOPTIONS: "-c client_min_messages=warning"
+      OVERWRITE: ${{ inputs.overwrite || 'false' }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: 更新資料表結構
+        run: bash scripts/migrate.sh
+      - name: 匯入海鮮對照表
+        run: node scripts/seed/seed-fish.mjs
+      - name: 重算並產出前台 JSON
+        run: bash scripts/recompute.sh
+      - name: 寫檢查報告
+        run: node scripts/compute-report.mjs
+      - name: 把結果 commit 回 repo(Netlify 會自動更新網站)
+        if: always()
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898283+github-actions[bot]@users.noreply.github.com"
+          git add results/ public/data/ || true
+          git commit -m "海鮮對照表匯入與重算 $(date -u +%Y-%m-%dT%H:%MZ)" || echo "沒有變更"
+          git pull --rebase -q && git push

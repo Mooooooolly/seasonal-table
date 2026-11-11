@@ -8,7 +8,7 @@ export async function detectNewCrops({ known } = {}) {
   if (!fresh.length) return [];
   await upsert(
     "crops",
-    fresh.map((s) => ({ crop_name: s.crop_name, crop_code: s.crop_code, status: "unmapped", first_seen: s.first_seen })),
+    fresh.map((s) => ({ crop_name: s.crop_name, crop_code: s.crop_code, category: s.category ?? "蔬菜", status: "unmapped", first_seen: s.first_seen })),
     "crop_name",
     { ignore: true },
   );
@@ -16,7 +16,7 @@ export async function detectNewCrops({ known } = {}) {
     "alerts",
     fresh.map((s) => ({
       type: "new_crop",
-      payload: { crop_name: s.crop_name, crop_code: s.crop_code, first_seen: s.first_seen, trade_days: s.trade_days, qty_kg: s.qty_kg },
+      payload: { category: s.category ?? "蔬菜", crop_name: s.crop_name, crop_code: s.crop_code, first_seen: s.first_seen, trade_days: s.trade_days, qty_kg: s.qty_kg },
     })),
   );
   return fresh;
