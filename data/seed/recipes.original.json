@@ -1,0 +1,1481 @@
+[
+ {
+  "id": "R01",
+  "name": "電鍋高麗菜飯",
+  "main_group": "高麗菜",
+  "involved_groups": [
+   "高麗菜",
+   "紅蘿蔔"
+  ],
+  "ingredients": [
+   {
+    "order": 1,
+    "name": "白米",
+    "qty_text": "2杯",
+    "group": null,
+    "group_is_guess": true
+   },
+   {
+    "order": 2,
+    "name": "高麗菜碎",
+    "qty_text": "約250g（推定",
+    "group": "高麗菜",
+    "group_is_guess": true
+   },
+   {
+    "order": 3,
+    "name": "來源寫",
+    "qty_text": "50g）",
+    "group": null,
+    "group_is_guess": true
+   },
+   {
+    "order": 4,
+    "name": "五花肉絲",
+    "qty_text": "50g",
+    "group": null,
+    "group_is_guess": true
+   },
+   {
+    "order": 5,
+    "name": "菜脯碎",
+    "qty_text": "30g",
+    "group": null,
+    "group_is_guess": true
+   },
+   {
+    "order": 6,
+    "name": "蒜碎",
+    "qty_text": "20g",
+    "group": null,
+    "group_is_guess": true
+   },
+   {
+    "order": 7,
+    "name": "蔥花",
+    "qty_text": "10g",
+    "group": null,
+    "group_is_guess": true
+   },
+   {
+    "order": 8,
+    "name": "紅蘿蔔絲",
+    "qty_text": "20g",
+    "group": "紅蘿蔔",
+    "group_is_guess": true
+   }
+  ],
+  "seasonings_text": "鹽 1小匙；胡椒粉 1小匙",
+  "equipment_source_text": "電鍋；炒鍋（煸五花肉與菜脯，推定）",
+  "equipment": [
+   "電鍋",
+   "炒鍋"
+  ],
+  "servings_text": "3–4人份",
+  "source_url": "https://www.nownews.com/news/6778366",
+  "notes": "高麗菜份量是我依 2 杯米推定的，原文 50g 疑似筆誤"
+ },
+ {
+  "id": "R02",
+  "name": "鹽昆布高麗菜（涼拌小菜）",
+  "main_group": "高麗菜",
+  "involved_groups": [
+   "高麗菜",
+   "紅蘿蔔"
+  ],
+  "ingredients": [
+   {
+    "order": 1,
+    "name": "高麗菜",
+    "qty_text": "200g",
+    "group": "高麗菜",
+    "group_is_guess": true
+   },
+   {
+    "order": 2,
+    "name": "紅蘿蔔",
+    "qty_text": "1/3根（約50g，可省略）",
+    "group": "紅蘿蔔",
+    "group_is_guess": true
+   },
+   {
+    "order": 3,
+    "name": "鹽昆布",
+    "qty_text": "5g",
+    "group": null,
+    "group_is_guess": true
+   },
+   {
+    "order": 4,
+    "name": "白芝麻",
+    "qty_text": "1大匙",
+    "group": null,
+    "group_is_guess": true
+   }
+  ],
+  "seasonings_text": "芝麻油 1大匙；醬油 1/2小匙；鹽 1指尖",
+  "equipment_source_text": "煮水鍋（熱水沖燙）；來源也提到可用微波爐",
+  "equipment": [
+   "湯鍋"
+  ],
+  "servings_text": "未標示（小菜，冷藏可放 2–3 天）",
+  "source_url": "https://www.edh.tw/article/33761",
+  "notes": ""
+ },
+ {
+  "id": "R03",
+  "name": "白蘿蔔玉米排骨湯",
+  "main_group": "白蘿蔔",
+  "involved_groups": [
+   "白蘿蔔",
+   "玉米"
+  ],
+  "ingredients": [
+   {
+    "order": 1,
+    "name": "白蘿蔔",
+    "qty_text": "1根（約600g）",
+    "group": "白蘿蔔",
+    "group_is_guess": true
+   },
+   {
+    "order": 2,
+    "name": "甜玉米",
+    "qty_text": "2根",
+    "group": "玉米",
+    "group_is_guess": true
+   },
+   {
+    "order": 3,
+    "name": "豬排骨",
+    "qty_text": "300–500g",
+    "group": null,
+    "group_is_guess": true
+   },
+   {
+    "order": 4,
+    "name": "老薑",
+    "qty_text": "3–5片",
+    "group": null,
+    "group_is_guess": true
+   },
+   {
+    "order": 5,
+    "name": "香菜或芹菜珠",
+    "qty_text": "少許",
+    "group": null,
+    "group_is_guess": true
+   }
+  ],
+  "seasonings_text": "米酒 1大匙；鹽 適量；白胡椒粉 少許",
+  "equipment_source_text": "湯鍋",
+  "equipment": [
+   "湯鍋"
+  ],
+  "servings_text": "4人份",
+  "source_url": "https://uptogo.com.tw/?p=305171",
+  "notes": "市場的「蘿蔔」混有櫻桃蘿蔔與甜菜根，這道指白蘿蔔;指白蘿蔔"
+ },
+ {
+  "id": "R04",
+  "name": "白蘿蔔魚片湯",
+  "main_group": "白蘿蔔",
+  "involved_groups": [
+   "白蘿蔔"
+  ],
+  "ingredients": [
+   {
+    "order": 1,
+    "name": "白蘿蔔",
+    "qty_text": "300g",
+    "group": "白蘿蔔",
+    "group_is_guess": true
+   },
+   {
+    "order": 2,
+    "name": "魚片（如鱈魚）200g",
+    "qty_text": "",
+    "group": null,
+    "group_is_guess": true
+   },
+   {
+    "order": 3,
+    "name": "生薑",
+    "qty_text": "3片",
+    "group": null,
+    "group_is_guess": true
+   },
+   {
+    "order": 4,
+    "name": "水",
+    "qty_text": "800ml",
+    "group": null,
+    "group_is_guess": true
+   }
+  ],
+  "seasonings_text": "玄米油 1大匙；酒 1小匙；鹽 1/2～1小匙；胡椒 少許",
+  "equipment_source_text": "平底鍋（煎魚片）；湯鍋",
+  "equipment": [
+   "炒鍋",
+   "湯鍋"
+  ],
+  "servings_text": "4人份",
+  "source_url": "https://edh.tw/articles/YRouqPu/2",
+  "notes": "魚片屬海鮮，第一版沒有價格資料"
+ },
+ {
+  "id": "R05",
+  "name": "清炒香菇大白菜",
+  "main_group": "大白菜",
+  "involved_groups": [
+   "大白菜"
+  ],
+  "ingredients": [
+   {
+    "order": 1,
+    "name": "大白菜",
+    "qty_text": "1/2顆",
+    "group": "大白菜",
+    "group_is_guess": true
+   },
+   {
+    "order": 2,
+    "name": "乾香菇",
+    "qty_text": "3朵",
+    "group": null,
+    "group_is_guess": true
+   },
+   {
+    "order": 3,
+    "name": "蒜頭",
+    "qty_text": "2顆",
+    "group": null,
+    "group_is_guess": true
+   }
+  ],
+  "seasonings_text": "鹽 適量；黑胡椒 適量；油 1小匙",
+  "equipment_source_text": "炒鍋（推定）",
+  "equipment": [
+   "炒鍋"
+  ],
+  "servings_text": "未標示",
+  "source_url": "https://www.edh.tw/media_article/159",
+  "notes": ""
+ },
+ {
+  "id": "R06",
+  "name": "豆腐白菜滷",
+  "main_group": "大白菜",
+  "involved_groups": [
+   "大白菜",
+   "紅蘿蔔"
+  ],
+  "ingredients": [
+   {
+    "order": 1,
+    "name": "大白菜",
+    "qty_text": "半顆",
+    "group": "大白菜",
+    "group_is_guess": true
+   },
+   {
+    "order": 2,
+    "name": "雞蛋",
+    "qty_text": "5顆",
+    "group": null,
+    "group_is_guess": true
+   },
+   {
+    "order": 3,
+    "name": "板豆腐",
+    "qty_text": "1塊",
+    "group": null,
+    "group_is_guess": true
+   },
+   {
+    "order": 4,
+    "name": "紅蘿蔔",
+    "qty_text": "半根（切細丁）",
+    "group": "紅蘿蔔",
+    "group_is_guess": true
+   },
+   {
+    "order": 5,
+    "name": "乾香菇",
+    "qty_text": "5朵（泡水切絲）",
+    "group": null,
+    "group_is_guess": true
+   },
+   {
+    "order": 6,
+    "name": "大乾蝦米",
+    "qty_text": "1湯匙",
+    "group": null,
+    "group_is_guess": true
+   },
+   {
+    "order": 7,
+    "name": "枸杞",
+    "qty_text": "2湯匙",
+    "group": null,
+    "group_is_guess": true
+   },
+   {
+    "order": 8,
+    "name": "薑絲",
+    "qty_text": "15g",
+    "group": null,
+    "group_is_guess": true
+   },
+   {
+    "order": 9,
+    "name": "熱開水",
+    "qty_text": "1500ml",
+    "group": null,
+    "group_is_guess": true
+   }
+  ],
+  "seasonings_text": "香油 1匙；海鹽 1茶匙",
+  "equipment_source_text": "平底鍋（煎蛋）；湯鍋（推定）",
+  "equipment": [
+   "炒鍋",
+   "湯鍋"
+  ],
+  "servings_text": "未標示（份量看起來是多人份）",
+  "source_url": "https://health.tvbs.com.tw/nutrition/352145",
+  "notes": ""
+ },
+ {
+  "id": "R07",
+  "name": "玉米濃湯",
+  "main_group": "玉米",
+  "involved_groups": [
+   "玉米"
+  ],
+  "ingredients": [
+   {
+    "order": 1,
+    "name": "玉米",
+    "qty_text": "2根",
+    "group": "玉米",
+    "group_is_guess": true
+   },
+   {
+    "order": 2,
+    "name": "奶油",
+    "qty_text": "20g",
+    "group": null,
+    "group_is_guess": true
+   },
+   {
+    "order": 3,
+    "name": "牛奶",
+    "qty_text": "400cc",
+    "group": null,
+    "group_is_guess": true
+   },
+   {
+    "order": 4,
+    "name": "水",
+    "qty_text": "4大匙",
+    "group": null,
+    "group_is_guess": true
+   }
+  ],
+  "seasonings_text": "鹽 1小匙",
+  "equipment_source_text": "有蓋鍋（來源用鑄鐵鍋）",
+  "equipment": [
+   "湯鍋"
+  ],
+  "servings_text": "3–4人份",
+  "source_url": "https://health.tvbs.com.tw/life/349040",
+  "notes": "來源摘自書籍《staub 鑄鐵鍋湯料理》（Edajun 著）;書摘,用有蓋鍋"
+ },
+ {
+  "id": "R08",
+  "name": "紅蘿蔔玉米豬腱湯",
+  "main_group": "紅蘿蔔",
+  "involved_groups": [
+   "紅蘿蔔",
+   "玉米"
+  ],
+  "ingredients": [
+   {
+    "order": 1,
+    "name": "紅蘿蔔",
+    "qty_text": "2條",
+    "group": "紅蘿蔔",
+    "group_is_guess": true
+   },
+   {
+    "order": 2,
+    "name": "玉米",
+    "qty_text": "1條",
+    "group": "玉米",
+    "group_is_guess": true
+   },
+   {
+    "order": 3,
+    "name": "豬腱",
+    "qty_text": "450g",
+    "group": null,
+    "group_is_guess": true
+   },
+   {
+    "order": 4,
+    "name": "蜜棗",
+    "qty_text": "2粒",
+    "group": null,
+    "group_is_guess": true
+   },
+   {
+    "order": 5,
+    "name": "水",
+    "qty_text": "8碗",
+    "group": null,
+    "group_is_guess": true
+   }
+  ],
+  "seasonings_text": "鹽 少許",
+  "equipment_source_text": "湯鍋（燉煮約 2 小時）",
+  "equipment": [
+   "湯鍋"
+  ],
+  "servings_text": "未標示",
+  "source_url": "https://collection.news/appledaily/articles/LMIQVYKKNT6B62I5NCOZ2ZG7RY",
+  "notes": "港式湯水；蜜棗在台灣較少見，要不要保留？;蜜棗在台灣較少見"
+ },
+ {
+  "id": "R09",
+  "name": "豆豉鯪魚炒油麥菜",
+  "main_group": "油麥菜",
+  "involved_groups": [
+   "油麥菜"
+  ],
+  "ingredients": [
+   {
+    "order": 1,
+    "name": "油麥菜（萵苣）200g",
+    "qty_text": "",
+    "group": "油麥菜",
+    "group_is_guess": true
+   },
+   {
+    "order": 2,
+    "name": "罐頭豆豉鯪魚",
+    "qty_text": "1罐",
+    "group": null,
+    "group_is_guess": true
+   },
+   {
+    "order": 3,
+    "name": "蒜",
+    "qty_text": "2瓣",
+    "group": null,
+    "group_is_guess": true
+   },
+   {
+    "order": 4,
+    "name": "食用油",
+    "qty_text": "1.5湯匙",
+    "group": null,
+    "group_is_guess": true
+   }
+  ],
+  "seasonings_text": "不另加鹽（罐頭本身有鹹味）",
+  "equipment_source_text": "炒鍋",
+  "equipment": [
+   "炒鍋"
+  ],
+  "servings_text": "2人份",
+  "source_url": "https://www.beautifulvoyager.com/stir-fry-lettuce-with-black-bean-dace-fish-ready-in-15-minutes/",
+  "notes": "作者在新加坡；萵苣菜目前只有這 1 道"
+ },
+ {
+  "id": "R10",
+  "name": "南瓜濃湯",
+  "main_group": "南瓜",
+  "involved_groups": [
+   "南瓜"
+  ],
+  "ingredients": [
+   {
+    "order": 1,
+    "name": "南瓜",
+    "qty_text": "400g（約半顆，來源建議東昇或栗子南瓜等西洋南瓜）",
+    "group": "南瓜",
+    "group_is_guess": true
+   },
+   {
+    "order": 2,
+    "name": "洋蔥",
+    "qty_text": "1顆",
+    "group": null,
+    "group_is_guess": true
+   },
+   {
+    "order": 3,
+    "name": "奶油",
+    "qty_text": "20g",
+    "group": null,
+    "group_is_guess": true
+   },
+   {
+    "order": 4,
+    "name": "牛奶",
+    "qty_text": "1杯",
+    "group": null,
+    "group_is_guess": true
+   },
+   {
+    "order": 5,
+    "name": "水",
+    "qty_text": "1杯",
+    "group": null,
+    "group_is_guess": true
+   }
+  ],
+  "seasonings_text": "鹽、胡椒粉 適量",
+  "equipment_source_text": "湯鍋；是否需要調理棒或果汁機，我沒取得完整步驟",
+  "equipment": [
+   "湯鍋"
+  ],
+  "servings_text": "4人份",
+  "source_url": "https://health.udn.com/health/story/11189/8328329",
+  "notes": "請看原文確認器材"
+ },
+ {
+  "id": "R11",
+  "name": "南瓜燉飯",
+  "main_group": "南瓜",
+  "involved_groups": [
+   "南瓜"
+  ],
+  "ingredients": [
+   {
+    "order": 1,
+    "name": "南瓜",
+    "qty_text": "80g",
+    "group": "南瓜",
+    "group_is_guess": true
+   },
+   {
+    "order": 2,
+    "name": "洋蔥",
+    "qty_text": "20g",
+    "group": null,
+    "group_is_guess": true
+   },
+   {
+    "order": 3,
+    "name": "米",
+    "qty_text": "80g",
+    "group": null,
+    "group_is_guess": true
+   },
+   {
+    "order": 4,
+    "name": "高湯",
+    "qty_text": "300cc",
+    "group": null,
+    "group_is_guess": true
+   }
+  ],
+  "seasonings_text": "冷壓橄欖油 1茶匙；岩鹽 1/4茶匙；乳酪粉 2湯匙；巴西利香料 少許；黑胡椒（步驟有提到，量未標示）",
+  "equipment_source_text": "有蓋平底鍋或湯鍋（步驟有「蓋上蓋子」，推定）",
+  "equipment": [
+   "湯鍋"
+  ],
+  "servings_text": "未標示（份量看起來是 1 人份）",
+  "source_url": "https://edh.tw/articles/QUQTaPO/2",
+  "notes": ""
+ },
+ {
+  "id": "R12",
+  "name": "蒜蓉小白菜",
+  "main_group": "小白菜",
+  "involved_groups": [
+   "小白菜"
+  ],
+  "ingredients": [
+   {
+    "order": 1,
+    "name": "小白菜",
+    "qty_text": "300g",
+    "group": "小白菜",
+    "group_is_guess": true
+   },
+   {
+    "order": 2,
+    "name": "大蒜",
+    "qty_text": "3瓣",
+    "group": null,
+    "group_is_guess": true
+   }
+  ],
+  "seasonings_text": "生抽 1湯匙；蠔油 1茶匙；食用油 1湯匙；鹽 少許；糖 半茶匙；雞精 少許",
+  "equipment_source_text": "炒鍋",
+  "equipment": [
+   "炒鍋"
+  ],
+  "servings_text": "未標示",
+  "source_url": "https://www.bowtie.com.hk/blog/zh/營養貼士/小白菜/",
+  "notes": "香港網站；「生抽」可用一般醬油，雞精可省;生抽可用一般醬油"
+ },
+ {
+  "id": "R13",
+  "name": "小白菜雞肉湯(原為煙鴨)",
+  "main_group": "小白菜",
+  "involved_groups": [
+   "小白菜"
+  ],
+  "ingredients": [
+   {
+    "order": 1,
+    "name": "台灣小白菜",
+    "qty_text": "150g",
+    "group": "小白菜",
+    "group_is_guess": true
+   },
+   {
+    "order": 2,
+    "name": "去骨雞腿肉",
+    "qty_text": "約150g（替代原本的煙鴨胸 半個）",
+    "group": null,
+    "group_is_guess": true
+   },
+   {
+    "order": 3,
+    "name": "冬菇（已泡）5隻",
+    "qty_text": "",
+    "group": null,
+    "group_is_guess": true
+   },
+   {
+    "order": 4,
+    "name": "薑",
+    "qty_text": "1片",
+    "group": null,
+    "group_is_guess": true
+   },
+   {
+    "order": 5,
+    "name": "水",
+    "qty_text": "1公升",
+    "group": null,
+    "group_is_guess": true
+   }
+  ],
+  "seasonings_text": "鹽、糖、紹酒 各少許",
+  "equipment_source_text": "湯鍋",
+  "equipment": [
+   "湯鍋"
+  ],
+  "servings_text": "未標示",
+  "source_url": "https://collection.news/appledaily/articles/PDNK74XVK3IGVDFHNJHZDRXJVA",
+  "notes": "已把煙鴨胸換成雞腿肉；份量與調味可能需微調;原食譜為煙鴨,已依你的指示改雞腿肉"
+ },
+ {
+  "id": "R14",
+  "name": "紅蘿蔔煎蛋",
+  "main_group": "紅蘿蔔",
+  "involved_groups": [
+   "紅蘿蔔"
+  ],
+  "ingredients": [
+   {
+    "order": 1,
+    "name": "紅蘿蔔（刨絲）1根",
+    "qty_text": "",
+    "group": "紅蘿蔔",
+    "group_is_guess": true
+   },
+   {
+    "order": 2,
+    "name": "蛋",
+    "qty_text": "3顆",
+    "group": null,
+    "group_is_guess": true
+   },
+   {
+    "order": 3,
+    "name": "蔥",
+    "qty_text": "3條（切小段）",
+    "group": null,
+    "group_is_guess": true
+   }
+  ],
+  "seasonings_text": "醬油 1小匙；鹽 1/4茶匙；油 少許",
+  "equipment_source_text": "平底鍋",
+  "equipment": [
+   "炒鍋"
+  ],
+  "servings_text": "2–3人份",
+  "source_url": "https://www.foodnext.net/life/recipes/lunch/paper/4975372633",
+  "notes": "來源為《林姓主婦的家務事》書摘;書摘"
+ },
+ {
+  "id": "R15",
+  "name": "涼拌小黃瓜",
+  "main_group": "小黃瓜",
+  "involved_groups": [
+   "小黃瓜"
+  ],
+  "ingredients": [
+   {
+    "order": 1,
+    "name": "小黃瓜",
+    "qty_text": "3根",
+    "group": "小黃瓜",
+    "group_is_guess": true
+   },
+   {
+    "order": 2,
+    "name": "蒜頭",
+    "qty_text": "3顆",
+    "group": null,
+    "group_is_guess": true
+   },
+   {
+    "order": 3,
+    "name": "辣椒",
+    "qty_text": "半根",
+    "group": null,
+    "group_is_guess": true
+   }
+  ],
+  "seasonings_text": "砂糖 1大匙；鹽 半匙；白醋或水果醋 40ml；香麻油 適量",
+  "equipment_source_text": "免開火（推定，步驟為拌）",
+  "equipment": [
+   "免開火"
+  ],
+  "servings_text": "未標示",
+  "source_url": "https://edh.tw/videos/hVjTxxv",
+  "notes": ""
+ },
+ {
+  "id": "R16",
+  "name": "梅漬小黃瓜",
+  "main_group": "小黃瓜",
+  "involved_groups": [
+   "小黃瓜"
+  ],
+  "ingredients": [
+   {
+    "order": 1,
+    "name": "小黃瓜",
+    "qty_text": "1條",
+    "group": "小黃瓜",
+    "group_is_guess": true
+   },
+   {
+    "order": 2,
+    "name": "醃梅",
+    "qty_text": "2顆",
+    "group": null,
+    "group_is_guess": true
+   }
+  ],
+  "seasonings_text": "麻油、鹽巴（份量來源未列）",
+  "equipment_source_text": "我沒取得步驟，請看原文",
+  "equipment": [],
+  "servings_text": "未標示",
+  "source_url": "https://www.bella.tw/articles/travel&foodies/30286",
+  "notes": "只取得材料，沒有步驟;只取得材料,沒有步驟"
+ },
+ {
+  "id": "R17",
+  "name": "絲瓜炒蛋",
+  "main_group": "絲瓜",
+  "involved_groups": [
+   "絲瓜"
+  ],
+  "ingredients": [
+   {
+    "order": 1,
+    "name": "絲瓜",
+    "qty_text": "1條",
+    "group": "絲瓜",
+    "group_is_guess": true
+   },
+   {
+    "order": 2,
+    "name": "蛋",
+    "qty_text": "2顆",
+    "group": null,
+    "group_is_guess": true
+   },
+   {
+    "order": 3,
+    "name": "蒜瓣",
+    "qty_text": "2瓣",
+    "group": null,
+    "group_is_guess": true
+   },
+   {
+    "order": 4,
+    "name": "薑絲",
+    "qty_text": "少許",
+    "group": null,
+    "group_is_guess": true
+   }
+  ],
+  "seasonings_text": "鹽 適量；食用油 適量",
+  "equipment_source_text": "炒鍋",
+  "equipment": [
+   "炒鍋"
+  ],
+  "servings_text": "未標示",
+  "source_url": "https://www.marieclaire.com.tw/beauty/health-fitness/58276",
+  "notes": "來源轉載自小紅書;轉載自小紅書"
+ },
+ {
+  "id": "R18",
+  "name": "沖繩風絲瓜豬肉味噌湯",
+  "main_group": "絲瓜",
+  "involved_groups": [
+   "絲瓜"
+  ],
+  "ingredients": [
+   {
+    "order": 1,
+    "name": "絲瓜",
+    "qty_text": "半條",
+    "group": "絲瓜",
+    "group_is_guess": true
+   },
+   {
+    "order": 2,
+    "name": "豬肉片",
+    "qty_text": "約100g",
+    "group": null,
+    "group_is_guess": true
+   },
+   {
+    "order": 3,
+    "name": "鴻禧菇（可省略）",
+    "qty_text": "",
+    "group": null,
+    "group_is_guess": true
+   },
+   {
+    "order": 4,
+    "name": "蔥白",
+    "qty_text": "少許",
+    "group": null,
+    "group_is_guess": true
+   },
+   {
+    "order": 5,
+    "name": "水",
+    "qty_text": "400ml",
+    "group": null,
+    "group_is_guess": true
+   }
+  ],
+  "seasonings_text": "味噌 1大匙；奶油 10g；柴魚醬油 1小匙；麻油 少許；白芝麻 少許",
+  "equipment_source_text": "一鍋煮（來源提到砂鍋）",
+  "equipment": [
+   "湯鍋"
+  ],
+  "servings_text": "2人份",
+  "source_url": "https://www.nownews.com/news/6732959",
+  "notes": ""
+ },
+ {
+  "id": "R19",
+  "name": "奶油地瓜飯",
+  "main_group": "地瓜",
+  "involved_groups": [
+   "地瓜"
+  ],
+  "ingredients": [
+   {
+    "order": 1,
+    "name": "地瓜",
+    "qty_text": "1個（200g）",
+    "group": "地瓜",
+    "group_is_guess": true
+   },
+   {
+    "order": 2,
+    "name": "白米",
+    "qty_text": "2杯（泡水 30 分鐘）",
+    "group": null,
+    "group_is_guess": true
+   },
+   {
+    "order": 3,
+    "name": "水",
+    "qty_text": "360ml",
+    "group": null,
+    "group_is_guess": true
+   }
+  ],
+  "seasonings_text": "白高湯（白醬油）2大匙；奶油 20g；鹽、黑胡椒（可選）",
+  "equipment_source_text": "電鍋或電子鍋（推定）",
+  "equipment": [
+   "電鍋"
+  ],
+  "servings_text": "未標示（用 2 杯米）",
+  "source_url": "https://www.edh.tw/article/32232",
+  "notes": "日本料理家食譜，由早安健康整理;日本料理家食譜,台灣網站整理"
+ },
+ {
+  "id": "R20",
+  "name": "黑糖薑汁地瓜湯",
+  "main_group": "地瓜",
+  "involved_groups": [
+   "地瓜"
+  ],
+  "ingredients": [
+   {
+    "order": 1,
+    "name": "地瓜",
+    "qty_text": "約600g（推定",
+    "group": "地瓜",
+    "group_is_guess": true
+   },
+   {
+    "order": 2,
+    "name": "來源寫",
+    "qty_text": "60g）",
+    "group": null,
+    "group_is_guess": true
+   },
+   {
+    "order": 3,
+    "name": "薑",
+    "qty_text": "30g",
+    "group": null,
+    "group_is_guess": true
+   },
+   {
+    "order": 4,
+    "name": "開水",
+    "qty_text": "1000cc",
+    "group": null,
+    "group_is_guess": true
+   }
+  ],
+  "seasonings_text": "黑糖塊 1大匙",
+  "equipment_source_text": "電鍋",
+  "equipment": [
+   "電鍋"
+  ],
+  "servings_text": "未標示",
+  "source_url": "https://edh.tw/articles/riAkrVs/2",
+  "notes": "地瓜份量是我依 1000cc 水推定的，原文 60g 疑似少一個零;地瓜份量依水量推定"
+ },
+ {
+  "id": "R21",
+  "name": "腐乾西蘭花",
+  "main_group": "青花菜",
+  "involved_groups": [
+   "青花菜",
+   "洋蔥",
+   "紅蘿蔔"
+  ],
+  "ingredients": [
+   {
+    "order": 1,
+    "name": "青花菜",
+    "qty_text": "200g",
+    "group": "青花菜",
+    "group_is_guess": true
+   },
+   {
+    "order": 2,
+    "name": "白豆乾",
+    "qty_text": "50g",
+    "group": null,
+    "group_is_guess": true
+   },
+   {
+    "order": 3,
+    "name": "蒜頭",
+    "qty_text": "2粒",
+    "group": null,
+    "group_is_guess": true
+   },
+   {
+    "order": 4,
+    "name": "洋蔥",
+    "qty_text": "20g",
+    "group": "洋蔥",
+    "group_is_guess": true
+   },
+   {
+    "order": 5,
+    "name": "紅蘿蔔",
+    "qty_text": "20g",
+    "group": "紅蘿蔔",
+    "group_is_guess": true
+   }
+  ],
+  "seasonings_text": "鹽、香油(麻油)、醬油、胡椒粉(皆少許)",
+  "equipment_source_text": "湯鍋(汆燙)；炒鍋(推定)",
+  "equipment": [
+   "炒鍋",
+   "湯鍋"
+  ],
+  "servings_text": "未標示",
+  "source_url": "https://health.tvbs.com.tw/recipe/364466",
+  "notes": "來源未列炒鍋,為推定;需冷藏的保鮮盒做法"
+ },
+ {
+  "id": "R22",
+  "name": "蒜香烤青花菜",
+  "main_group": "青花菜",
+  "involved_groups": [
+   "青花菜"
+  ],
+  "ingredients": [
+   {
+    "order": 1,
+    "name": "青花菜",
+    "qty_text": "未標示",
+    "group": "青花菜",
+    "group_is_guess": true
+   },
+   {
+    "order": 2,
+    "name": "黃檸檬",
+    "qty_text": "未標示(切片)",
+    "group": null,
+    "group_is_guess": true
+   },
+   {
+    "order": 3,
+    "name": "起司條",
+    "qty_text": "未標示(減脂期可不加)",
+    "group": null,
+    "group_is_guess": true
+   }
+  ],
+  "seasonings_text": "橄欖油 1匙；蒜末 1匙；鹽 一點點；黑胡椒 未標示",
+  "equipment_source_text": "烤箱(200度約15分鐘)；烤盤",
+  "equipment": [
+   "烤箱"
+  ],
+  "servings_text": "未標示",
+  "source_url": "https://www.marieclaire.com.tw/beauty/health-fitness/54891",
+  "notes": "主食材份量來源沒寫;用烤箱,不在預設器材內"
+ },
+ {
+  "id": "R23",
+  "name": "滑嫩番茄炒蛋",
+  "main_group": "番茄",
+  "involved_groups": [
+   "番茄"
+  ],
+  "ingredients": [
+   {
+    "order": 1,
+    "name": "雞蛋",
+    "qty_text": "4顆",
+    "group": null,
+    "group_is_guess": true
+   },
+   {
+    "order": 2,
+    "name": "牛番茄",
+    "qty_text": "1顆",
+    "group": "番茄",
+    "group_is_guess": true
+   }
+  ],
+  "seasonings_text": "鹽 1小匙；糖 依喜好(未標示份量)",
+  "equipment_source_text": "鍋(推定炒鍋)；大碗",
+  "equipment": [
+   "炒鍋"
+  ],
+  "servings_text": "3–4人份",
+  "source_url": "https://health.tvbs.com.tw/life/327127",
+  "notes": ""
+ },
+ {
+  "id": "R24",
+  "name": "紅蘿蔔番茄通心粉",
+  "main_group": "紅蘿蔔",
+  "involved_groups": [
+   "紅蘿蔔",
+   "洋蔥",
+   "番茄",
+   "彩椒"
+  ],
+  "ingredients": [
+   {
+    "order": 1,
+    "name": "熟通心粉",
+    "qty_text": "150g",
+    "group": null,
+    "group_is_guess": true
+   },
+   {
+    "order": 2,
+    "name": "紅蘿蔔丁",
+    "qty_text": "100g",
+    "group": "紅蘿蔔",
+    "group_is_guess": true
+   },
+   {
+    "order": 3,
+    "name": "洋蔥末",
+    "qty_text": "50g",
+    "group": "洋蔥",
+    "group_is_guess": true
+   },
+   {
+    "order": 4,
+    "name": "番茄丁",
+    "qty_text": "80g",
+    "group": "番茄",
+    "group_is_guess": true
+   },
+   {
+    "order": 5,
+    "name": "紅椒丁",
+    "qty_text": "50g",
+    "group": null,
+    "group_is_guess": true
+   },
+   {
+    "order": 6,
+    "name": "蝦仁",
+    "qty_text": "5隻",
+    "group": null,
+    "group_is_guess": true
+   }
+  ],
+  "seasonings_text": "橄欖油 50ml；乾辣椒 10g；義式番茄醬 30g(來源未分列食材與佐料)",
+  "equipment_source_text": "鍋；調理機",
+  "equipment": [
+   "炒鍋"
+  ],
+  "servings_text": "未標示",
+  "source_url": "https://health.tvbs.com.tw/recipe/359130",
+  "notes": "紅椒丁對應「彩椒」群組"
+ },
+ {
+  "id": "R25",
+  "name": "減鹽番茄燴飯",
+  "main_group": "番茄",
+  "involved_groups": [
+   "番茄",
+   "洋蔥",
+   "馬鈴薯"
+  ],
+  "ingredients": [
+   {
+    "order": 1,
+    "name": "牛肉片",
+    "qty_text": "80g",
+    "group": null,
+    "group_is_guess": true
+   },
+   {
+    "order": 2,
+    "name": "洋蔥",
+    "qty_text": "1/4顆",
+    "group": "洋蔥",
+    "group_is_guess": true
+   },
+   {
+    "order": 3,
+    "name": "馬鈴薯",
+    "qty_text": "1/2顆",
+    "group": "馬鈴薯",
+    "group_is_guess": true
+   },
+   {
+    "order": 4,
+    "name": "白飯",
+    "qty_text": "1人份",
+    "group": null,
+    "group_is_guess": true
+   },
+   {
+    "order": 5,
+    "name": "番茄",
+    "qty_text": "未標示份量",
+    "group": "番茄",
+    "group_is_guess": true
+   },
+   {
+    "order": 6,
+    "name": "洋香菜",
+    "qty_text": "隨個人喜好",
+    "group": null,
+    "group_is_guess": true
+   }
+  ],
+  "seasonings_text": "紅酒 1.5大匙；麵粉 1/2大匙；蔬菜湯粉 1/2小匙；中濃醬汁 1小匙；砂糖 1/2小匙；橄欖油 1小匙；胡椒 少許",
+  "equipment_source_text": "鍋子",
+  "equipment": [
+   "炒鍋"
+  ],
+  "servings_text": "1人份",
+  "source_url": "https://edh.tw/articles/rKCQVYE/2",
+  "notes": "日式減鹽食譜,台灣網站整理;番茄份量來源沒寫"
+ },
+ {
+  "id": "R26",
+  "name": "番茄蛋花湯(加小白菜)",
+  "main_group": "番茄",
+  "involved_groups": [
+   "番茄",
+   "小白菜"
+  ],
+  "ingredients": [
+   {
+    "order": 1,
+    "name": "番茄",
+    "qty_text": "未標示(切瓣)",
+    "group": "番茄",
+    "group_is_guess": true
+   },
+   {
+    "order": 2,
+    "name": "小白菜",
+    "qty_text": "未標示(切段)",
+    "group": "小白菜",
+    "group_is_guess": true
+   },
+   {
+    "order": 3,
+    "name": "雞蛋",
+    "qty_text": "未標示",
+    "group": null,
+    "group_is_guess": true
+   },
+   {
+    "order": 4,
+    "name": "水",
+    "qty_text": "250ml",
+    "group": null,
+    "group_is_guess": true
+   }
+  ],
+  "seasonings_text": "鹽 適量；白胡椒粉 少許；香油 數滴(可省)",
+  "equipment_source_text": "湯鍋",
+  "equipment": [
+   "湯鍋"
+  ],
+  "servings_text": "未標示",
+  "source_url": "https://vocus.cc/article/63e41986fd897800016fee47",
+  "notes": "食材份量來源都沒寫"
+ },
+ {
+  "id": "R27",
+  "name": "薑絲小白菜",
+  "main_group": "小白菜",
+  "involved_groups": [
+   "小白菜"
+  ],
+  "ingredients": [
+   {
+    "order": 1,
+    "name": "小白菜",
+    "qty_text": "1把",
+    "group": "小白菜",
+    "group_is_guess": true
+   },
+   {
+    "order": 2,
+    "name": "薑絲",
+    "qty_text": "8片",
+    "group": null,
+    "group_is_guess": true
+   }
+  ],
+  "seasonings_text": "鹽 1撮；鮮味炒手 1撮；沙拉油 1圈",
+  "equipment_source_text": "鍋子(推定炒鍋),大火",
+  "equipment": [
+   "炒鍋"
+  ],
+  "servings_text": "未標示",
+  "source_url": "https://health.udn.com/health/story/6036/9445125",
+  "notes": ""
+ },
+ {
+  "id": "R28",
+  "name": "洋蔥炒蛋",
+  "main_group": "洋蔥",
+  "involved_groups": [
+   "洋蔥"
+  ],
+  "ingredients": [
+   {
+    "order": 1,
+    "name": "洋蔥",
+    "qty_text": "1顆",
+    "group": "洋蔥",
+    "group_is_guess": true
+   },
+   {
+    "order": 2,
+    "name": "雞蛋",
+    "qty_text": "2顆",
+    "group": null,
+    "group_is_guess": true
+   }
+  ],
+  "seasonings_text": "醬油 1匙；醬油膏 1匙；蠔油 1匙；炒製用油(未標示份量)",
+  "equipment_source_text": "炒鍋(推定)",
+  "equipment": [
+   "炒鍋"
+  ],
+  "servings_text": "未標示",
+  "source_url": "https://www.marieclaire.com.tw/beauty/health-fitness/58624",
+  "notes": "來源未明列器材"
+ },
+ {
+  "id": "R29",
+  "name": "洋蔥荷包蛋",
+  "main_group": "洋蔥",
+  "involved_groups": [
+   "洋蔥"
+  ],
+  "ingredients": [
+   {
+    "order": 1,
+    "name": "洋蔥",
+    "qty_text": "1顆",
+    "group": "洋蔥",
+    "group_is_guess": true
+   },
+   {
+    "order": 2,
+    "name": "蛋",
+    "qty_text": "2顆",
+    "group": null,
+    "group_is_guess": true
+   }
+  ],
+  "seasonings_text": "黑胡椒 少許；香料 依喜好；煎鍋刷油(未標示份量)",
+  "equipment_source_text": "煎鍋(平底鍋)；筷子",
+  "equipment": [
+   "炒鍋"
+  ],
+  "servings_text": "未標示",
+  "source_url": "https://health.tvbs.com.tw/nutrition/322753",
+  "notes": ""
+ },
+ {
+  "id": "R30",
+  "name": "熗炒油麥菜",
+  "main_group": "油麥菜",
+  "involved_groups": [
+   "油麥菜",
+   "A菜"
+  ],
+  "ingredients": [
+   {
+    "order": 1,
+    "name": "尖葉萵苣(A菜或油麥菜)",
+    "qty_text": "1把(約500g)",
+    "group": "油麥菜",
+    "group_is_guess": true
+   },
+   {
+    "order": 2,
+    "name": "乾辣椒段",
+    "qty_text": "10~15g",
+    "group": null,
+    "group_is_guess": true
+   },
+   {
+    "order": 3,
+    "name": "青花椒粒",
+    "qty_text": "1小匙",
+    "group": null,
+    "group_is_guess": true
+   },
+   {
+    "order": 4,
+    "name": "蒜頭",
+    "qty_text": "4~5小粒",
+    "group": null,
+    "group_is_guess": true
+   }
+  ],
+  "seasonings_text": "鹽 適量；鮮味炒手 約1/4小匙；食用油 約3大匙(步驟中提到)",
+  "equipment_source_text": "炒鍋(推定,來源未列)",
+  "equipment": [
+   "炒鍋"
+  ],
+  "servings_text": "未標示",
+  "source_url": "https://icook.tw/recipes/252598",
+  "notes": "愛料理作者食譜;花椒做法偏川味"
+ },
+ {
+  "id": "R31",
+  "name": "玉米濃湯(新鮮玉米版)",
+  "main_group": "玉米",
+  "involved_groups": [
+   "玉米",
+   "馬鈴薯",
+   "洋蔥"
+  ],
+  "ingredients": [
+   {
+    "order": 1,
+    "name": "新鮮玉米",
+    "qty_text": "4根(或原味玉米粒 4杯,保留玉米梗)",
+    "group": "玉米",
+    "group_is_guess": true
+   },
+   {
+    "order": 2,
+    "name": "馬鈴薯",
+    "qty_text": "1小顆(約7公分)",
+    "group": "馬鈴薯",
+    "group_is_guess": true
+   },
+   {
+    "order": 3,
+    "name": "洋蔥",
+    "qty_text": "1大顆",
+    "group": "洋蔥",
+    "group_is_guess": true
+   },
+   {
+    "order": 4,
+    "name": "大蒜",
+    "qty_text": "2瓣",
+    "group": null,
+    "group_is_guess": true
+   },
+   {
+    "order": 5,
+    "name": "無鹽奶油",
+    "qty_text": "30克",
+    "group": null,
+    "group_is_guess": true
+   },
+   {
+    "order": 6,
+    "name": "高湯或清水",
+    "qty_text": "約1000毫升",
+    "group": null,
+    "group_is_guess": true
+   },
+   {
+    "order": 7,
+    "name": "牛奶或鮮奶油",
+    "qty_text": "200毫升",
+    "group": null,
+    "group_is_guess": true
+   }
+  ],
+  "seasonings_text": "鹽、白胡椒粉(適量)；植物油 一兩滴(防奶油焦化,未列份量)",
+  "equipment_source_text": "厚底湯鍋；果汁機或調理機；細網篩",
+  "equipment": [
+   "湯鍋"
+  ],
+  "servings_text": "約4人份",
+  "source_url": "https://uptogo.com.tw/?p=1356910",
+  "notes": "同頁另有罐頭版台式玉米濃湯(4–6人份),需要的話可加入"
+ }
+]

@@ -37,7 +37,8 @@ function headers(extra = {}) {
   return h;
 }
 
-export async function upsert(table, rows, onConflict, { chunk = 500 } = {}) {
+// ignore=true:已存在的列不動(不覆蓋使用者在後台改過的資料)
+export async function upsert(table, rows, onConflict, { chunk = 500, ignore = false } = {}) {
   for (let i = 0; i < rows.length; i += chunk) {
     const body = JSON.stringify(rows.slice(i, i + chunk));
     let lastErr;
@@ -45,7 +46,7 @@ export async function upsert(table, rows, onConflict, { chunk = 500 } = {}) {
       if (t) await new Promise((r) => setTimeout(r, 1000 * 2 ** t));
       const res = await fetch(`${URL_}/rest/v1/${table}?on_conflict=${onConflict}`, {
         method: "POST",
-        headers: headers({ Prefer: "resolution=merge-duplicates,return=minimal" }),
+        headers: headers({ Prefer: `resolution=${ignore ? "ignore" : "merge"}-duplicates,return=minimal` }),
         body,
       });
       if (res.ok) { lastErr = null; break; }
@@ -63,6 +64,29 @@ export async function count(table, query = "") {
   });
   if (!res.ok && res.status !== 206) throw new Error(`count ${table} HTTP ${res.status}`);
   return Number((res.headers.get("content-range") || "").split("/")[1]);
+}
+
+// 分頁讀完整張表(Supabase 單次最多回 1000 列)
+export async function selectAll(table, query = "select=*", page = 1000) {
+  const out = [];
+  for (let from = 0; ; from += page) {
+    const res = await fetch(`${URL_}/rest/v1/${table}?${query}`, { headers: headers({ Range: `${from}-${from + page - 1}` }) });
+    if (!res.ok && res.status !== 206) throw new Error(`select ${table} HTTP ${res.status}: ${(await res.text()).slice(0, 300)}`);
+    const rows = await res.json();
+    out.push(...rows);
+    if (rows.length < page) return out;
+  }
+}
+
+export async function insert(table, rows) {
+  if (!rows.length) return;
+  const res = await fetch(`${URL_}/rest/v1/${table}`, { method: "POST", headers: headers({ Prefer: "return=minimal" }), body: JSON.stringify(rows) });
+  if (!res.ok) throw new Error(`insert ${table} HTTP ${res.status}: ${(await res.text()).slice(0, 300)}`);
+}
+
+export async function del(table, query) {
+  const res = await fetch(`${URL_}/rest/v1/${table}?${query}`, { method: "DELETE", headers: headers() });
+  if (!res.ok) throw new Error(`delete ${table} HTTP ${res.status}: ${(await res.text()).slice(0, 300)}`);
 }
 
 export async function select(table, query) {

@@ -1,0 +1,832 @@
+<title>時令食材原型</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Noto+Sans+TC:wght@400;500;700;900&display=swap">
+<style>
+/* Layout: phone-width column, bottom tab bar, bottom sheet for details. Color blocks per vegetable replace photos. */
+:root{
+  --bg:#EEF2EC; --card:#FFFFFF; --ink:#16281F; --muted:#5E7066; --line:#D8E0D6;
+  --accent:#1F6B4A; --accent-ink:#FFFFFF; --season:#C8431B; --season-bg:#FBE6DD;
+  --cheap:#1F6B4A; --dear:#8A5A12; --chip:#E1E9DF; --sheet-shadow:rgba(10,30,20,.28);
+  --font:"Noto Sans TC",system-ui,-apple-system,"PingFang TC","Microsoft JhengHei",sans-serif;
+  --mono:"DM Mono",ui-monospace,Menlo,monospace;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#0F1A14; --card:#18271F; --ink:#E6EFE8; --muted:#97AA9E; --line:#2A3C32;
+  --accent:#6FCB9B; --accent-ink:#0F1A14; --season:#FF9A73; --season-bg:#3A221A;
+  --cheap:#6FCB9B; --dear:#E2B461; --chip:#223329; --sheet-shadow:rgba(0,0,0,.6); color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0F1A14; --card:#18271F; --ink:#E6EFE8; --muted:#97AA9E; --line:#2A3C32;
+  --accent:#6FCB9B; --accent-ink:#0F1A14; --season:#FF9A73; --season-bg:#3A221A;
+  --cheap:#6FCB9B; --dear:#E2B461; --chip:#223329; --sheet-shadow:rgba(0,0,0,.6); color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--font);font-size:15px;line-height:1.5;
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));
+  padding-block:0 84px}
+.wrap{max-width:560px;margin:0 auto}
+header{padding-top:18px}
+.proto{font-size:12px;color:var(--muted);background:var(--chip);border-radius:6px;padding:6px 10px;margin-bottom:14px}
+h1{font-size:26px;font-weight:900;margin:0;letter-spacing:.02em}
+.sub{color:var(--muted);font-size:13px;margin:2px 0 14px}
+.seg{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:14px}
+.chip{border:1px solid var(--line);background:transparent;color:var(--ink);border-radius:999px;padding:6px 13px;font:inherit;font-size:13px;cursor:pointer}
+.chip[aria-pressed="true"]{background:var(--accent);color:var(--accent-ink);border-color:var(--accent)}
+.chip:focus-visible,button:focus-visible,input:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.label{font-size:12px;letter-spacing:.08em;color:var(--muted);margin:14px 0 8px}
+input[type=search]{width:100%;font:inherit;padding:10px 12px;border:1px solid var(--line);border-radius:10px;background:var(--card);color:var(--ink);margin-bottom:12px}
+.list{display:flex;flex-direction:column;gap:10px}
+.item{display:flex;gap:12px;align-items:center;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:10px;width:100%;text-align:left;font:inherit;color:inherit;cursor:pointer}
+.blk{flex:none;width:52px;height:52px;border-radius:12px;display:grid;place-items:center;font-weight:900;font-size:24px;color:#10241A}
+.blk.sm{width:40px;height:40px;font-size:18px;border-radius:10px}
+.body{min-width:0;flex:1}
+.row1{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.name{font-weight:700;font-size:16px}
+.tag{font-size:11px;font-weight:700;color:var(--season);background:var(--season-bg);padding:1px 7px;border-radius:999px}
+.price{font-family:var(--mono);font-size:15px;font-variant-numeric:tabular-nums}
+.price small{font-family:var(--font);color:var(--muted);font-size:11px}
+.meta{font-size:12px;color:var(--muted)}
+.cheap{color:var(--cheap)} .dear{color:var(--dear)}
+.right{flex:none;text-align:right;font-size:12px;color:var(--muted)}
+.eq{display:flex;gap:6px;flex-wrap:wrap;margin-top:3px}
+.eq span{font-size:11px;background:var(--chip);border-radius:5px;padding:0 6px;color:var(--muted)}
+nav{position:fixed;left:0;right:0;bottom:0;background:var(--card);border-top:1px solid var(--line);display:flex;
+  padding:6px max(16px,env(safe-area-inset-left,0px)) calc(6px + env(safe-area-inset-bottom,0px)) max(16px,env(safe-area-inset-right,0px));z-index:5}
+nav button{flex:1;background:none;border:0;font:inherit;font-size:13px;color:var(--muted);padding:8px 0;cursor:pointer;border-radius:8px;position:relative}
+nav button[aria-current="true"]{color:var(--accent);font-weight:700}
+nav .n{position:absolute;top:2px;margin-left:4px;background:var(--season);color:var(--accent-ink);font-size:10px;border-radius:999px;padding:0 6px;font-weight:700}
+.scrim{position:fixed;inset:0;background:rgba(0,0,0,.4);z-index:8}
+.sheet{position:fixed;left:0;right:0;bottom:0;max-height:88%;overflow:auto;background:var(--bg);border-radius:18px 18px 0 0;z-index:9;
+  box-shadow:0 -8px 30px var(--sheet-shadow);padding:16px max(16px,env(safe-area-inset-left,0px)) calc(24px + env(safe-area-inset-bottom,0px))}
+.sheet .in{max-width:560px;margin:0 auto}
+.grab{width:40px;height:4px;background:var(--line);border-radius:4px;margin:0 auto 12px}
+.close{float:right;background:var(--chip);color:var(--ink);border:0;border-radius:999px;padding:4px 12px;font:inherit;font-size:13px;cursor:pointer}
+h2{font-size:20px;margin:0 0 4px}
+h3{font-size:12px;letter-spacing:.08em;color:var(--muted);margin:16px 0 6px;font-weight:500}
+ul.ing{list-style:none;padding:0;margin:0;background:var(--card);border:1px solid var(--line);border-radius:12px}
+ul.ing li{padding:8px 12px;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;gap:10px}
+ul.ing li:last-child{border:0}
+ul.ing .tr{color:var(--accent);font-weight:700;font-size:12px;white-space:nowrap}
+.btn{display:block;width:100%;text-align:center;border:0;border-radius:12px;padding:12px;font:inherit;font-weight:700;font-size:15px;cursor:pointer;background:var(--accent);color:var(--accent-ink);margin-top:14px;text-decoration:none}
+.btn.alt{background:transparent;color:var(--accent);border:1px solid var(--accent);margin-top:8px}
+.btn[disabled]{opacity:.55;cursor:default}
+.note{font-size:12px;color:var(--muted);margin-top:14px}
+.empty{color:var(--muted);text-align:center;padding:28px 0;font-size:14px}
+.chk{display:flex;gap:12px;align-items:flex-start;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:10px 12px}
+.chk input{margin-top:4px;width:18px;height:18px;accent-color:var(--accent)}
+.chk.done .name{text-decoration:line-through;color:var(--muted)}
+.total{font-family:var(--mono);font-size:18px}
+.src{display:flex;gap:8px;align-items:baseline;font-size:13px;margin-top:3px}
+.rn{flex:none;font-size:11px;font-weight:700;color:var(--accent);background:var(--chip);border-radius:5px;padding:0 6px}
+.src .q{color:var(--ink)}
+</style>
+
+<div class="wrap">
+<header>
+  <div class="proto">原型・示意資料。價格區間是以 10 月 1–22 日北部五市場批發加權均價為中心、上下各 10% 的示意值,不是真實報價。</div>
+  <h1 id="title">食材</h1>
+  <div class="sub" id="sub"></div>
+</header>
+<main id="main"></main>
+</div>
+<nav aria-label="主選單">
+  <button data-tab="ing" aria-current="true">食材</button>
+  <button data-tab="rec" aria-current="false">食譜</button>
+  <button data-tab="cart" aria-current="false">採買清單<span class="n" id="cartn" hidden></span></button>
+</nav>
+<div id="layer"></div>
+
+<script>
+const VEG=[
+ {n:"高麗菜",alias:"高麗菜",cur:29.2,med:14.5,vol:6386,c:"#9CC27A",vd:255.7,vm:298.8},
+ {n:"白蘿蔔",alias:"白蘿蔔",cur:12.9,med:14.7,vol:2118,c:"#DCE6D2",vd:86.4,vm:79.0},
+ {n:"大白菜",alias:"大白菜",cur:24.4,med:21.5,vol:1692,c:"#C9DDA8",vd:68.8,vm:74.0},
+ {n:"玉米",alias:"玉米",cur:26.2,med:23.9,vol:1448,c:"#F2CB4C",vd:56.0,vm:69.2},
+ {n:"南瓜",alias:"南瓜",cur:35.2,med:27.9,vol:1324,c:"#EA9A44",vd:52.2,vm:43.6},
+ {n:"小黃瓜",alias:"小黃瓜",cur:48.0,med:45.8,vol:1288,c:"#58A054",vd:48.4,vm:42.1},
+ {n:"小白菜",alias:"小白菜",cur:16.2,med:21.7,vol:1236,c:"#6FA85A",vd:47.5,vm:38.0},
+ {n:"絲瓜",alias:"絲瓜",cur:32.0,med:34.0,vol:1147,c:"#B3CE78",vd:42.9,vm:33.5},
+ {n:"紅蘿蔔",alias:"紅蘿蔔",cur:22.3,med:16.3,vol:1049,c:"#E8743A",vd:41.8,vm:47.5},
+ {n:"油麥菜",alias:"油麥菜",cur:18.9,med:20.8,vol:941,c:"#7DB06B",vd:36.4,vm:29.9},
+ {n:"青花菜",alias:"青花菜",cur:64.5,med:57.9,vol:914,c:"#5FA36B",vd:35.8,vm:35.6},
+ {n:"地瓜",alias:"地瓜",cur:14.6,med:14.7,vol:867,c:"#C9708A",vd:34.7,vm:35.8},
+ {n:"洋蔥",alias:"洋蔥",cur:29.7,med:21.6,vol:806,c:"#D9A5C0",vd:32.4,vm:31.4},
+ {n:"番茄",alias:"番茄",cur:130.0,med:51.5,vol:783,c:"#E25B45",vd:29.7,vm:49.7}];
+const V={}; VEG.forEach(v=>{v.delta=v.cur/v.med-1; v.season=v.delta<0&&v.vd>v.vm; v.jin=v.cur*0.6; v.lo=Math.round(v.jin*0.9); v.hi=Math.round(v.jin*1.1); V[v.n]=v;});
+const R=[
+[
+"R01",
+"電鍋高麗菜飯",
+[
+"高麗菜",
+"紅蘿蔔"
+],
+[
+"電鍋",
+"炒鍋"
+],
+"3–4人份",
+[
+"白米 2杯",
+"高麗菜碎 約250g（推定",
+"來源寫 50g）",
+"五花肉絲 50g",
+"菜脯碎 30g",
+"蒜碎 20g",
+"蔥花 10g",
+"紅蘿蔔絲 20g"
+],
+"鹽 1小匙；胡椒粉 1小匙",
+"https://www.nownews.com/news/6778366"
+],
+[
+"R02",
+"鹽昆布高麗菜（涼拌小菜）",
+[
+"高麗菜",
+"紅蘿蔔"
+],
+[
+"湯鍋"
+],
+"未標示（小菜，冷藏可放 2–3 天）",
+[
+"高麗菜 200g",
+"紅蘿蔔 1/3根（約50g，可省略）",
+"鹽昆布 5g",
+"白芝麻 1大匙"
+],
+"芝麻油 1大匙；醬油 1/2小匙；鹽 1指尖",
+"https://www.edh.tw/article/33761"
+],
+[
+"R03",
+"白蘿蔔玉米排骨湯",
+[
+"白蘿蔔",
+"玉米"
+],
+[
+"湯鍋"
+],
+"4人份",
+[
+"白蘿蔔 1根（約600g）",
+"甜玉米 2根",
+"豬排骨 300–500g",
+"老薑 3–5片",
+"香菜或芹菜珠 少許"
+],
+"米酒 1大匙；鹽 適量；白胡椒粉 少許",
+"https://uptogo.com.tw/?p=305171"
+],
+[
+"R04",
+"白蘿蔔魚片湯",
+[
+"白蘿蔔"
+],
+[
+"炒鍋",
+"湯鍋"
+],
+"4人份",
+[
+"白蘿蔔 300g",
+"魚片（如鱈魚）200g",
+"生薑 3片",
+"水 800ml"
+],
+"玄米油 1大匙；酒 1小匙；鹽 1/2～1小匙；胡椒 少許",
+"https://edh.tw/articles/YRouqPu/2"
+],
+[
+"R05",
+"清炒香菇大白菜",
+[
+"大白菜"
+],
+[
+"炒鍋"
+],
+"未標示",
+[
+"大白菜 1/2顆",
+"乾香菇 3朵",
+"蒜頭 2顆"
+],
+"鹽 適量；黑胡椒 適量；油 1小匙",
+"https://www.edh.tw/media_article/159"
+],
+[
+"R06",
+"豆腐白菜滷",
+[
+"大白菜",
+"紅蘿蔔"
+],
+[
+"炒鍋",
+"湯鍋"
+],
+"未標示（份量看起來是多人份）",
+[
+"大白菜 半顆",
+"雞蛋 5顆",
+"板豆腐 1塊",
+"紅蘿蔔 半根（切細丁）",
+"乾香菇 5朵（泡水切絲）",
+"大乾蝦米 1湯匙",
+"枸杞 2湯匙",
+"薑絲 15g",
+"熱開水 1500ml"
+],
+"香油 1匙；海鹽 1茶匙",
+"https://health.tvbs.com.tw/nutrition/352145"
+],
+[
+"R07",
+"玉米濃湯",
+[
+"玉米"
+],
+[
+"湯鍋"
+],
+"3–4人份",
+[
+"玉米 2根",
+"奶油 20g",
+"牛奶 400cc",
+"水 4大匙"
+],
+"鹽 1小匙",
+"https://health.tvbs.com.tw/life/349040"
+],
+[
+"R08",
+"紅蘿蔔玉米豬腱湯",
+[
+"紅蘿蔔",
+"玉米"
+],
+[
+"湯鍋"
+],
+"未標示",
+[
+"紅蘿蔔 2條",
+"玉米 1條",
+"豬腱 450g",
+"蜜棗 2粒",
+"水 8碗"
+],
+"鹽 少許",
+"https://collection.news/appledaily/articles/LMIQVYKKNT6B62I5NCOZ2ZG7RY"
+],
+[
+"R09",
+"豆豉鯪魚炒油麥菜",
+[
+"油麥菜"
+],
+[
+"炒鍋"
+],
+"2人份",
+[
+"油麥菜（萵苣）200g",
+"罐頭豆豉鯪魚 1罐",
+"蒜 2瓣",
+"食用油 1.5湯匙"
+],
+"不另加鹽（罐頭本身有鹹味）",
+"https://www.beautifulvoyager.com/stir-fry-lettuce-with-black-bean-dace-fish-ready-in-15-minutes/"
+],
+[
+"R10",
+"南瓜濃湯",
+[
+"南瓜"
+],
+[
+"湯鍋"
+],
+"4人份",
+[
+"南瓜 400g（約半顆，來源建議東昇或栗子南瓜等西洋南瓜）",
+"洋蔥 1顆",
+"奶油 20g",
+"牛奶 1杯",
+"水 1杯"
+],
+"鹽、胡椒粉 適量",
+"https://health.udn.com/health/story/11189/8328329"
+],
+[
+"R11",
+"南瓜燉飯",
+[
+"南瓜"
+],
+[
+"湯鍋"
+],
+"未標示（份量看起來是 1 人份）",
+[
+"南瓜 80g",
+"洋蔥 20g",
+"米 80g",
+"高湯 300cc"
+],
+"冷壓橄欖油 1茶匙；岩鹽 1/4茶匙；乳酪粉 2湯匙；巴西利香料 少許；黑胡椒（步驟有提到，量未標示）",
+"https://edh.tw/articles/QUQTaPO/2"
+],
+[
+"R12",
+"蒜蓉小白菜",
+[
+"小白菜"
+],
+[
+"炒鍋"
+],
+"未標示",
+[
+"小白菜 300g",
+"大蒜 3瓣"
+],
+"生抽 1湯匙；蠔油 1茶匙；食用油 1湯匙；鹽 少許；糖 半茶匙；雞精 少許",
+"https://www.bowtie.com.hk/blog/zh/營養貼士/小白菜/"
+],
+[
+"R13",
+"小白菜雞肉湯(原為煙鴨)",
+[
+"小白菜"
+],
+[
+"湯鍋"
+],
+"未標示",
+[
+"台灣小白菜 150g",
+"去骨雞腿肉 約150g（替代原本的煙鴨胸 半個）",
+"冬菇（已泡）5隻",
+"薑 1片",
+"水 1公升"
+],
+"鹽、糖、紹酒 各少許",
+"https://collection.news/appledaily/articles/PDNK74XVK3IGVDFHNJHZDRXJVA"
+],
+[
+"R14",
+"紅蘿蔔煎蛋",
+[
+"紅蘿蔔"
+],
+[
+"炒鍋"
+],
+"2–3人份",
+[
+"紅蘿蔔（刨絲）1根",
+"蛋 3顆",
+"蔥 3條（切小段）"
+],
+"醬油 1小匙；鹽 1/4茶匙；油 少許",
+"https://www.foodnext.net/life/recipes/lunch/paper/4975372633"
+],
+[
+"R15",
+"涼拌小黃瓜",
+[
+"小黃瓜"
+],
+[
+"免開火"
+],
+"未標示",
+[
+"小黃瓜 3根",
+"蒜頭 3顆",
+"辣椒 半根"
+],
+"砂糖 1大匙；鹽 半匙；白醋或水果醋 40ml；香麻油 適量",
+"https://edh.tw/videos/hVjTxxv"
+],
+[
+"R16",
+"梅漬小黃瓜",
+[
+"小黃瓜"
+],
+[],
+"未標示",
+[
+"小黃瓜 1條",
+"醃梅 2顆"
+],
+"麻油、鹽巴（份量來源未列）",
+"https://www.bella.tw/articles/travel&foodies/30286"
+],
+[
+"R17",
+"絲瓜炒蛋",
+[
+"絲瓜"
+],
+[
+"炒鍋"
+],
+"未標示",
+[
+"絲瓜 1條",
+"蛋 2顆",
+"蒜瓣 2瓣",
+"薑絲 少許"
+],
+"鹽 適量；食用油 適量",
+"https://www.marieclaire.com.tw/beauty/health-fitness/58276"
+],
+[
+"R18",
+"沖繩風絲瓜豬肉味噌湯",
+[
+"絲瓜"
+],
+[
+"湯鍋"
+],
+"2人份",
+[
+"絲瓜 半條",
+"豬肉片 約100g",
+"鴻禧菇（可省略）",
+"蔥白 少許",
+"水 400ml"
+],
+"味噌 1大匙；奶油 10g；柴魚醬油 1小匙；麻油 少許；白芝麻 少許",
+"https://www.nownews.com/news/6732959"
+],
+[
+"R19",
+"奶油地瓜飯",
+[
+"地瓜"
+],
+[
+"電鍋"
+],
+"未標示（用 2 杯米）",
+[
+"地瓜 1個（200g）",
+"白米 2杯（泡水 30 分鐘）",
+"水 360ml"
+],
+"白高湯（白醬油）2大匙；奶油 20g；鹽、黑胡椒（可選）",
+"https://www.edh.tw/article/32232"
+],
+[
+"R20",
+"黑糖薑汁地瓜湯",
+[
+"地瓜"
+],
+[
+"電鍋"
+],
+"未標示",
+[
+"地瓜 約600g（推定",
+"來源寫 60g）",
+"薑 30g",
+"開水 1000cc"
+],
+"黑糖塊 1大匙",
+"https://edh.tw/articles/riAkrVs/2"
+],
+[
+"R21",
+"腐乾西蘭花",
+[
+"青花菜",
+"洋蔥",
+"紅蘿蔔"
+],
+[
+"炒鍋",
+"湯鍋"
+],
+"未標示",
+[
+"青花菜 200g",
+"白豆乾 50g",
+"蒜頭 2粒",
+"洋蔥 20g",
+"紅蘿蔔 20g"
+],
+"鹽、香油(麻油)、醬油、胡椒粉(皆少許)",
+"https://health.tvbs.com.tw/recipe/364466"
+],
+[
+"R22",
+"蒜香烤青花菜",
+[
+"青花菜"
+],
+[
+"烤箱"
+],
+"未標示",
+[
+"青花菜 未標示",
+"黃檸檬 未標示(切片)",
+"起司條 未標示(減脂期可不加)"
+],
+"橄欖油 1匙；蒜末 1匙；鹽 一點點；黑胡椒 未標示",
+"https://www.marieclaire.com.tw/beauty/health-fitness/54891"
+],
+[
+"R23",
+"滑嫩番茄炒蛋",
+[
+"番茄"
+],
+[
+"炒鍋"
+],
+"3–4人份",
+[
+"雞蛋 4顆",
+"牛番茄 1顆"
+],
+"鹽 1小匙；糖 依喜好(未標示份量)",
+"https://health.tvbs.com.tw/life/327127"
+],
+[
+"R24",
+"紅蘿蔔番茄通心粉",
+[
+"紅蘿蔔",
+"洋蔥",
+"番茄"
+],
+[
+"炒鍋"
+],
+"未標示",
+[
+"熟通心粉 150g",
+"紅蘿蔔丁 100g",
+"洋蔥末 50g",
+"番茄丁 80g",
+"紅椒丁 50g",
+"蝦仁 5隻"
+],
+"橄欖油 50ml；乾辣椒 10g；義式番茄醬 30g(來源未分列食材與佐料)",
+"https://health.tvbs.com.tw/recipe/359130"
+],
+[
+"R25",
+"減鹽番茄燴飯",
+[
+"番茄",
+"洋蔥"
+],
+[
+"炒鍋"
+],
+"1人份",
+[
+"牛肉片 80g",
+"洋蔥 1/4顆",
+"馬鈴薯 1/2顆",
+"白飯 1人份",
+"番茄 未標示份量",
+"洋香菜 隨個人喜好"
+],
+"紅酒 1.5大匙；麵粉 1/2大匙；蔬菜湯粉 1/2小匙；中濃醬汁 1小匙；砂糖 1/2小匙；橄欖油 1小匙；胡椒 少許",
+"https://edh.tw/articles/rKCQVYE/2"
+],
+[
+"R26",
+"番茄蛋花湯(加小白菜)",
+[
+"番茄",
+"小白菜"
+],
+[
+"湯鍋"
+],
+"未標示",
+[
+"番茄 未標示(切瓣)",
+"小白菜 未標示(切段)",
+"雞蛋 未標示",
+"水 250ml"
+],
+"鹽 適量；白胡椒粉 少許；香油 數滴(可省)",
+"https://vocus.cc/article/63e41986fd897800016fee47"
+],
+[
+"R27",
+"薑絲小白菜",
+[
+"小白菜"
+],
+[
+"炒鍋"
+],
+"未標示",
+[
+"小白菜 1把",
+"薑絲 8片"
+],
+"鹽 1撮；鮮味炒手 1撮；沙拉油 1圈",
+"https://health.udn.com/health/story/6036/9445125"
+],
+[
+"R28",
+"洋蔥炒蛋",
+[
+"洋蔥"
+],
+[
+"炒鍋"
+],
+"未標示",
+[
+"洋蔥 1顆",
+"雞蛋 2顆"
+],
+"醬油 1匙；醬油膏 1匙；蠔油 1匙；炒製用油(未標示份量)",
+"https://www.marieclaire.com.tw/beauty/health-fitness/58624"
+],
+[
+"R29",
+"洋蔥荷包蛋",
+[
+"洋蔥"
+],
+[
+"炒鍋"
+],
+"未標示",
+[
+"洋蔥 1顆",
+"蛋 2顆"
+],
+"黑胡椒 少許；香料 依喜好；煎鍋刷油(未標示份量)",
+"https://health.tvbs.com.tw/nutrition/322753"
+],
+[
+"R30",
+"熗炒油麥菜",
+[
+"油麥菜"
+],
+[
+"炒鍋"
+],
+"未標示",
+[
+"尖葉萵苣(A菜或油麥菜) 1把(約500g)",
+"乾辣椒段 10~15g",
+"青花椒粒 1小匙",
+"蒜頭 4~5小粒"
+],
+"鹽 適量；鮮味炒手 約1/4小匙；食用油 約3大匙(步驟中提到)",
+"https://icook.tw/recipes/252598"
+],
+[
+"R31",
+"玉米濃湯(新鮮玉米版)",
+[
+"玉米",
+"洋蔥"
+],
+[
+"湯鍋"
+],
+"約4人份",
+[
+"新鮮玉米 4根(或原味玉米粒 4杯,保留玉米梗)",
+"馬鈴薯 1小顆(約7公分)",
+"洋蔥 1大顆",
+"大蒜 2瓣",
+"無鹽奶油 30克",
+"高湯或清水 約1000毫升",
+"牛奶或鮮奶油 200毫升"
+],
+"鹽、白胡椒粉(適量)；植物油 一兩滴(防奶油焦化,未列份量)",
+"https://uptogo.com.tw/?p=1356910"
+]
+].map(a=>{const r={id:a[0],name:a[1],veg:a[2],eq:a[3],serve:a[4],ing:a[5],sea:a[6],url:a[7]};
+  const s=r.veg.filter(x=>V[x].season).length;
+  r.season=V[r.veg[0]].season || s/r.veg.length>=0.5; return r;});
+
+const EQ=["電鍋","炒鍋","湯鍋","烤箱"];
+const st={tab:"ing",season:false,eq:new Set(EQ),q:"",cart:[],done:{}};
+try{const s=JSON.parse(localStorage.getItem("seasonal-proto")||"null"); if(s){st.cart=s.cart||[];st.done=s.done||{};if(s.eq)st.eq=new Set(s.eq)}}catch(e){}
+function save(){try{localStorage.setItem("seasonal-proto",JSON.stringify({cart:st.cart,done:st.done,eq:[...st.eq]}))}catch(e){}}
+const $=s=>document.querySelector(s), main=$("#main"), layer=$("#layer");
+const pct=d=>(d<0?"−":"+")+Math.abs(Math.round(d*100))+"%";
+const eqOk=r=>r.eq.every(e=>e==="免開火"||st.eq.has(e));
+const blk=(n,c)=>`<div class="blk ${c||""}" style="background:${V[n].c}" aria-hidden="true">${n[0]}</div>`;
+const deltaTxt=v=>`<span class="${v.delta<0?"cheap":"dear"}">較近 11 個月中位數 ${pct(v.delta)}</span>`;
+
+function renderIng(){
+  $("#title").textContent="食材";
+  $("#sub").textContent="北部批發市場・蔬菜・依當季與交易量排序";
+  const list=[...VEG].sort((a,b)=>(b.season-a.season)||(b.vol-a.vol)).filter(v=>!st.season||v.season);
+  main.innerHTML=`<div class="seg"><button class="chip" id="fs" aria-pressed="${st.season}">只看當季</button></div>
+  <div class="list">${list.map(v=>{
+    const n=R.filter(r=>r.veg.includes(v.n)).length;
+    return `<button class="item" data-v="${v.n}">${blk(v.n)}<div class="body">
+      <div class="row1"><span class="name">${v.alias}</span>${v.season?'<span class="tag">當季</span>':""}</div>
+      <div class="price">${v.lo}–${v.hi} <small>元/台斤</small></div>
+      <div class="meta">批發價・${deltaTxt(v)}</div></div>
+      <div class="right">${n} 道食譜<br>›</div></button>`}).join("")}</div>
+  <p class="note">當季 = 本月以來加權均價低於近 11 個月中位數,且日均交易量高於中位數(原型簡化版,正式版改用近一週)。批發價不等於超市零售價。</p>`;
+  $("#fs").onclick=()=>{st.season=!st.season;renderIng()};
+  main.querySelectorAll(".item").forEach(b=>b.onclick=()=>openVeg(b.dataset.v));
+}
+function recCard(r){
+  return `<button class="item" data-r="${r.id}">${blk(r.veg[0],"")}<div class="body">
+    <div class="row1"><span class="name">${r.name}</span>${r.season?'<span class="tag">當季</span>':""}</div>
+    <div class="meta">${r.veg.map(x=>V[x].alias).join("、")}・${r.ing.length} 項食材</div>
+    <div class="eq">${(r.eq.length?r.eq:["器材未確認"]).map(e=>`<span>${e}</span>`).join("")}</div></div><div class="right">›</div></button>`;
+}
+function renderRec(){
+  $("#title").textContent="食譜";
+  $("#sub").textContent="預設只顯示家裡有的器材做得出的菜";
+  const q=st.q.trim();
+  const list=R.filter(r=>(!st.season||r.season)&&eqOk(r)&&(!q||r.ing.join(" ").includes(q)||r.name.includes(q)||r.veg.some(x=>V[x].alias.includes(q)||x.includes(q))))
+    .sort((a,b)=>b.season-a.season);
+  main.innerHTML=`<input type="search" id="q" placeholder="輸入食材或菜名,例如:蛋、地瓜" value="${q}" aria-label="搜尋食材或菜名">
+  <div class="seg"><button class="chip" id="fs" aria-pressed="${st.season}">只看當季</button></div>
+  <div class="label">我家有的器材</div>
+  <div class="seg">${EQ.map(e=>`<button class="chip" data-e="${e}" aria-pressed="${st.eq.has(e)}">${e}</button>`).join("")}</div>
+  <div class="label">${list.length} 道</div>
+  <div class="list">${list.map(recCard).join("")||'<div class="empty">沒有符合的食譜,試著放寬器材或關掉「只看當季」。</div>'}</div>`;
+  const qi=$("#q"); qi.oninput=()=>{st.q=qi.value;const p=qi.selectionStart;renderRec();const n=$("#q");n.focus();n.setSelectionRange(p,p)};
+  $("#fs").onclick=()=>{st.season=!st.season;renderRec()};
+  main.querySelectorAll("[data-e]").forEach(b=>b.onclick=()=>{const e=b.dataset.e;st.eq.has(e)?st.eq.delete(e):st.eq.add(e);save();renderRec()});
+  main.querySelectorAll("[data-r]").forEach(b=>b.onclick=()=>openRec(b.dataset.r));
+}
+function renderCart(){
+  $("#title").textContent="採買清單";
+  const rs=st.cart.map(id=>R.find(r=>r.id===id));
+  $("#sub").textContent=rs.length?`${rs.length} 道菜`:"從食譜加入後,食材會合併顯示在這裡";
+  if(!rs.length){main.innerHTML='<div class="empty">還沒有加入任何食譜。<br>到「食譜」分頁挑一道菜,按「加入採買清單」。</div>';return}
+  const g={};
+  rs.forEach(r=>r.ing.forEach(line=>{
+    const tv=r.veg.find(x=>line.includes(V[x].alias)||line.includes(x)||(x==="花胡瓜"&&line.includes("小黃瓜")));
+    const sp=line.indexOf(" "), nm=sp>0?line.slice(0,sp):line, qty=sp>0?line.slice(sp+1):"";
+    const key=tv||nm; (g[key]=g[key]||{tv,lines:[]}).lines.push({r:r.name,l:tv?line:qty});
+  }));
+  const keys=Object.keys(g).sort((a,b)=>(!!g[b].tv)-(!!g[a].tv));
+  main.innerHTML=`<div class="label">已加入的菜(點一下移除)</div><div class="seg">${rs.map(r=>`<button class="chip" data-x="${r.id}" aria-label="移除 ${r.name}">${r.name} ✕</button>`).join("")}</div><div class="list">${keys.map(k=>{const o=g[k],v=o.tv&&V[o.tv];
+    return `<label class="chk ${st.done[k]?"done":""}"><input type="checkbox" data-k="${k}" ${st.done[k]?"checked":""}>
+    <div class="body"><div class="name">${v?v.alias:k} ${v&&v.season?'<span class="tag">當季</span>':""}</div>
+    ${v?`<div class="price">${v.lo}–${v.hi} <small>元/台斤</small></div>`:""}
+    ${o.lines.map(x=>`<div class="src"><span class="rn">${x.r}</span><span class="q">${x.l}</span></div>`).join("")}</div></label>`}).join("")}</div>
+  <button class="btn alt" id="clr">清空清單</button>
+  <p class="note">第一版只合併蔬菜,份量不自動加總,預估總價留到第二版。</p>`;
+  main.querySelectorAll("[data-k]").forEach(c=>c.onchange=()=>{st.done[c.dataset.k]=c.checked;save();renderCart()});
+  main.querySelectorAll("[data-x]").forEach(b=>b.onclick=()=>{st.cart=st.cart.filter(i=>i!==b.dataset.x);save();render()});
+  $("#clr").onclick=()=>{st.cart=[];st.done={};save();render()};
+}
+function render(){
+  document.querySelectorAll("nav [data-tab]").forEach(b=>b.setAttribute("aria-current",b.dataset.tab===st.tab));
+  const n=$("#cartn"); n.hidden=!st.cart.length; n.textContent=st.cart.length;
+  ({ing:renderIng,rec:renderRec,cart:renderCart})[st.tab]();
+}
+function closeSheet(){layer.innerHTML=""}
+function sheet(html){
+  layer.innerHTML=`<div class="scrim" id="sc"></div><div class="sheet" role="dialog" aria-modal="true"><div class="in"><div class="grab"></div>${html}</div></div>`;
+  $("#sc").onclick=closeSheet; const c=layer.querySelector(".close"); if(c){c.onclick=closeSheet;c.focus()}
+}
+function openVeg(n){
+  const v=V[n], rs=R.filter(r=>r.veg.includes(n)&&eqOk(r));
+  sheet(`<button class="close">關閉</button><div class="row1">${blk(n,"sm")}<div><h2>${v.alias}${v.season?' <span class="tag">當季</span>':""}</h2>
+    <div class="price">${v.lo}–${v.hi} <small>元/台斤</small></div></div></div>
+    <div class="meta" style="margin-top:8px">批發價・${deltaTxt(v)}・近一個月交易量約 ${v.vol.toLocaleString()} 公噸</div>
+    <h3>用它做的菜(${rs.length})</h3><div class="list">${rs.map(recCard).join("")||'<div class="empty">目前器材篩選下沒有食譜。</div>'}</div>`);
+  layer.querySelectorAll("[data-r]").forEach(b=>b.onclick=()=>openRec(b.dataset.r));
+}
+function openRec(id){
+  const r=R.find(x=>x.id===id), inCart=st.cart.includes(id);
+  sheet(`<button class="close">關閉</button><h2>${r.name}${r.season?' <span class="tag">當季</span>':""}</h2>
+    <div class="meta">${r.serve}・${(r.eq.length?r.eq:["器材未確認"]).join("、")}</div>
+    <h3>食材</h3><ul class="ing">${r.ing.map(l=>{const tv=r.veg.find(x=>l.includes(V[x].alias)||l.includes(x)||(x==="花胡瓜"&&l.includes("小黃瓜")));
+      return `<li><span>${l}</span>${tv?`<span class="tr">${V[tv].lo}–${V[tv].hi} 元/斤${V[tv].season?"・當季":""}</span>`:""}</li>`}).join("")}</ul>
+    <h3>佐料</h3><ul class="ing"><li><span>${r.sea}</span></li></ul>
+    <button class="btn" id="add" ${inCart?"disabled":""}>${inCart?"已在採買清單":"加入採買清單"}</button>
+    <a class="btn alt" href="${r.url}" target="_blank" rel="noopener">看原食譜</a>
+    <p class="note">份量照來源標示,「推定」是整理時依做法估的。</p>`);
+  $("#add").onclick=()=>{st.cart.push(id);save();render();openRec(id)};
+}
+document.querySelectorAll("nav [data-tab]").forEach(b=>b.onclick=()=>{st.tab=b.dataset.tab;closeSheet();render();window.scrollTo(0,0)});
+addEventListener("keydown",e=>{if(e.key==="Escape")closeSheet()});
+render();
+</script>

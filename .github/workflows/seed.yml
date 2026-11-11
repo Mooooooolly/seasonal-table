@@ -1,0 +1,56 @@
+name: 匯入種子資料(手動)
+
+on:
+  workflow_dispatch:
+    inputs:
+      overwrite:
+        description: "覆蓋已存在的群組、品名、食譜?(後台改過的會被蓋掉)"
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+
+concurrency:
+  group: db-write
+  cancel-in-progress: false
+
+jobs:
+  seed:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    env:
+      SUPABASE_URL: https://uahnndhsrztgdiwtkkyx.supabase.co
+      SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
+      SUPABASE_DB_URL: ${{ secrets.SUPABASE_DB_URL }}
+      OVERWRITE: ${{ inputs.overwrite }}
+      PGOPTIONS: "-c client_min_messages=warning"
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: 更新資料表結構(執行 supabase/migrations 裡全部的 SQL)
+        run: |
+          if [ -z "$SUPABASE_DB_URL" ]; then
+            echo "::error::缺少 SUPABASE_DB_URL。請到 repo → Settings → Secrets → Actions 新增(Supabase → Connect → Session pooler 的連線字串)"
+            exit 1
+          fi
+          for f in supabase/migrations/*.sql; do
+            echo "== $f"
+            psql "$SUPABASE_DB_URL" -v ON_ERROR_STOP=1 -q -f "$f"
+          done
+
+      - name: 匯入對照表與食譜
+        run: node scripts/seed/seed.mjs
+
+      - name: 把結果 commit 回 repo
+        if: always()
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898283+github-actions[bot]@users.noreply.github.com"
+          git add results/ || true
+          git commit -m "種子資料匯入結果 $(date -u +%Y-%m-%dT%H:%MZ)" || echo "沒有變更"
+          git pull --rebase -q && git push
