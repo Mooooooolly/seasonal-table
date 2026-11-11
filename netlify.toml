@@ -1,0 +1,9 @@
+# 前台是純靜態網站,不需要 build;GitHub Actions 每次重算後 commit 新的 JSON,Netlify 會自動重新部署
+[build]
+  publish = "public"
+  command = ""
+
+[[headers]]
+  for = "/data/*"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
