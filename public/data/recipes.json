@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-11T09:33:39.070349+00:00",
+  "generated_at": "2026-11-11T15:12:52.031977+00:00",
   "recipes": [
     {
       "id": "R01",
@@ -609,7 +609,7 @@
       "id": "R18",
       "name": "沖繩風絲瓜豬肉味噌湯",
       "main_group": "絲瓜",
-      "is_season": false,
+      "is_season": true,
       "servings_text": "2人份",
       "equipment": [
         "湯鍋"
