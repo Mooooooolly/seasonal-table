@@ -3,7 +3,8 @@ import { readFileSync, writeFileSync, mkdirSync, appendFileSync } from "node:fs"
 import { assertEnv, selectAll } from "./lib/supabase.mjs";
 
 assertEnv();
-const run = JSON.parse(readFileSync("results/compute-run.json", "utf8"));
+const runAll = JSON.parse(readFileSync("results/compute-run.json", "utf8"));
+const run = runAll["蔬菜"] ?? runAll; // 舊格式相容
 const G = JSON.parse(readFileSync("public/data/groups.json", "utf8"));
 const R = JSON.parse(readFileSync("public/data/recipes.json", "utf8"));
 const crops = await selectAll("crops", "select=crop_name,group_id,status");
@@ -17,10 +18,10 @@ const HANDOFF_TOP = ["高麗菜", "白蘿蔔", "大白菜", "玉米", "南瓜", 
 // 原型(10/1–22 簡化算法)標為當季的
 const PROTO_SEASON = ["白蘿蔔", "小白菜", "絲瓜", "油麥菜"];
 
-const main = G.groups.filter((g) => g.role === "主食材");
+const main = G.groups.filter((g) => g.role === "主食材" && (g.category ?? "蔬菜") === "蔬菜");
 const top = main.filter((g) => g.is_top10);
 
-let md = `# 重算結果\n\n`;
+let md = `# 重算結果\n\n## 蔬菜\n\n`;
 md += `- 執行時間(UTC):${new Date().toISOString()}\n`;
 md += `- 計算基準日(最近一個至少 3 個市場有資料的日期):**${run.calc_date}**\n`;
 md += `- 現值視窗(最近 7 個資料日):${run.window.join("、")}\n`;
@@ -51,6 +52,14 @@ for (const g of top) {
 
 const otherSeason = main.filter((g) => g.is_season && !g.is_top10);
 md += `\n## 其他當季的主食材群組(不在前 10%)\n\n${otherSeason.map((g) => `${g.name}(${pct(g.delta_pct)})`).join("、") || "無"}\n`;
+
+for (const [cat, info] of Object.entries(runAll)) {
+  if (cat === "蔬菜" || !info?.calc_date) continue;
+  const gs = G.groups.filter((g) => g.category === cat && g.role === "主食材");
+  md += `\n# ${cat}\n\n- 計算基準日:**${info.calc_date}**,現值視窗 ${info.window[0]} 至 ${info.window.at(-1)}\n- 主食材群組 ${info.main_groups} 個,前 10% = ${info.top_n} 個\n\n`;
+  md += `| 名次 | 群組 | 近 30 天(公噸) | 價格(元/台斤) | 較一年中位數 | 盛產 | 前 10% |\n|---|---|---|---|---|---|---|\n`;
+  for (const g of gs.slice(0, 40)) md += `| ${g.rank ?? "—"} | ${g.name} | ${g.vol_30d_ton} | ${g.price_lo}–${g.price_hi} | ${pct(g.delta_pct)} | ${yes(g.is_season)} | ${g.is_top10 ? "✔" : ""} |\n`;
+}
 
 md += `\n## 食譜當季\n\n| 食譜 | 主食材 | 當季 |\n|---|---|---|\n`;
 for (const r of R.recipes) md += `| ${r.id} ${r.name} | ${r.main_group} | ${r.is_season === null ? "不適用" : yes(r.is_season)} |\n`;

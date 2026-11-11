@@ -109,11 +109,13 @@ const STORE = "seasonal-table-v1";
 const COLORS = {高麗菜:"#9CC27A",白蘿蔔:"#DCE6D2",大白菜:"#C9DDA8",玉米:"#F2CB4C",南瓜:"#EA9A44",小黃瓜:"#58A054",小白菜:"#6FA85A",
   絲瓜:"#B3CE78",紅蘿蔔:"#E8743A",油麥菜:"#7DB06B",青花菜:"#5FA36B",地瓜:"#C9708A",洋蔥:"#D9A5C0",番茄:"#E25B45",苦瓜:"#8DBF6A",
   馬鈴薯:"#D8C08A",彩椒:"#E46B4F",鴻喜菇:"#D9CBB4",蒜頭:"#EDE4D3",薑:"#E3C77E",蔥:"#8CC37C",辣椒:"#D9483B",香菜:"#7BB86F",巴西利:"#6FAE5E"};
-const color = (n) => COLORS[n] || `hsl(${[...n].reduce((h, c) => (h * 31 + c.codePointAt(0)) % 360, 7)} 45% 72%)`;
+const hash = (n) => [...n].reduce((h, c) => (h * 31 + c.codePointAt(0)) % 997, 7);
+// 海鮮用藍綠色系,蔬菜用全色相
+const color = (n) => COLORS[n] || (G[n]?.category === "海鮮" ? `hsl(${180 + (hash(n) % 50)} 45% 72%)` : `hsl(${hash(n) % 360} 45% 72%)`);
 const esc = (s) => String(s ?? "").replace(/[&<>"']/g, (c) => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
 
 let G = {}, GROUPS = [], R = [], META = {};
-const st = {tab:"ing", season:false, eq:new Set(EQ), q:"", cart:[], done:{}};
+const st = {tab:"ing", cat:"蔬菜", season:false, eq:new Set(EQ), q:"", cart:[], done:{}};
 try { const s = JSON.parse(localStorage.getItem(STORE) || "null");
   if (s) { st.cart = s.cart || []; st.done = s.done || {}; if (s.eq) st.eq = new Set(s.eq); } } catch (e) {}
 function save() { try { localStorage.setItem(STORE, JSON.stringify({cart:st.cart, done:st.done, eq:[...st.eq]})); } catch (e) {} }
@@ -131,11 +133,15 @@ const showGroup = (g) => g.role === "主食材" && (g.is_top10 || R.some((r) => 
 
 function renderIng() {
   $("#title").textContent = "食材";
-  $("#sub").textContent = "北部批發市場・蔬菜・依盛產與交易量排序";
-  const list = GROUPS.filter(showGroup)
+  $("#sub").textContent = `北部批發市場・${st.cat}・依${TAG}與交易量排序`;
+  setInfo();
+  const cats = [...new Set(GROUPS.map((g) => g.category || "蔬菜"))];
+  const list = GROUPS.filter((g) => (g.category || "蔬菜") === st.cat).filter(showGroup)
     .sort((a, b) => (!!b.is_season - !!a.is_season) || (b.vol_30d_ton - a.vol_30d_ton))
     .filter((g) => !st.season || g.is_season);
-  main.innerHTML = `<div class="seg"><button class="chip" id="fs" aria-pressed="${st.season}">只看${TAG}</button></div>
+  main.innerHTML = `${cats.length > 1 ? `<div class="seg" role="group" aria-label="類別">${cats.map((c) =>
+      `<button class="chip" data-cat="${esc(c)}" aria-pressed="${st.cat === c}">${esc(c)}</button>`).join("")}</div>` : ""}
+  <div class="seg"><button class="chip" id="fs" aria-pressed="${st.season}">只看${TAG}</button></div>
   <div class="list">${list.map((g) => {
     const n = recipesOf(g.name).length;
     return `<button class="item" data-g="${esc(g.name)}">${blk(g.name)}<div class="body">
@@ -146,6 +152,7 @@ function renderIng() {
   }).join("") || `<div class="empty">目前沒有${TAG}的食材。</div>`}</div>
   <p class="note">${TAG} = 最近 7 個交易日的批發均價低於近一年中位數,且交易量高於近一年中位數。只代表批發市場的狀況,不等於超市零售價。</p>`;
   $("#fs").onclick = () => { st.season = !st.season; renderIng(); };
+  main.querySelectorAll("[data-cat]").forEach((b) => (b.onclick = () => { st.cat = b.dataset.cat; renderIng(); }));
   main.querySelectorAll("[data-g]").forEach((b) => (b.onclick = () => openGroup(b.dataset.g)));
 }
 
@@ -205,7 +212,21 @@ function renderCart() {
   $("#clr").onclick = () => { if (confirm("確定清空採買清單?")) { st.cart = []; st.done = {}; save(); render(); } };
 }
 
+// 資料期間說明:食材分頁依目前類別,其他分頁用蔬菜
+function setInfo() {
+  const cat = st.tab === "ing" ? st.cat : "蔬菜";
+  const c = META.categories?.[cat] ?? {data_date: META.data_date, window_start: META.window_start};
+  const fmt = (d) => (d ? d.slice(5).replace("-", "/") : "?");
+  const where = cat === "海鮮" ? "北部五個魚市場" : "北部五市場";
+  const info = $("#info"), age = c.data_date ? Math.floor((Date.now() - new Date(c.data_date + "T00:00:00+08:00")) / 86400000) : 99;
+  info.classList.toggle("err", age > 7);
+  info.textContent = age > 7
+    ? `${cat}資料已經 ${age} 天沒有更新(最新是 ${fmt(c.data_date)}),價格與${TAG}標示可能不準。`
+    : `批發價(${where}),資料期間 ${fmt(c.window_start)}–${fmt(c.data_date)}。不是超市零售價。`;
+}
+
 function render() {
+  setInfo();
   document.querySelectorAll("nav [data-tab]").forEach((b) => b.setAttribute("aria-current", b.dataset.tab === st.tab));
   const n = $("#cartn"); n.hidden = !st.cart.length; n.textContent = st.cart.length;
   ({ing:renderIng, rec:renderRec, cart:renderCart})[st.tab]();
@@ -256,13 +277,6 @@ addEventListener("keydown", (e) => { if (e.key === "Escape") closeSheet(); });
     META = g; GROUPS = g.groups; GROUPS.forEach((x) => (G[x.name] = x));
     R = r.recipes;
     st.cart = st.cart.filter((id) => R.some((x) => x.id === id));
-    const fmt = (d) => d ? d.slice(5).replace("-", "/") : "?";
-    $("#info").textContent = `批發價(北部五市場),資料期間 ${fmt(g.window_start)}–${fmt(g.data_date)}。不是超市零售價。`;
-    const age = g.data_date ? Math.floor((Date.now() - new Date(g.data_date + "T00:00:00+08:00")) / 86400000) : 99;
-    if (age > 7) {
-      $("#info").classList.add("err");
-      $("#info").textContent = `資料已經 ${age} 天沒有更新(最新是 ${fmt(g.data_date)}),價格與${TAG}標示可能不準。`;
-    }
     render();
   } catch (e) {
     $("#info").textContent = "";
