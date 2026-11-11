@@ -2,6 +2,10 @@ name: 重算當季與價格(手動)
 
 on:
   workflow_dispatch:
+  # 計算規則(SQL)改了就自動重算
+  push:
+    paths:
+      - "supabase/migrations/**"
 
 permissions:
   contents: write

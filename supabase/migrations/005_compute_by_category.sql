@@ -113,16 +113,21 @@ begin
     gweek as (select m.group_id, date_trunc('week', t.date) wk, sum(t.pq) / sum(t.q) p
               from t_daily t join t_member m using (crop_name)
               where t.date >= base_from and t.date < base_to group by 1, 2),
-    gmed as (select group_id, percentile_cont(0.5) within group (order by p) p from gweek group by 1)
+    gmed as (select group_id, percentile_cont(0.5) within group (order by p) p from gweek group by 1),
+    -- 漲跌:各品名先跟自己的一年中位數比,再依現值交易量加權平均。
+    -- 不直接用群組均價比,因為品種組成改變(例如貴的品種占比變高)會讓群組均價看起來漲了
+    dlt as (select m.group_id, sum(cs.cur_vol_daily * (cs.cur_price / cs.med_price - 1)) / nullif(sum(cs.cur_vol_daily), 0) dv
+            from t_member m join crop_stats cs using (crop_name)
+            where cs.cur_price is not null and cs.med_price > 0 and cs.cur_vol_daily > 0 group by 1)
     select g.group_id, d, w_start, g.role, cat,
            round(rng.lo * 0.6), round(rng.hi * 0.6),
-           gcur.p, gmed.p, gcur.p / nullif(gmed.p, 0) - 1,
+           gcur.p, gmed.p, dlt.dv,
            case when g.role = '主食材' and g.seasonal and coalesce(vote.eligible_vol, 0) > 0
                 then coalesce(vote.season_vol, 0) / vote.eligible_vol >= 0.5 end,
            case when coalesce(vote.eligible_vol, 0) > 0 then coalesce(vote.season_vol, 0) / vote.eligible_vol end,
            coalesce(vote.vol30, 0), null, false
     from g left join vote using (group_id) left join rng using (group_id)
-    left join gcur using (group_id) left join gmed using (group_id);
+    left join gcur using (group_id) left join gmed using (group_id) left join dlt using (group_id);
 
     select count(*) into n_main from group_stats where role = '主食材' and category = cat;
     n_top := ceil(n_main * 0.1);

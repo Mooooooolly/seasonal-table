@@ -11,7 +11,7 @@ const crops = await selectAll("crops", "select=crop_name,group_id,status");
 const cs = Object.fromEntries((await selectAll("crop_stats")).map((c) => [c.crop_name, c]));
 
 const pct = (d) => (d == null ? "—" : (d > 0 ? "+" : d < 0 ? "−" : "±") + Math.abs(d) + "%");
-const yes = (b) => (b === true ? "✅ 當季" : b === false ? "—" : "不判斷");
+const yes = (b) => (b === true ? "✅ 盛產" : b === false ? "—" : "不判斷");
 const ton = (kg) => (Number(kg) / 1000).toFixed(1);
 // HANDOFF.md 第 6 節列出的前 10%(以使用者整理時的資料算)
 const HANDOFF_TOP = ["高麗菜", "白蘿蔔", "大白菜", "玉米", "南瓜", "小黃瓜", "小白菜", "絲瓜", "紅蘿蔔", "油麥菜", "青花菜", "地瓜", "洋蔥", "番茄"];
