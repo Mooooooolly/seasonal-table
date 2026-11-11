@@ -1,0 +1,29 @@
+name: 資料來源測試(海鮮、肉類)
+
+on:
+  push:
+    paths:
+      - "scripts/probe-sources.mjs"
+      - ".github/workflows/probe-sources.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - run: node scripts/probe-sources.mjs
+      - name: 把結果 commit 回 repo
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898283+github-actions[bot]@users.noreply.github.com"
+          git add results/
+          git commit -m "資料來源測試結果 $(date -u +%Y-%m-%dT%H:%MZ)" || echo "沒有變更"
+          git pull --rebase -q && git push

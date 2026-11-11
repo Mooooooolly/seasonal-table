@@ -27,24 +27,10 @@ jobs:
           node-version: "22"
 
       - name: 更新資料表結構
-        run: |
-          for f in supabase/migrations/*.sql; do
-            echo "== $f"
-            psql "$SUPABASE_DB_URL" -v ON_ERROR_STOP=1 -q -f "$f"
-          done
+        run: bash scripts/migrate.sh
 
-      - name: 重算(第 6 節規則)
-        run: |
-          mkdir -p results public/data
-          psql "$SUPABASE_DB_URL" -v ON_ERROR_STOP=1 -At -c "select recompute_stats()" > results/compute-run.json
-          cat results/compute-run.json
-
-      - name: 產出前台 JSON
-        run: |
-          psql "$SUPABASE_DB_URL" -v ON_ERROR_STOP=1 -At -c "select export_groups_json()"  | jq . > public/data/groups.json
-          psql "$SUPABASE_DB_URL" -v ON_ERROR_STOP=1 -At -c "select export_recipes_json()" | jq . > public/data/recipes.json
-          jq '.groups | length' public/data/groups.json
-          jq '.recipes | length' public/data/recipes.json
+      - name: 重算並產出前台 JSON
+        run: bash scripts/recompute.sh
 
       - name: 寫檢查報告
         run: node scripts/compute-report.mjs

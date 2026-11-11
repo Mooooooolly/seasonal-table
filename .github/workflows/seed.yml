@@ -32,16 +32,8 @@ jobs:
         with:
           node-version: "22"
 
-      - name: 更新資料表結構(執行 supabase/migrations 裡全部的 SQL)
-        run: |
-          if [ -z "$SUPABASE_DB_URL" ]; then
-            echo "::error::缺少 SUPABASE_DB_URL。請到 repo → Settings → Secrets → Actions 新增(Supabase → Connect → Session pooler 的連線字串)"
-            exit 1
-          fi
-          for f in supabase/migrations/*.sql; do
-            echo "== $f"
-            psql "$SUPABASE_DB_URL" -v ON_ERROR_STOP=1 -q -f "$f"
-          done
+      - name: 更新資料表結構
+        run: bash scripts/migrate.sh
 
       - name: 匯入對照表與食譜
         run: node scripts/seed/seed.mjs

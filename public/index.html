@@ -258,6 +258,11 @@ addEventListener("keydown", (e) => { if (e.key === "Escape") closeSheet(); });
     st.cart = st.cart.filter((id) => R.some((x) => x.id === id));
     const fmt = (d) => d ? d.slice(5).replace("-", "/") : "?";
     $("#info").textContent = `批發價(北部五市場),資料期間 ${fmt(g.window_start)}–${fmt(g.data_date)}。不是超市零售價。`;
+    const age = g.data_date ? Math.floor((Date.now() - new Date(g.data_date + "T00:00:00+08:00")) / 86400000) : 99;
+    if (age > 7) {
+      $("#info").classList.add("err");
+      $("#info").textContent = `資料已經 ${age} 天沒有更新(最新是 ${fmt(g.data_date)}),價格與${TAG}標示可能不準。`;
+    }
     render();
   } catch (e) {
     $("#info").textContent = "";

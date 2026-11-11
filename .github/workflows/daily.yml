@@ -1,0 +1,71 @@
+name: 每日更新
+
+on:
+  schedule:
+    # 每天台灣時間 15:17(UTC 07:17)。避開整點,GitHub 整點排程常延遲
+    - cron: "17 7 * * *"
+  workflow_dispatch:
+    inputs:
+      days:
+        description: "重抓最近幾天"
+        default: "7"
+
+permissions:
+  contents: write
+  actions: write   # 讓排程自己保持啟用(見最後一步)
+
+concurrency:
+  group: db-write
+  cancel-in-progress: false
+
+jobs:
+  daily:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    env:
+      SUPABASE_URL: https://uahnndhsrztgdiwtkkyx.supabase.co
+      SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
+      SUPABASE_DB_URL: ${{ secrets.SUPABASE_DB_URL }}
+      PGOPTIONS: "-c client_min_messages=warning"
+      DAYS: ${{ inputs.days || '7' }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: 更新資料表結構
+        run: bash scripts/migrate.sh
+
+      - name: 抓最近幾天的行情、找新品名、檢查資料是否過期
+        run: node scripts/daily.mjs
+
+      - name: 重算並產出前台 JSON
+        run: bash scripts/recompute.sh
+
+      - name: 寫檢查報告
+        run: node scripts/compute-report.mjs
+
+      - name: 失敗時記一則提醒(後台收件匣會看到)
+        if: failure()
+        run: |
+          psql "$SUPABASE_DB_URL" -v ON_ERROR_STOP=1 -q -c "
+            insert into alerts (type, payload)
+            select 'job_failed', jsonb_build_object('stage', 'daily workflow', 'run', '${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}')
+            where not exists (select 1 from alerts where type = 'job_failed' and resolved_at is null);" || true
+
+      - name: 把結果 commit 回 repo(Netlify 會自動更新網站)
+        if: always()
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898283+github-actions[bot]@users.noreply.github.com"
+          git add results/ public/data/ || true
+          git commit -m "每日更新 $(date -u +%Y-%m-%d)" || echo "沒有變更"
+          git pull --rebase -q && git push
+
+      - name: 保持排程啟用(GitHub 會停用 60 天沒動靜的 repo 的排程)
+        if: always()
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh workflow enable daily.yml --repo "${{ github.repository }}" || true
