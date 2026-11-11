@@ -135,7 +135,8 @@ function renderIng() {
   $("#title").textContent = "食材";
   $("#sub").textContent = `北部批發市場・${st.cat}・依${TAG}與交易量排序`;
   setInfo();
-  const cats = [...new Set(GROUPS.map((g) => g.category || "蔬菜"))];
+  const ORDER = ["蔬菜", "海鮮"];
+  const cats = [...new Set(GROUPS.map((g) => g.category || "蔬菜"))].sort((a, b) => (ORDER.indexOf(a) + 99) % 99 - (ORDER.indexOf(b) + 99) % 99);
   const list = GROUPS.filter((g) => (g.category || "蔬菜") === st.cat).filter(showGroup)
     .sort((a, b) => (!!b.is_season - !!a.is_season) || (b.vol_30d_ton - a.vol_30d_ton))
     .filter((g) => !st.season || g.is_season);
