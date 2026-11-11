@@ -1,0 +1,59 @@
+name: 重算當季與價格(手動)
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: db-write
+  cancel-in-progress: false
+
+jobs:
+  compute:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    env:
+      SUPABASE_URL: https://uahnndhsrztgdiwtkkyx.supabase.co
+      SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
+      SUPABASE_DB_URL: ${{ secrets.SUPABASE_DB_URL }}
+      PGOPTIONS: "-c client_min_messages=warning"
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: 更新資料表結構
+        run: |
+          for f in supabase/migrations/*.sql; do
+            echo "== $f"
+            psql "$SUPABASE_DB_URL" -v ON_ERROR_STOP=1 -q -f "$f"
+          done
+
+      - name: 重算(第 6 節規則)
+        run: |
+          mkdir -p results public/data
+          psql "$SUPABASE_DB_URL" -v ON_ERROR_STOP=1 -At -c "select recompute_stats()" > results/compute-run.json
+          cat results/compute-run.json
+
+      - name: 產出前台 JSON
+        run: |
+          psql "$SUPABASE_DB_URL" -v ON_ERROR_STOP=1 -At -c "select export_groups_json()"  | jq . > public/data/groups.json
+          psql "$SUPABASE_DB_URL" -v ON_ERROR_STOP=1 -At -c "select export_recipes_json()" | jq . > public/data/recipes.json
+          jq '.groups | length' public/data/groups.json
+          jq '.recipes | length' public/data/recipes.json
+
+      - name: 寫檢查報告
+        run: node scripts/compute-report.mjs
+
+      - name: 把結果 commit 回 repo
+        if: always()
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898283+github-actions[bot]@users.noreply.github.com"
+          git add results/ public/data/ || true
+          git commit -m "重算結果 $(date -u +%Y-%m-%dT%H:%MZ)" || echo "沒有變更"
+          git pull --rebase -q && git push
