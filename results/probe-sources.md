@@ -1,20 +1,22 @@
 # 資料來源測試
 
-- 執行時間(UTC):2026-11-11T06:08:07.634Z
+- 執行時間(UTC):2026-11-11T06:17:07.359Z
 - 測試日期範圍:115.11.01 至 115.11.08
+
+## api.aspx 裡找到的端點與標題
+
+沒找到
 
 | 項目 | HTTP | 列數 | 回應時間 |
 |---|---|---|---|
-| 蔬菜(對照組) | 200 | 234 | 1745 ms |
-| 漁產品交易行情 A | 200 | 0 | 1867 ms |
-| 漁產品交易行情 B | 200 | — | 21293 ms |
-| 漁產品交易行情 C | 200 | — | 22609 ms |
-| 毛豬交易行情 A | 200 | 1 | 615 ms |
-| 毛豬交易行情 B | 200 | — | 21264 ms |
-| 家禽交易行情 | 200 | — | 21783 ms |
-| API 說明 A | 200 | — | 21654 ms |
-| API 說明 B | 200 | — | 21675 ms |
-| API 說明 C | 200 | — | 648 ms |
+| 蔬菜(對照組) | 200 | 234 | 1559 ms |
+| 漁產:不帶參數 | 200 | 1000 | 12308 ms |
+| 漁產:日期無點 | 200 | 1000 | 3578 ms |
+| 漁產:日期有點 | 200 | 0 | 2103 ms |
+| 漁產:單日無點 | 200 | 5 | 1290 ms |
+| 毛豬:不帶參數 | 200 | 1 | 268 ms |
+| 毛豬:日期無點 | 200 | 1 | 261 ms |
+| 毛豬:日期無點+台北 | 200 | 0 | 196 ms |
 
 ## 蔬菜(對照組)
 
@@ -55,27 +57,120 @@
 ]
 ```
 
-## 漁產品交易行情 A
+## 漁產:不帶參數
+
+`https://data.moa.gov.tw/api/v1/FisheryProductsTransType/`
+
+- 欄位:TransDate、SeafoodProdCode、SeafoodProdName、MarketName、Upper_Price、Middle_Price、Lower_Price、Trans_Quantity、Avg_Price
+- 市場:苗栗、東港、佳里、三重、岡山、嘉義、台北、台南、斗南、埔心、桃園、新營、台中、高雄、新竹、彰化、新港、頭城、基隆、花蓮、興達港、澎湖、梓官
+- 品名(207 種,列前 60):休市、尼羅紅魚、鯉魚、草魚、大頭鰱、虱目魚、虱目魚肚、虱目魚頭、烏仔魚、豆仔魚、金目鱸、鱺魚、鯰魚、田蛙、紅鰽、淡水珍珠石斑、珍珠龍膽/龍虎斑、黃臘鰺(紅杉)、香魚、午仔魚、烏殼(養)、其他養殖、加鱲、赤翅、赤海、紅魚、黑口、四破、甘瓜仔、其他鰺類、白鯧、黑鯧、其他鯧類、煙仔虎、土魠、馬加、白北、魷魚、花枝、石斑魚、油魚、鯖魚、（日本）白帶魚、扁魚、厚唇、海鱺、赤筆、青筆、雞仔魚、什魚、下雜魚、烏公、烏殼、鮭魚、其他鯧類(凍)、勿仔(凍)、（日本）白帶魚凍、比目魚、扁鱈、魚腸(凍)、鮭魚(凍)、白蝦
+
+```json
+[
+ {
+  "TransDate": "1151231",
+  "SeafoodProdCode": "-",
+  "SeafoodProdName": "休市",
+  "MarketName": "苗栗",
+  "Upper_Price": 0,
+  "Middle_Price": 0,
+  "Lower_Price": 0,
+  "Trans_Quantity": 0,
+  "Avg_Price": 0
+ },
+ {
+  "TransDate": "1151231",
+  "SeafoodProdCode": "-",
+  "SeafoodProdName": "休市",
+  "MarketName": "東港",
+  "Upper_Price": 0,
+  "Middle_Price": 0,
+  "Lower_Price": 0,
+  "Trans_Quantity": 0,
+  "Avg_Price": 0
+ }
+]
+```
+
+## 漁產:日期無點
+
+`https://data.moa.gov.tw/api/v1/FisheryProductsTransType/?Start_time=1151101&End_time=1151108`
+
+- 欄位:TransDate、SeafoodProdCode、SeafoodProdName、MarketName、Upper_Price、Middle_Price、Lower_Price、Trans_Quantity、Avg_Price
+- 市場:基隆、花蓮、新港、頭城、東港、彰化、台中、台北、嘉義、斗南、苗栗、新竹、新營、埔心、台南、岡山、桃園、梓官、興達港、澎湖、高雄、三重、佳里
+- 品名(248 種,列前 60):休市、鯉魚、鯽魚、草魚、大頭鰱、烏鰡、虱目魚、虱目魚肚、烏仔魚、豆仔魚、金目鱸、加州鱸、七星鱸、黑鯛、黃鍚鯛、淡水珍珠石斑、黃臘鰺(紅杉)、烏殼(養)、其他養殖、加鱲、赤宗、盤仔、花身、金線、秋姑、紅魚、紅目鰱、黃花、白口、鮸魚、四破、巴闌、甘瓜仔、青魽、紅魽、黑鯧、其他鯧類、勿仔、其他鮪魚、煙仔虎、土魠、白北、闊北、角鯊、魷魚、墨魚賊、花枝、透抽、小卷、章魚、馬頭魚、石斑魚、狗母、海鰻、海鯽魚、鯖魚、（日本）白帶魚、鱝(魴仔)、扁魚、赤筆
+
+```json
+[
+ {
+  "TransDate": "1151108",
+  "SeafoodProdCode": "-",
+  "SeafoodProdName": "休市",
+  "MarketName": "基隆",
+  "Upper_Price": 0,
+  "Middle_Price": 0,
+  "Lower_Price": 0,
+  "Trans_Quantity": 0,
+  "Avg_Price": 0
+ },
+ {
+  "TransDate": "1151108",
+  "SeafoodProdCode": "-",
+  "SeafoodProdName": "休市",
+  "MarketName": "花蓮",
+  "Upper_Price": 0,
+  "Middle_Price": 0,
+  "Lower_Price": 0,
+  "Trans_Quantity": 0,
+  "Avg_Price": 0
+ }
+]
+```
+
+## 漁產:日期有點
 
 `https://data.moa.gov.tw/api/v1/FisheryProductsTransType/?Start_time=115.11.01&End_time=115.11.08`
 
 - 欄位:
 
-## 漁產品交易行情 B
+## 漁產:單日無點
 
-`https://data.moa.gov.tw/api/v1/AquaticTransType/?Start_time=115.11.01&End_time=115.11.08`
+`https://data.moa.gov.tw/api/v1/FisheryProductsTransType/?Start_time=1151108&End_time=1151108`
 
-- 回應: <!DOCTYPE html> <html> <head> <meta charset="utf-8" /> <meta property ="og:type" content="website"/> <meta property ="og:url" content="error.aspx"/> <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" /> <meta id="goosleSiteVerification" n
+- 欄位:TransDate、SeafoodProdCode、SeafoodProdName、MarketName、Upper_Price、Middle_Price、Lower_Price、Trans_Quantity、Avg_Price
+- 市場:基隆、花蓮、新港、頭城、東港
+- 品名(1 種,列前 60):休市
 
-## 漁產品交易行情 C
+```json
+[
+ {
+  "TransDate": "1151108",
+  "SeafoodProdCode": "-",
+  "SeafoodProdName": "休市",
+  "MarketName": "基隆",
+  "Upper_Price": 0,
+  "Middle_Price": 0,
+  "Lower_Price": 0,
+  "Trans_Quantity": 0,
+  "Avg_Price": 0
+ },
+ {
+  "TransDate": "1151108",
+  "SeafoodProdCode": "-",
+  "SeafoodProdName": "休市",
+  "MarketName": "花蓮",
+  "Upper_Price": 0,
+  "Middle_Price": 0,
+  "Lower_Price": 0,
+  "Trans_Quantity": 0,
+  "Avg_Price": 0
+ }
+]
+```
 
-`https://data.moa.gov.tw/api/v1/FishTransType/?Start_time=115.11.01&End_time=115.11.08`
+## 毛豬:不帶參數
 
-- 回應: <!DOCTYPE html> <html> <head> <meta charset="utf-8" /> <meta property ="og:type" content="website"/> <meta property ="og:url" content="error.aspx"/> <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" /> <meta id="goosleSiteVerification" n
-
-## 毛豬交易行情 A
-
-`https://data.moa.gov.tw/api/v1/PorkTransType/?Start_time=115.11.01&End_time=115.11.08`
+`https://data.moa.gov.tw/api/v1/PorkTransType/`
 
 - 欄位:TransDate、MarketName、TransNum_Total、TransNum_AvgWgt、TransNum_AvgPrice、SpecPig_Num、SpecPig_AvgWgt、SpecPig_AvgPrice、Num_95in_115in、AvgWgt_95in_115in、AvgPrice_95in_115in、Num_75in_95、AvgWgt_75in_95、AvgPrice_75in_95、Num_115up、AvgWgt_115up、AvgPrice_115up、Num_75low、AvgWgt_75low、AvgPrice_75low、OutPigs_Num、OutPigs_AvgWgt、OutPigs_AvgPrice、OtherPigs_Num、OtherPigs_AvgWgt、OtherPigs_AvgPrice、FreezerPigs_Num、FreezerPigs_AvgWgt、FreezerPigs_AvgPrice、TotalTrans_ExcludeFreezer_Num、TotalTrans_ExcludeFreezer_AvgWeight、TotalTrans_ExcludeFreezer_AvgPrice、KgPig5_Q、KgPig5_W、KgPig5_P、KgPig6_Q、KgPig6_W、KgPig6_P
 - 市場:臺南市
@@ -125,32 +220,60 @@
 ]
 ```
 
-## 毛豬交易行情 B
+## 毛豬:日期無點
 
-`https://data.moa.gov.tw/api/v1/LivestockTransType/?Start_time=115.11.01&End_time=115.11.08`
+`https://data.moa.gov.tw/api/v1/PorkTransType/?Start_time=1151101&End_time=1151108`
 
-- 回應: <!DOCTYPE html> <html> <head> <meta charset="utf-8" /> <meta property ="og:type" content="website"/> <meta property ="og:url" content="error.aspx"/> <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" /> <meta id="goosleSiteVerification" n
+- 欄位:TransDate、MarketName、TransNum_Total、TransNum_AvgWgt、TransNum_AvgPrice、SpecPig_Num、SpecPig_AvgWgt、SpecPig_AvgPrice、Num_95in_115in、AvgWgt_95in_115in、AvgPrice_95in_115in、Num_75in_95、AvgWgt_75in_95、AvgPrice_75in_95、Num_115up、AvgWgt_115up、AvgPrice_115up、Num_75low、AvgWgt_75low、AvgPrice_75low、OutPigs_Num、OutPigs_AvgWgt、OutPigs_AvgPrice、OtherPigs_Num、OtherPigs_AvgWgt、OtherPigs_AvgPrice、FreezerPigs_Num、FreezerPigs_AvgWgt、FreezerPigs_AvgPrice、TotalTrans_ExcludeFreezer_Num、TotalTrans_ExcludeFreezer_AvgWeight、TotalTrans_ExcludeFreezer_AvgPrice、KgPig5_Q、KgPig5_W、KgPig5_P、KgPig6_Q、KgPig6_W、KgPig6_P
+- 市場:臺南市
 
-## 家禽交易行情
+```json
+[
+ {
+  "TransDate": "1151110",
+  "MarketName": "臺南市",
+  "TransNum_Total": 359,
+  "TransNum_AvgWgt": 123.26,
+  "TransNum_AvgPrice": 95.75,
+  "SpecPig_Num": 352,
+  "SpecPig_AvgWgt": 123.15,
+  "SpecPig_AvgPrice": 95.95,
+  "Num_95in_115in": 91,
+  "AvgWgt_95in_115in": 107.63,
+  "AvgPrice_95in_115in": 96.26,
+  "Num_75in_95": 1,
+  "AvgWgt_75in_95": 93.5,
+  "AvgPrice_75in_95": 92.8,
+  "Num_115up": 210,
+  "AvgWgt_115up": 125.33,
+  "AvgPrice_115up": 96.2,
+  "Num_75low": 0,
+  "AvgWgt_75low": 0,
+  "AvgPrice_75low": 0,
+  "OutPigs_Num": 0,
+  "OutPigs_AvgWgt": 0,
+  "OutPigs_AvgPrice": 0,
+  "OtherPigs_Num": 3,
+  "OtherPigs_AvgWgt": 0,
+  "OtherPigs_AvgPrice": 66.78,
+  "FreezerPigs_Num": 29,
+  "FreezerPigs_AvgWgt": 127.28,
+  "FreezerPigs_AvgPrice": 91.12,
+  "TotalTrans_ExcludeFreezer_Num": 330,
+  "TotalTrans_ExcludeFreezer_AvgWeight": 122.91,
+  "TotalTrans_ExcludeFreezer_AvgPrice": 96.17,
+  "KgPig5_Q": 51,
+  "KgPig5_W": 141.87,
+  "KgPig5_P": 94.63,
+  "KgPig6_Q": 3,
+  "KgPig6_W": 158.33,
+  "KgPig6_P": 98.32
+ }
+]
+```
 
-`https://data.moa.gov.tw/api/v1/PoultryTransType/?Start_time=115.11.01&End_time=115.11.08`
+## 毛豬:日期無點+台北
 
-- 回應: <!DOCTYPE html> <html> <head> <meta charset="utf-8" /> <meta property ="og:type" content="website"/> <meta property ="og:url" content="error.aspx"/> <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" /> <meta id="goosleSiteVerification" n
+`https://data.moa.gov.tw/api/v1/PorkTransType/?Start_time=1151101&End_time=1151108&MarketName=台北市`
 
-## API 說明 A
-
-`https://data.moa.gov.tw/api/v1/swagger/docs/v1`
-
-- 回應: <!DOCTYPE html> <html> <head> <meta charset="utf-8" /> <meta property ="og:type" content="website"/> <meta property ="og:url" content="error.aspx"/> <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" /> <meta id="goosleSiteVerification" n
-
-## API 說明 B
-
-`https://data.moa.gov.tw/swagger/v1/swagger.json`
-
-- 回應: <!DOCTYPE html> <html> <head> <meta charset="utf-8" /> <meta property ="og:type" content="website"/> <meta property ="og:url" content="error.aspx"/> <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" /> <meta id="goosleSiteVerification" n
-
-## API 說明 C
-
-`https://data.moa.gov.tw/api.aspx`
-
-- 回應: <!DOCTYPE html> <html> <head> <meta charset="utf-8" /> <meta property ="og:type" content="website"/> <meta property ="og:url" content="/api.aspx"/> <meta property ="og:image" content="/upload/20180710191607BIT75SGI.jpg"/> <meta name="viewport" content="width=device-width, initi
+- 欄位:
