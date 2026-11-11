@@ -1,0 +1,3170 @@
+[
+ {
+  "crop_name": "鯖魚(凍)",
+  "crop_code": "3331 ",
+  "qty_ton": 3785.1,
+  "avg_price_kg": 37.3,
+  "trade_days": 158,
+  "markets": "台北/三重/基隆/桃園/新竹",
+  "last_seen": "2026-11-11"
+ },
+ {
+  "crop_name": "其他(海鮮)",
+  "crop_code": "9999 ",
+  "qty_ton": 3648.7,
+  "avg_price_kg": 52.3,
+  "trade_days": 260,
+  "markets": "台北/三重/新竹",
+  "last_seen": "2026-11-11"
+ },
+ {
+  "crop_name": "吳郭魚",
+  "crop_code": "1011 ",
+  "qty_ton": 3429.8,
+  "avg_price_kg": 59.7,
+  "trade_days": 253,
+  "markets": "台北/三重/桃園/新竹",
+  "last_seen": "2026-11-11"
+ },
+ {
+  "crop_name": "虱目魚",
+  "crop_code": "1041 ",
+  "qty_ton": 2658.6,
+  "avg_price_kg": 81.8,
+  "trade_days": 259,
+  "markets": "台北/三重/桃園/新竹",
+  "last_seen": "2026-11-11"
+ },
+ {
+  "crop_name": "下雜魚(凍)",
+  "crop_code": "3564 ",
+  "qty_ton": 2452.9,
+  "avg_price_kg": 11.1,
+  "trade_days": 124,
+  "markets": "基隆",
+  "last_seen": "2026-11-09"
+ },
+ {
+  "crop_name": "金目鱸",
+  "crop_code": "1071 ",
+  "qty_ton": 1282.1,
+  "avg_price_kg": 91.5,
+  "trade_days": 260,
+  "markets": "台北/三重/桃園/新竹",
+  "last_seen": "2026-11-11"
+ },
+ {
+  "crop_name": "文蛤養",
+  "crop_code": "5022 ",
+  "qty_ton": 945.6,
+  "avg_price_kg": 109.3,
+  "trade_days": 257,
+  "markets": "台北/三重/桃園/新竹",
+  "last_seen": "2026-11-11"
+ },
+ {
+  "crop_name": "午仔魚",
+  "crop_code": "2271 ",
+  "qty_ton": 932.2,
+  "avg_price_kg": 175.4,
+  "trade_days": 260,
+  "markets": "台北/三重/桃園/新竹",
+  "last_seen": "2026-11-11"
+ },
+ {
+  "crop_name": "其他非凍結魚",
+  "crop_code": "2999 ",
+  "qty_ton": 923.5,
+  "avg_price_kg": 92.1,
+  "trade_days": 258,
+  "markets": "台北/三重/桃園/新竹",
+  "last_seen": "2026-11-11"
+ },
+ {
+  "crop_name": "透抽(凍)",
+  "crop_code": "3164 ",
+  "qty_ton": 922.3,
+  "avg_price_kg": 199.4,
+  "trade_days": 260,
+  "markets": "台北/三重/基隆/桃園/新竹",
+  "last_seen": "2026-11-11"
+ },
+ {
+  "crop_name": "牡蠣養",
+  "crop_code": "5012 ",
+  "qty_ton": 918.4,
+  "avg_price_kg": 92.4,
+  "trade_days": 258,
+  "markets": "台北/三重/桃園/新竹",
+  "last_seen": "2026-11-11"
+ },
+ {
+  "crop_name": "巴闌(凍)",
+  "crop_code": "3074 ",
+  "qty_ton": 858.2,
+  "avg_price_kg": 14.1,
+  "trade_days": 73,
+  "markets": "基隆/桃園/新竹",
+  "last_seen": "2026-10-28"
+ },
+ {
+  "crop_name": "鯖魚",
+  "crop_code": "2331 ",
+  "qty_ton": 844.7,
+  "avg_price_kg": 63.8,
+  "trade_days": 259,
+  "markets": "台北/三重/桃園/新竹",
+  "last_seen": "2026-11-11"
+ },
+ {
+  "crop_name": "硬尾",
+  "crop_code": "2073 ",
+  "qty_ton": 818.1,
+  "avg_price_kg": 48,
+  "trade_days": 256,
+  "markets": "台北/三重/桃園/新竹",
+  "last_seen": "2026-11-11"
+ },
+ {
+  "crop_name": "（日本）白帶魚",
+  "crop_code": "2341 ",
+  "qty_ton": 796.3,
+  "avg_price_kg": 118.3,
+  "trade_days": 264,
+  "markets": "台北/三重/基隆/桃園/新竹",
+  "last_seen": "2026-11-11"
+ },
+ {
+  "crop_name": "透抽",
+  "crop_code": "2164 ",
+  "qty_ton": 765.7,
+  "avg_price_kg": 172,
+  "trade_days": 259,
+  "markets": "台北/三重/桃園/新竹",
+  "last_seen": "2026-11-11"
+ },
+ {
+  "crop_name": "什魚(凍)",
+  "crop_code": "3562 ",
+  "qty_ton": 699.3,
+  "avg_price_kg": 95.7,
+  "trade_days": 114,
+  "markets": "基隆",
+  "last_seen": "2026-11-09"
+ },
+ {
+  "crop_name": "尼羅紅魚",
+  "crop_code": "1012 ",
+  "qty_ton": 600.9,
+  "avg_price_kg": 68.1,
+  "trade_days": 257,
+  "markets": "台北/三重/桃園/新竹",
+  "last_seen": "2026-11-11"
+ },
+ {
+  "crop_name": "盤仔",
+  "crop_code": "2013 ",
+  "qty_ton": 565.1,
+  "avg_price_kg": 84.4,
+  "trade_days": 258,
+  "markets": "台北/三重/桃園/新竹",
+  "last_seen": "2026-11-11"
+ },
+ {
+  "crop_name": "其他吳郭",
+  "crop_code": "1019 ",
+  "qty_ton": 564.5,
+  "avg_price_kg": 85.2,
+  "trade_days": 260,
+  "markets": "台北/三重/桃園/新竹",
+  "last_seen": "2026-11-11"
+ },
+ {
+  "crop_name": "其他凍結(凍)",
+  "crop_code": "3999 ",
+  "qty_ton": 538.6,
+  "avg_price_kg": 96.2,
+  "trade_days": 259,
+  "markets": "台北/三重/桃園/新竹",
+  "last_seen": "2026-11-11"
+ },
+ {
+  "crop_name": "勿仔",
+  "crop_code": "2106 ",
+  "qty_ton": 514.1,
+  "avg_price_kg": 160.7,
+  "trade_days": 253,
+  "markets": "台北/三重/桃園/新竹",
+  "last_seen": "2026-11-11"
+ },
+ {
+  "crop_name": "珍珠龍膽/龍虎斑",
+  "crop_code": "1174 ",
+  "qty_ton": 457.7,
+  "avg_price_kg": 172.5,
+  "trade_days": 260,
+  "markets": "台北/三重/桃園/新竹",
+  "last_seen": "2026-11-11"
+ },
+ {
+  "crop_name": "白蝦",
+  "crop_code": "4015 ",
+  "qty_ton": 427.4,
+  "avg_price_kg": 191.9,
+  "trade_days": 254,
+  "markets": "台北/三重/桃園/新竹",
+  "last_seen": "2026-11-11"
+ },
+ {
+  "crop_name": "鮭魚",
+  "crop_code": "2781 ",
+  "qty_ton": 414.8,
+  "avg_price_kg": 263.6,
+  "trade_days": 250,
+  "markets": "台北/三重/桃園/新竹",
+  "last_seen": "2026-11-11"
+ },
+ {
+  "crop_name": "肉魚",
+  "crop_code": "2261 ",
+  "qty_ton": 413,
+  "avg_price_kg": 188,
+  "trade_days": 261,
+  "markets": "台北/三重/基隆/桃園/新竹",
+  "last_seen": "2026-11-11"
+ },
+ {
+  "crop_name": "大鯊",
+  "crop_code": "2151 ",
+  "qty_ton": 399.2,
+  "avg_price_kg": 55.2,
+  "trade_days": 252,
+  "markets": "台北/三重/基隆/桃園/新竹",
+  "last_seen": "2026-11-11"
+ },
+ {
+  "crop_name": "秋刀(凍)",
+  "crop_code": "3521 ",
+  "qty_ton": 390.6,
+  "avg_price_kg": 70.4,
+  "trade_days": 258,
+  "markets": "台北/三重/桃園/新竹",
+  "last_seen": "2026-11-11"
+ },
+ {
+  "crop_name": "小蝦海",
+  "crop_code": "4121 ",
+  "qty_ton": 365.1,
+  "avg_price_kg": 30.1,
+  "trade_days": 27,
+  "markets": "基隆/桃園",
+  "last_seen": "2026-10-21"
+ },
+ {
+  "crop_name": "黑皮旗凍",
+  "crop_code": "3133 ",
+  "qty_ton": 359.3,
+  "avg_price_kg": 100.6,
+  "trade_days": 144,
+  "markets": "台北",
+  "last_seen": "2026-11-10"
+ },
+ {
+  "crop_name": "赤宗",
+  "crop_code": "2012 ",
+  "qty_ton": 357.3,
+  "avg_price_kg": 115.3,
+  "trade_days": 257,
+  "markets": "台北/三重/桃園/新竹",
+  "last_seen": "2026-11-11"
+ },
+ {
+  "crop_name": "鮭魚(凍)",
+  "crop_code": "3781 ",
+  "qty_ton": 353.8,
+  "avg_price_kg": 142.7,
+  "trade_days": 252,
+  "markets": "台北/三重/桃園/新竹",
+  "last_seen": "2026-11-11"
+ },
+ {
+  "crop_name": "白口",
+  "crop_code": "2064 ",
+  "qty_ton": 334,
+  "avg_price_kg": 74.1,
+  "trade_days": 258,
+  "markets": "台北/三重/桃園/新竹",
+  "last_seen": "2026-11-11"
+ },
+ {
+  "crop_name": "巴闌",
+  "crop_code": "2074 ",
+  "qty_ton": 332.8,
+  "avg_price_kg": 43.3,
+  "trade_days": 258,
+  "markets": "三重/桃園/新竹",
+  "last_seen": "2026-11-11"
+ },
+ {
+  "crop_name": "牛角蟹、黃金蟹",
+  "crop_code": "4409 ",
+  "qty_ton": 318.6,
+  "avg_price_kg": 84.5,
+  "trade_days": 40,
+  "markets": "基隆",
+  "last_seen": "2026-11-10"
+ },
+ {
+  "crop_name": "（日本）白帶魚凍",
+  "crop_code": "3341 ",
+  "qty_ton": 300.6,
+  "avg_price_kg": 119,
+  "trade_days": 264,
+  "markets": "台北/三重/基隆/桃園/新竹",
+  "last_seen": "2026-11-11"
+ },
+ {
+  "crop_name": "黃花",
+  "crop_code": "2061 ",
+  "qty_ton": 295.5,
+  "avg_price_kg": 230.6,
+  "trade_days": 257,
+  "markets": "台北/三重/桃園/新竹",
+  "last_seen": "2026-11-11"
+ },
+ {
+  "crop_name": "七星鱸",
+  "crop_code": "1073 ",
+  "qty_ton": 290.2,
+  "avg_price_kg": 123.2,
+  "trade_days": 259,
+  "markets": "台北/三重/桃園/新竹",
+  "last_seen": "2026-11-11"
+ },
+ {
+  "crop_name": "花鰹",
+  "crop_code": "2122 ",
+  "qty_ton": 250.7,
+  "avg_price_kg": 55.1,
+  "trade_days": 251,
+  "markets": "台北/三重/桃園/新竹",
+  "last_seen": "2026-11-11"
+ },
+ {
+  "crop_name": "烏殼(養)",
+  "crop_code": "1603 ",
+  "qty_ton": 248.2,
+  "avg_price_kg": 83.1,
+  "trade_days": 75,
+  "markets": "台北/三重/桃園/新竹",
+  "last_seen": "2026-11-11"
+ },
+ {
+  "crop_name": "大頭鰱",
+  "crop_code": "1024 ",
+  "qty_ton": 230.2,
+  "avg_price_kg": 79.9,
+  "trade_days": 253,
+  "markets": "台北/三重/桃園/新竹",
+  "last_seen": "2026-11-11"
+ },
+ {
+  "crop_name": "大鯊【凍】",
+  "crop_code": "3151 ",
+  "qty_ton": 223,
+  "avg_price_kg": 49.9,
+  "trade_days": 256,
+  "markets": "三重/基隆/桃園",
+  "last_seen": "2026-11-11"
+ },
+ {
+  "crop_name": "花枝",
+  "crop_code": "2163 ",
+  "qty_ton": 222.2,
+  "avg_price_kg": 145.9,
+  "trade_days": 257,
+  "markets": "台北/三重/桃園/新竹",
+  "last_seen": "2026-11-11"
+ },
+ {
+  "crop_name": "黃臘鰺(紅杉)",
+  "crop_code": "1181 ",
+  "qty_ton": 212.8,
+  "avg_price_kg": 187.1,
+  "trade_days": 260,
+  "markets": "台北/三重/桃園/新竹",
+  "last_seen": "2026-11-11"
+ },
+ {
+  "crop_name": "硬尾(凍)",
+  "crop_code": "3073 ",
+  "qty_ton": 200.8,
+  "avg_price_kg": 25,
+  "trade_days": 4,
+  "markets": "基隆",
+  "last_seen": "2026-04-28"
+ },
+ {
+  "crop_name": "皮刀(凍)",
+  "crop_code": "3251 ",
+  "qty_ton": 186.6,
+  "avg_price_kg": 15,
+  "trade_days": 4,
+  "markets": "基隆/新竹",
+  "last_seen": "2026-05-13"
+ },
+ {
+  "crop_name": "其他加工",
+  "crop_code": "6049 ",
+  "qty_ton": 170.3,
+  "avg_price_kg": 71.5,
+  "trade_days": 253,
+  "markets": "三重/桃園/新竹",
+  "last_seen": "2026-11-11"
+ },
+ {
+  "crop_name": "劍蝦",
+  "crop_code": "4071 ",
+  "qty_ton": 168.8,
+  "avg_price_kg": 196.5,
+  "trade_days": 257,
+  "markets": "台北/基隆/桃園/新竹",
+  "last_seen": "2026-11-11"
+ },
+ {
+  "crop_name": "比目魚、扁鱈",
+  "crop_code": "3641 ",
+  "qty_ton": 167.4,
+  "avg_price_kg": 187,
+  "trade_days": 254,
+  "markets": "台北/三重/桃園/新竹",
+  "last_seen": "2026-11-11"
+ },
+ {
+  "crop_name": "其他蝦類",
+  "crop_code": "4509 ",
+  "qty_ton": 157.2,
+  "avg_price_kg": 109,
+  "trade_days": 254,
+  "markets": "台北/三重/桃園/新竹",
+  "last_seen": "2026-11-11"
+ },
+ {
+  "crop_name": "青斑",
+  "crop_code": "1171 ",
+  "qty_ton": 156.3,
+  "avg_price_kg": 191.9,
+  "trade_days": 256,
+  "markets": "台北/三重/桃園/新竹",
+  "last_seen": "2026-11-11"
+ },
+ {
+  "crop_name": "馬頭魚",
+  "crop_code": "2181 ",
+  "qty_ton": 152.5,
+  "avg_price_kg": 200.3,
+  "trade_days": 217,
+  "markets": "台北/三重/桃園/新竹",
+  "last_seen": "2026-11-11"
+ },
+ {
+  "crop_name": "其他貝類",
+  "crop_code": "5999 ",
+  "qty_ton": 142.9,
+  "avg_price_kg": 97.1,
+  "trade_days": 257,
+  "markets": "台北/三重/桃園/新竹",
+  "last_seen": "2026-11-11"
+ },
+ {
+  "crop_name": "其他養殖",
+  "crop_code": "1999 ",
+  "qty_ton": 136.7,
+  "avg_price_kg": 92.5,
+  "trade_days": 256,
+  "markets": "台北/桃園/新竹",
+  "last_seen": "2026-11-11"
+ },
+ {
+  "crop_name": "草魚",
+  "crop_code": "1023 ",
+  "qty_ton": 131.2,
+  "avg_price_kg": 110.5,
+  "trade_days": 250,
+  "markets": "台北/三重/桃園/新竹",
+  "last_seen": "2026-11-11"
+ },
+ {
+  "crop_name": "其他鯊魚",
+  "crop_code": "2159 ",
+  "qty_ton": 108.9,
+  "avg_price_kg": 96.6,
+  "trade_days": 249,
+  "markets": "桃園/新竹",
+  "last_seen": "2026-11-11"
+ },
+ {
+  "crop_name": "蝦母、東方異腕蝦",
+  "crop_code": "4404 ",
+  "qty_ton": 107.9,
+  "avg_price_kg": 178.4,
+  "trade_days": 7,
+  "markets": "基隆",
+  "last_seen": "2026-10-30"
+ },
+ {
+  "crop_name": "魷魚(凍)",
+  "crop_code": "3161 ",
+  "qty_ton": 104.9,
+  "avg_price_kg": 55,
+  "trade_days": 236,
+  "markets": "台北/三重/基隆/桃園/新竹",
+  "last_seen": "2026-11-11"
+ },
+ {
+  "crop_name": "加州鱸",
+  "crop_code": "1072 ",
+  "qty_ton": 100.6,
+  "avg_price_kg": 122.8,
+  "trade_days": 254,
+  "markets": "台北/三重/桃園/新竹",
+  "last_seen": "2026-11-11"
+ },
+ {
+  "crop_name": "蝦仁",
+  "crop_code": "4016 ",
+  "qty_ton": 100.5,
+  "avg_price_kg": 133.3,
+  "trade_days": 252,
+  "markets": "三重/桃園/新竹",
+  "last_seen": "2026-11-11"
+ },
+ {
+  "crop_name": "皮刀",
+  "crop_code": "2251 ",
+  "qty_ton": 93,
+  "avg_price_kg": 59,
+  "trade_days": 254,
+  "markets": "台北/三重/桃園/新竹",
+  "last_seen": "2026-11-11"
+ },
+ {
+  "crop_name": "香魚",
+  "crop_code": "1191 ",
+  "qty_ton": 89.7,
+  "avg_price_kg": 159.3,
+  "trade_days": 247,
+  "markets": "台北/三重/桃園/新竹",
+  "last_seen": "2026-11-11"
+ },
+ {
+  "crop_name": "鯽魚",
+  "crop_code": "1022 ",
+  "qty_ton": 88.3,
+  "avg_price_kg": 86.6,
+  "trade_days": 252,
+  "markets": "台北/桃園/新竹",
+  "last_seen": "2026-11-11"
+ },
+ {
+  "crop_name": "加鱲",
+  "crop_code": "2011 ",
+  "qty_ton": 87,
+  "avg_price_kg": 195.7,
+  "trade_days": 257,
+  "markets": "台北/三重/桃園/新竹",
+  "last_seen": "2026-11-11"
+ },
+ {
+  "crop_name": "紅魚",
+  "crop_code": "2042 ",
+  "qty_ton": 86.1,
+  "avg_price_kg": 139.5,
+  "trade_days": 257,
+  "markets": "三重/桃園/新竹",
+  "last_seen": "2026-11-11"
+ },
+ {
+  "crop_name": "尖梭",
+  "crop_code": "2301 ",
+  "qty_ton": 85.6,
+  "avg_price_kg": 73.2,
+  "trade_days": 257,
+  "markets": "台北/三重/桃園/新竹",
+  "last_seen": "2026-11-11"
+ },
+ {
+  "crop_name": "章魚",
+  "crop_code": "2169 ",
+  "qty_ton": 81.7,
+  "avg_price_kg": 114.3,
+  "trade_days": 246,
+  "markets": "台北/桃園/新竹",
+  "last_seen": "2026-11-11"
+ },
+ {
+  "crop_name": "肉魚(凍)",
+  "crop_code": "3261 ",
+  "qty_ton": 78.9,
+  "avg_price_kg": 107.6,
+  "trade_days": 191,
+  "markets": "台北/三重/桃園/新竹",
+  "last_seen": "2026-11-11"
+ },
+ {
+  "crop_name": "熟丁香",
+  "crop_code": "6071 ",
+  "qty_ton": 78.9,
+  "avg_price_kg": 103.6,
+  "trade_days": 251,
+  "markets": "台北/桃園",
+  "last_seen": "2026-11-11"
+ },
+ {
+  "crop_name": "虱目魚頭",
+  "crop_code": "1043 ",
+  "qty_ton": 74.5,
+  "avg_price_kg": 14.6,
+  "trade_days": 254,
+  "markets": "台北/三重/桃園/新竹",
+  "last_seen": "2026-11-11"
+ },
+ {
+  "crop_name": "白鯧",
+  "crop_code": "2091 ",
+  "qty_ton": 73.3,
+  "avg_price_kg": 360.6,
+  "trade_days": 260,
+  "markets": "台北/三重/桃園/新竹",
+  "last_seen": "2026-11-11"
+ },
+ {
+  "crop_name": "煙仔虎",
+  "crop_code": "2124 ",
+  "qty_ton": 72.7,
+  "avg_price_kg": 59.5,
+  "trade_days": 254,
+  "markets": "三重/桃園/新竹",
+  "last_seen": "2026-11-11"
+ },
+ {
+  "crop_name": "小卷(凍)",
+  "crop_code": "3166 ",
+  "qty_ton": 72.3,
+  "avg_price_kg": 90.1,
+  "trade_days": 130,
+  "markets": "台北/三重/基隆/桃園/新竹",
+  "last_seen": "2026-11-11"
+ },
+ {
+  "crop_name": "狗母",
+  "crop_code": "2211 ",
+  "qty_ton": 70.8,
+  "avg_price_kg": 48.4,
+  "trade_days": 249,
+  "markets": "台北/三重/桃園/新竹",
+  "last_seen": "2026-11-11"
+ },
+ {
+  "crop_name": "柳葉魚(凍)",
+  "crop_code": "3632 ",
+  "qty_ton": 70.6,
+  "avg_price_kg": 89.4,
+  "trade_days": 252,
+  "markets": "台北/三重/桃園/新竹",
+  "last_seen": "2026-11-11"
+ },
+ {
+  "crop_name": "花市仔",
+  "crop_code": "4521 ",
+  "qty_ton": 68,
+  "avg_price_kg": 115.2,
+  "trade_days": 222,
+  "markets": "台北/基隆/桃園/新竹",
+  "last_seen": "2026-11-11"
+ },
+ {
+  "crop_name": "鮭魚頭/尾",
+  "crop_code": "2782 ",
+  "qty_ton": 66.7,
+  "avg_price_kg": 60.5,
+  "trade_days": 250,
+  "markets": "三重/桃園/新竹",
+  "last_seen": "2026-11-11"
+ },
+ {
+  "crop_name": "烏鰡",
+  "crop_code": "1027 ",
+  "qty_ton": 65.3,
+  "avg_price_kg": 102.1,
+  "trade_days": 245,
+  "markets": "台北/三重/桃園/新竹",
+  "last_seen": "2026-11-11"
+ },
+ {
+  "crop_name": "甘瓜仔",
+  "crop_code": "2077 ",
+  "qty_ton": 64.5,
+  "avg_price_kg": 125.5,
+  "trade_days": 256,
+  "markets": "台北/桃園/新竹",
+  "last_seen": "2026-11-11"
+ },
+ {
+  "crop_name": "石斑魚",
+  "crop_code": "2201 ",
+  "qty_ton": 63.7,
+  "avg_price_kg": 320.1,
+  "trade_days": 258,
+  "markets": "台北/三重/桃園/新竹",
+  "last_seen": "2026-11-11"
+ },
+ {
+  "crop_name": "紅鰽",
+  "crop_code": "1164 ",
+  "qty_ton": 63.4,
+  "avg_price_kg": 209.1,
+  "trade_days": 256,
+  "markets": "台北/桃園/新竹",
+  "last_seen": "2026-11-11"
+ },
+ {
+  "crop_name": "馬加",
+  "crop_code": "2142 ",
+  "qty_ton": 62.8,
+  "avg_price_kg": 255.6,
+  "trade_days": 255,
+  "markets": "台北/桃園/新竹",
+  "last_seen": "2026-11-11"
+ },
+ {
+  "crop_name": "四破",
+  "crop_code": "2071 ",
+  "qty_ton": 58.3,
+  "avg_price_kg": 66.2,
+  "trade_days": 142,
+  "markets": "台北/三重/桃園/新竹",
+  "last_seen": "2026-11-11"
+ },
+ {
+  "crop_name": "海菜",
+  "crop_code": "6101 ",
+  "qty_ton": 57.6,
+  "avg_price_kg": 21.3,
+  "trade_days": 192,
+  "markets": "三重/桃園/新竹",
+  "last_seen": "2026-11-10"
+ },
+ {
+  "crop_name": "蟳",
+  "crop_code": "4511 ",
+  "qty_ton": 57.2,
+  "avg_price_kg": 232.7,
+  "trade_days": 251,
+  "markets": "台北/桃園/新竹",
+  "last_seen": "2026-11-11"
+ },
+ {
+  "crop_name": "魷魚",
+  "crop_code": "2161 ",
+  "qty_ton": 53.1,
+  "avg_price_kg": 109.2,
+  "trade_days": 230,
+  "markets": "桃園/新竹",
+  "last_seen": "2026-09-30"
+ },
+ {
+  "crop_name": "土魠",
+  "crop_code": "2141 ",
+  "qty_ton": 51.3,
+  "avg_price_kg": 305.4,
+  "trade_days": 211,
+  "markets": "台北/三重/桃園/新竹",
+  "last_seen": "2026-11-11"
+ },
+ {
+  "crop_name": "紅蝦海",
+  "crop_code": "4101 ",
+  "qty_ton": 50.7,
+  "avg_price_kg": 94.2,
+  "trade_days": 86,
+  "markets": "台北/基隆",
+  "last_seen": "2026-11-09"
+ },
+ {
+  "crop_name": "虱目魚肚",
+  "crop_code": "1042 ",
+  "qty_ton": 50.4,
+  "avg_price_kg": 220.7,
+  "trade_days": 259,
+  "markets": "台北/三重/桃園/新竹",
+  "last_seen": "2026-11-11"
+ },
+ {
+  "crop_name": "比目魚片",
+  "crop_code": "6009 ",
+  "qty_ton": 50.3,
+  "avg_price_kg": 119.1,
+  "trade_days": 252,
+  "markets": "三重/桃園",
+  "last_seen": "2026-11-11"
+ },
+ {
+  "crop_name": "紅尾",
+  "crop_code": "2075 ",
+  "qty_ton": 49.6,
+  "avg_price_kg": 45.6,
+  "trade_days": 225,
+  "markets": "台北/基隆/桃園/新竹",
+  "last_seen": "2026-11-11"
+ },
+ {
+  "crop_name": "鯉魚",
+  "crop_code": "1021 ",
+  "qty_ton": 48.6,
+  "avg_price_kg": 56.9,
+  "trade_days": 242,
+  "markets": "台北/三重/桃園/新竹",
+  "last_seen": "2026-11-11"
+ },
+ {
+  "crop_name": "烏仔魚",
+  "crop_code": "1051 ",
+  "qty_ton": 48.2,
+  "avg_price_kg": 59,
+  "trade_days": 249,
+  "markets": "台北/三重/桃園/新竹",
+  "last_seen": "2026-11-11"
+ },
+ {
+  "crop_name": "金龍、石鱸",
+  "crop_code": "2511 ",
+  "qty_ton": 47.9,
+  "avg_price_kg": 169.6,
+  "trade_days": 254,
+  "markets": "台北/桃園/新竹",
+  "last_seen": "2026-11-11"
+ },
+ {
+  "crop_name": "鮸魚",
+  "crop_code": "2067 ",
+  "qty_ton": 47.6,
+  "avg_price_kg": 153.7,
+  "trade_days": 241,
+  "markets": "台北/三重/桃園/新竹",
+  "last_seen": "2026-11-11"
+ },
+ {
+  "crop_name": "黑口",
+  "crop_code": "2063 ",
+  "qty_ton": 47.1,
+  "avg_price_kg": 97.2,
+  "trade_days": 256,
+  "markets": "台北/三重/桃園/新竹",
+  "last_seen": "2026-11-11"
+ },
+ {
+  "crop_name": "銀花鱸",
+  "crop_code": "1074 ",
+  "qty_ton": 46.1,
+  "avg_price_kg": 137.1,
+  "trade_days": 157,
+  "markets": "台北/三重/桃園/新竹",
+  "last_seen": "2026-11-04"
+ },
+ {
+  "crop_name": "烏殼",
+  "crop_code": "2603 ",
+  "qty_ton": 45.8,
+  "avg_price_kg": 75.6,
+  "trade_days": 93,
+  "markets": "台北/三重/桃園/新竹",
+  "last_seen": "2026-11-11"
+ },
+ {
+  "crop_name": "黑鯛",
+  "crop_code": "2015 ",
+  "qty_ton": 43.9,
+  "avg_price_kg": 188.4,
+  "trade_days": 260,
+  "markets": "台北/三重/桃園/新竹",
+  "last_seen": "2026-11-11"
+ },
+ {
+  "crop_name": "黑鯧",
+  "crop_code": "2092 ",
+  "qty_ton": 43.9,
+  "avg_price_kg": 177.7,
+  "trade_days": 255,
+  "markets": "台北/三重/桃園/新竹",
+  "last_seen": "2026-11-11"
+ },
+ {
+  "crop_name": "海鰻",
+  "crop_code": "2221 ",
+  "qty_ton": 42.8,
+  "avg_price_kg": 87.3,
+  "trade_days": 242,
+  "markets": "台北/桃園/新竹",
+  "last_seen": "2026-11-11"
+ },
+ {
+  "crop_name": "真鰹",
+  "crop_code": "2121 ",
+  "qty_ton": 41.9,
+  "avg_price_kg": 44,
+  "trade_days": 246,
+  "markets": "三重/桃園",
+  "last_seen": "2026-11-11"
+ },
+ {
+  "crop_name": "白皮旗",
+  "crop_code": "2134 ",
+  "qty_ton": 41.8,
+  "avg_price_kg": 182.9,
+  "trade_days": 249,
+  "markets": "台北",
+  "last_seen": "2026-11-11"
+ },
+ {
+  "crop_name": "三牙",
+  "crop_code": "2062 ",
+  "qty_ton": 41.6,
+  "avg_price_kg": 99.9,
+  "trade_days": 226,
+  "markets": "台北/桃園/新竹",
+  "last_seen": "2026-11-11"
+ },
+ {
+  "crop_name": "土魠(凍)",
+  "crop_code": "3141 ",
+  "qty_ton": 39.3,
+  "avg_price_kg": 175.1,
+  "trade_days": 232,
+  "markets": "三重/桃園/新竹",
+  "last_seen": "2026-11-11"
+ },
+ {
+  "crop_name": "花枝(凍)",
+  "crop_code": "3163 ",
+  "qty_ton": 39,
+  "avg_price_kg": 105.1,
+  "trade_days": 186,
+  "markets": "台北/三重/基隆/桃園/新竹",
+  "last_seen": "2026-11-09"
+ },
+ {
+  "crop_name": "大正蝦海",
+  "crop_code": "4061 ",
+  "qty_ton": 38.4,
+  "avg_price_kg": 884.4,
+  "trade_days": 107,
+  "markets": "基隆/桃園/新竹",
+  "last_seen": "2026-11-10"
+ },
+ {
+  "crop_name": "紅魽",
+  "crop_code": "2079 ",
+  "qty_ton": 37.5,
+  "avg_price_kg": 186.2,
+  "trade_days": 244,
+  "markets": "台北/三重/桃園/新竹",
+  "last_seen": "2026-11-11"
+ },
+ {
+  "crop_name": "軟舌、軟絲",
+  "crop_code": "2165 ",
+  "qty_ton": 37.2,
+  "avg_price_kg": 233.9,
+  "trade_days": 251,
+  "markets": "台北/桃園/新竹",
+  "last_seen": "2026-11-11"
+ },
+ {
+  "crop_name": "龍尖、青嘴",
+  "crop_code": "2191 ",
+  "qty_ton": 36.9,
+  "avg_price_kg": 80.1,
+  "trade_days": 223,
+  "markets": "台北/桃園/新竹",
+  "last_seen": "2026-11-11"
+ },
+ {
+  "crop_name": "小卷",
+  "crop_code": "2166 ",
+  "qty_ton": 36.4,
+  "avg_price_kg": 123.6,
+  "trade_days": 182,
+  "markets": "三重/桃園/新竹",
+  "last_seen": "2026-11-11"
+ },
+ {
+  "crop_name": "淡水珍珠石斑",
+  "crop_code": "1172 ",
+  "qty_ton": 36.4,
+  "avg_price_kg": 140.6,
+  "trade_days": 199,
+  "markets": "台北/三重/桃園/新竹",
+  "last_seen": "2026-11-11"
+ },
+ {
+  "crop_name": "熟鯖魚",
+  "crop_code": "6081 ",
+  "qty_ton": 36.2,
+  "avg_price_kg": 135.4,
+  "trade_days": 252,
+  "markets": "三重/桃園",
+  "last_seen": "2026-11-11"
+ },
+ {
+  "crop_name": "其他鰹類",
+  "crop_code": "2129 ",
+  "qty_ton": 36,
+  "avg_price_kg": 54.9,
+  "trade_days": 178,
+  "markets": "桃園/新竹",
+  "last_seen": "2026-11-11"
+ },
+ {
+  "crop_name": "田蛙",
+  "crop_code": "1141 ",
+  "qty_ton": 35.9,
+  "avg_price_kg": 77.7,
+  "trade_days": 252,
+  "markets": "台北/桃園",
+  "last_seen": "2026-11-11"
+ },
+ {
+  "crop_name": "章魚(凍)",
+  "crop_code": "3169 ",
+  "qty_ton": 35.3,
+  "avg_price_kg": 89.4,
+  "trade_days": 55,
+  "markets": "台北/基隆",
+  "last_seen": "2026-11-10"
+ },
+ {
+  "crop_name": "白北",
+  "crop_code": "2143 ",
+  "qty_ton": 34.8,
+  "avg_price_kg": 312,
+  "trade_days": 239,
+  "markets": "台北/三重/桃園/新竹",
+  "last_seen": "2026-11-11"
+ },
+ {
+  "crop_name": "鱝(魴仔)",
+  "crop_code": "2351 ",
+  "qty_ton": 31.8,
+  "avg_price_kg": 38.2,
+  "trade_days": 250,
+  "markets": "台北/三重/桃園/新竹",
+  "last_seen": "2026-11-11"
+ },
+ {
+  "crop_name": "紅目鰱",
+  "crop_code": "2051 ",
+  "qty_ton": 31.3,
+  "avg_price_kg": 200.6,
+  "trade_days": 250,
+  "markets": "台北/桃園/新竹",
+  "last_seen": "2026-11-11"
+ },
+ {
+  "crop_name": "鮭魚片",
+  "crop_code": "6010 ",
+  "qty_ton": 30.6,
+  "avg_price_kg": 115.7,
+  "trade_days": 251,
+  "markets": "三重/桃園/新竹",
+  "last_seen": "2026-11-11"
+ },
+ {
+  "crop_name": "什魚",
+  "crop_code": "2562 ",
+  "qty_ton": 30.5,
+  "avg_price_kg": 57.8,
+  "trade_days": 247,
+  "markets": "三重/基隆/桃園/新竹",
+  "last_seen": "2026-11-11"
+ },
+ {
+  "crop_name": "蜆(養)",
+  "crop_code": "5092 ",
+  "qty_ton": 30.1,
+  "avg_price_kg": 104.7,
+  "trade_days": 52,
+  "markets": "台北/桃園",
+  "last_seen": "2026-07-14"
+ },
+ {
+  "crop_name": "長鰭鮪",
+  "crop_code": "2111 ",
+  "qty_ton": 27.7,
+  "avg_price_kg": 119.3,
+  "trade_days": 182,
+  "markets": "台北",
+  "last_seen": "2026-11-10"
+ },
+ {
+  "crop_name": "白秋蝦海",
+  "crop_code": "4081 ",
+  "qty_ton": 27.4,
+  "avg_price_kg": 81.7,
+  "trade_days": 42,
+  "markets": "台北/基隆/新竹",
+  "last_seen": "2026-11-09"
+ },
+ {
+  "crop_name": "鮭魚頭/尾凍",
+  "crop_code": "3782 ",
+  "qty_ton": 27.3,
+  "avg_price_kg": 49.5,
+  "trade_days": 224,
+  "markets": "三重/新竹",
+  "last_seen": "2026-11-11"
+ },
+ {
+  "crop_name": "黃鍚鯛",
+  "crop_code": "1165 ",
+  "qty_ton": 26.6,
+  "avg_price_kg": 228.6,
+  "trade_days": 253,
+  "markets": "台北/桃園/新竹",
+  "last_seen": "2026-11-11"
+ },
+ {
+  "crop_name": "剝皮魚",
+  "crop_code": "2571 ",
+  "qty_ton": 24.3,
+  "avg_price_kg": 180.1,
+  "trade_days": 256,
+  "markets": "台北/三重/桃園/新竹",
+  "last_seen": "2026-11-11"
+ },
+ {
+  "crop_name": "其他鯧類",
+  "crop_code": "2099 ",
+  "qty_ton": 24.3,
+  "avg_price_kg": 118.5,
+  "trade_days": 254,
+  "markets": "三重/桃園/新竹",
+  "last_seen": "2026-11-11"
+ },
+ {
+  "crop_name": "小串仔",
+  "crop_code": "2115 ",
+  "qty_ton": 24.1,
+  "avg_price_kg": 74.1,
+  "trade_days": 249,
+  "markets": "三重/桃園/新竹",
+  "last_seen": "2026-11-11"
+ },
+ {
+  "crop_name": "其他蟹類",
+  "crop_code": "4999 ",
+  "qty_ton": 24,
+  "avg_price_kg": 124.6,
+  "trade_days": 242,
+  "markets": "台北/基隆/桃園/新竹",
+  "last_seen": "2026-11-11"
+ },
+ {
+  "crop_name": "鯊條",
+  "crop_code": "2152 ",
+  "qty_ton": 23.3,
+  "avg_price_kg": 30.8,
+  "trade_days": 230,
+  "markets": "桃園/新竹",
+  "last_seen": "2026-11-10"
+ },
+ {
+  "crop_name": "雙髻鮫",
+  "crop_code": "2160 ",
+  "qty_ton": 21.1,
+  "avg_price_kg": 70.4,
+  "trade_days": 219,
+  "markets": "新竹",
+  "last_seen": "2026-11-10"
+ },
+ {
+  "crop_name": "英哥",
+  "crop_code": "2481 ",
+  "qty_ton": 20.7,
+  "avg_price_kg": 197.2,
+  "trade_days": 240,
+  "markets": "台北/桃園/新竹",
+  "last_seen": "2026-11-11"
+ },
+ {
+  "crop_name": "青筆、雞仔魚",
+  "crop_code": "2541 ",
+  "qty_ton": 20.3,
+  "avg_price_kg": 162.7,
+  "trade_days": 257,
+  "markets": "台北/桃園/新竹",
+  "last_seen": "2026-11-11"
+ },
+ {
+  "crop_name": "金線",
+  "crop_code": "2021 ",
+  "qty_ton": 20.2,
+  "avg_price_kg": 228.2,
+  "trade_days": 246,
+  "markets": "台北/三重/桃園/新竹",
+  "last_seen": "2026-11-11"
+ },
+ {
+  "crop_name": "熟卷",
+  "crop_code": "6050 ",
+  "qty_ton": 19.6,
+  "avg_price_kg": 257.5,
+  "trade_days": 178,
+  "markets": "台北/三重/桃園/新竹",
+  "last_seen": "2026-11-11"
+ },
+ {
+  "crop_name": "海鱺",
+  "crop_code": "2491 ",
+  "qty_ton": 18.7,
+  "avg_price_kg": 346,
+  "trade_days": 229,
+  "markets": "台北/桃園/新竹",
+  "last_seen": "2026-11-11"
+ },
+ {
+  "crop_name": "秋姑",
+  "crop_code": "2041 ",
+  "qty_ton": 18.4,
+  "avg_price_kg": 101.7,
+  "trade_days": 240,
+  "markets": "台北/桃園/新竹",
+  "last_seen": "2026-11-11"
+ },
+ {
+  "crop_name": "魚內臟",
+  "crop_code": "6111 ",
+  "qty_ton": 17.7,
+  "avg_price_kg": 64.6,
+  "trade_days": 60,
+  "markets": "三重/桃園",
+  "last_seen": "2026-03-17"
+ },
+ {
+  "crop_name": "魚丸",
+  "crop_code": "6031 ",
+  "qty_ton": 17.7,
+  "avg_price_kg": 62.5,
+  "trade_days": 245,
+  "markets": "三重/桃園",
+  "last_seen": "2026-11-11"
+ },
+ {
+  "crop_name": "軟舌、軟絲(凍)",
+  "crop_code": "3165 ",
+  "qty_ton": 17.4,
+  "avg_price_kg": 273.4,
+  "trade_days": 250,
+  "markets": "台北/桃園/新竹",
+  "last_seen": "2026-11-11"
+ },
+ {
+  "crop_name": "豆仔魚",
+  "crop_code": "1061 ",
+  "qty_ton": 16.9,
+  "avg_price_kg": 145.9,
+  "trade_days": 241,
+  "markets": "台北/桃園/新竹",
+  "last_seen": "2026-11-11"
+ },
+ {
+  "crop_name": "飛魚",
+  "crop_code": "2281 ",
+  "qty_ton": 16.7,
+  "avg_price_kg": 65.9,
+  "trade_days": 54,
+  "markets": "台北/桃園/新竹",
+  "last_seen": "2026-09-30"
+ },
+ {
+  "crop_name": "黑鯧(凍)",
+  "crop_code": "3092 ",
+  "qty_ton": 15.7,
+  "avg_price_kg": 110.2,
+  "trade_days": 249,
+  "markets": "三重/桃園/新竹",
+  "last_seen": "2026-11-11"
+ },
+ {
+  "crop_name": "海鯰",
+  "crop_code": "2231 ",
+  "qty_ton": 15.5,
+  "avg_price_kg": 29,
+  "trade_days": 207,
+  "markets": "台北/桃園/新竹",
+  "last_seen": "2026-11-11"
+ },
+ {
+  "crop_name": "海瓜子",
+  "crop_code": "5888 ",
+  "qty_ton": 14.9,
+  "avg_price_kg": 142.2,
+  "trade_days": 233,
+  "markets": "桃園/新竹",
+  "last_seen": "2026-11-11"
+ },
+ {
+  "crop_name": "旗魚肉",
+  "crop_code": "2136 ",
+  "qty_ton": 13.9,
+  "avg_price_kg": 142.3,
+  "trade_days": 218,
+  "markets": "三重/桃園",
+  "last_seen": "2026-11-11"
+ },
+ {
+  "crop_name": "厚唇",
+  "crop_code": "2431 ",
+  "qty_ton": 13.9,
+  "avg_price_kg": 148.5,
+  "trade_days": 250,
+  "markets": "台北/新竹",
+  "last_seen": "2026-11-11"
+ },
+ {
+  "crop_name": "烏母",
+  "crop_code": "2601 ",
+  "qty_ton": 13.5,
+  "avg_price_kg": 176.2,
+  "trade_days": 82,
+  "markets": "新竹",
+  "last_seen": "2026-11-11"
+ },
+ {
+  "crop_name": "秋哥",
+  "crop_code": "2471 ",
+  "qty_ton": 13.2,
+  "avg_price_kg": 75.6,
+  "trade_days": 57,
+  "markets": "台北/桃園",
+  "last_seen": "2026-11-10"
+ },
+ {
+  "crop_name": "其他鯧類(凍)",
+  "crop_code": "3099 ",
+  "qty_ton": 12.9,
+  "avg_price_kg": 111.7,
+  "trade_days": 230,
+  "markets": "桃園",
+  "last_seen": "2026-11-11"
+ },
+ {
+  "crop_name": "青鱗",
+  "crop_code": "2102 ",
+  "qty_ton": 12.5,
+  "avg_price_kg": 70,
+  "trade_days": 11,
+  "markets": "台北/桃園",
+  "last_seen": "2026-07-07"
+ },
+ {
+  "crop_name": "泰國蝦養",
+  "crop_code": "4032 ",
+  "qty_ton": 12.4,
+  "avg_price_kg": 166.3,
+  "trade_days": 248,
+  "markets": "桃園/新竹",
+  "last_seen": "2026-11-11"
+ },
+ {
+  "crop_name": "丁香",
+  "crop_code": "2105 ",
+  "qty_ton": 12.4,
+  "avg_price_kg": 97.1,
+  "trade_days": 226,
+  "markets": "桃園/新竹",
+  "last_seen": "2026-11-11"
+ },
+ {
+  "crop_name": "厚殼蝦海",
+  "crop_code": "4091 ",
+  "qty_ton": 12.3,
+  "avg_price_kg": 127.1,
+  "trade_days": 82,
+  "markets": "台北/新竹",
+  "last_seen": "2026-11-10"
+ },
+ {
+  "crop_name": "下雜魚",
+  "crop_code": "2564 ",
+  "qty_ton": 12.3,
+  "avg_price_kg": 15.1,
+  "trade_days": 162,
+  "markets": "基隆/新竹",
+  "last_seen": "2026-11-11"
+ },
+ {
+  "crop_name": "扁魚",
+  "crop_code": "2401 ",
+  "qty_ton": 12.3,
+  "avg_price_kg": 66.9,
+  "trade_days": 201,
+  "markets": "台北/桃園/新竹",
+  "last_seen": "2026-11-11"
+ },
+ {
+  "crop_name": "石喬",
+  "crop_code": "2145 ",
+  "qty_ton": 12.1,
+  "avg_price_kg": 164.1,
+  "trade_days": 160,
+  "markets": "台北/桃園/新竹",
+  "last_seen": "2026-11-10"
+ },
+ {
+  "crop_name": "蘆蝦海",
+  "crop_code": "4111 ",
+  "qty_ton": 11.9,
+  "avg_price_kg": 210.6,
+  "trade_days": 29,
+  "markets": "台北/基隆/新竹",
+  "last_seen": "2026-06-16"
+ },
+ {
+  "crop_name": "白鯧(凍)",
+  "crop_code": "3091 ",
+  "qty_ton": 11.3,
+  "avg_price_kg": 352.1,
+  "trade_days": 237,
+  "markets": "台北/三重/桃園/新竹",
+  "last_seen": "2026-11-11"
+ },
+ {
+  "crop_name": "煙仔虎(凍)",
+  "crop_code": "3124 ",
+  "qty_ton": 11.2,
+  "avg_price_kg": 31,
+  "trade_days": 3,
+  "markets": "基隆/新竹",
+  "last_seen": "2026-08-25"
+ },
+ {
+  "crop_name": "紅古",
+  "crop_code": "2082 ",
+  "qty_ton": 10.4,
+  "avg_price_kg": 71.2,
+  "trade_days": 114,
+  "markets": "台北/三重/桃園/新竹",
+  "last_seen": "2026-11-05"
+ },
+ {
+  "crop_name": "紅條(凍)",
+  "crop_code": "3203 ",
+  "qty_ton": 10.4,
+  "avg_price_kg": 454.9,
+  "trade_days": 232,
+  "markets": "台北/桃園",
+  "last_seen": "2026-11-11"
+ },
+ {
+  "crop_name": "國光、角仔魚",
+  "crop_code": "2531 ",
+  "qty_ton": 10.2,
+  "avg_price_kg": 26.2,
+  "trade_days": 162,
+  "markets": "台北/三重/桃園/新竹",
+  "last_seen": "2026-11-11"
+ },
+ {
+  "crop_name": "油魚",
+  "crop_code": "2321 ",
+  "qty_ton": 9.6,
+  "avg_price_kg": 68.8,
+  "trade_days": 221,
+  "markets": "台北/桃園/新竹",
+  "last_seen": "2026-11-11"
+ },
+ {
+  "crop_name": "赤筆",
+  "crop_code": "2501 ",
+  "qty_ton": 9.2,
+  "avg_price_kg": 255,
+  "trade_days": 243,
+  "markets": "台北/桃園/新竹",
+  "last_seen": "2026-11-11"
+ },
+ {
+  "crop_name": "阿根廷魷魚頭",
+  "crop_code": "3172 ",
+  "qty_ton": 9.2,
+  "avg_price_kg": 51.9,
+  "trade_days": 105,
+  "markets": "桃園",
+  "last_seen": "2026-11-11"
+ },
+ {
+  "crop_name": "長加",
+  "crop_code": "2461 ",
+  "qty_ton": 9.2,
+  "avg_price_kg": 202.7,
+  "trade_days": 189,
+  "markets": "台北/桃園/新竹",
+  "last_seen": "2026-11-11"
+ },
+ {
+  "crop_name": "銀鯧",
+  "crop_code": "2093 ",
+  "qty_ton": 8.9,
+  "avg_price_kg": 125.9,
+  "trade_days": 227,
+  "markets": "三重/桃園/新竹",
+  "last_seen": "2026-11-10"
+ },
+ {
+  "crop_name": "青魽",
+  "crop_code": "2078 ",
+  "qty_ton": 8.8,
+  "avg_price_kg": 74.2,
+  "trade_days": 162,
+  "markets": "台北/桃園/新竹",
+  "last_seen": "2026-11-06"
+ },
+ {
+  "crop_name": "目孔",
+  "crop_code": "2072 ",
+  "qty_ton": 8.7,
+  "avg_price_kg": 103.5,
+  "trade_days": 130,
+  "markets": "台北/桃園/新竹",
+  "last_seen": "2026-11-11"
+ },
+ {
+  "crop_name": "龍舌",
+  "crop_code": "2411 ",
+  "qty_ton": 8.6,
+  "avg_price_kg": 119.1,
+  "trade_days": 211,
+  "markets": "台北/桃園/新竹",
+  "last_seen": "2026-11-11"
+ },
+ {
+  "crop_name": "石狗公",
+  "crop_code": "2440 ",
+  "qty_ton": 8.5,
+  "avg_price_kg": 167.6,
+  "trade_days": 234,
+  "markets": "桃園/新竹",
+  "last_seen": "2026-11-11"
+ },
+ {
+  "crop_name": "其他熟魚",
+  "crop_code": "6099 ",
+  "qty_ton": 7.9,
+  "avg_price_kg": 130.5,
+  "trade_days": 195,
+  "markets": "台北/桃園/新竹",
+  "last_seen": "2026-11-11"
+ },
+ {
+  "crop_name": "象魚(臭肚)",
+  "crop_code": "2563 ",
+  "qty_ton": 7.2,
+  "avg_price_kg": 133.7,
+  "trade_days": 198,
+  "markets": "桃園/新竹",
+  "last_seen": "2026-11-11"
+ },
+ {
+  "crop_name": "富貴魚、燕鯧",
+  "crop_code": "1201 ",
+  "qty_ton": 7.1,
+  "avg_price_kg": 150.9,
+  "trade_days": 96,
+  "markets": "桃園/新竹",
+  "last_seen": "2026-11-10"
+ },
+ {
+  "crop_name": "龍膽石斑",
+  "crop_code": "1173 ",
+  "qty_ton": 6.9,
+  "avg_price_kg": 128.8,
+  "trade_days": 106,
+  "markets": "三重/桃園/新竹",
+  "last_seen": "2026-11-06"
+ },
+ {
+  "crop_name": "鱒魚",
+  "crop_code": "1121 ",
+  "qty_ton": 6.2,
+  "avg_price_kg": 211.9,
+  "trade_days": 69,
+  "markets": "台北/三重/桃園/新竹",
+  "last_seen": "2026-11-10"
+ },
+ {
+  "crop_name": "魚肚",
+  "crop_code": "6110 ",
+  "qty_ton": 6.1,
+  "avg_price_kg": 13.2,
+  "trade_days": 97,
+  "markets": "三重/桃園",
+  "last_seen": "2026-10-30"
+ },
+ {
+  "crop_name": "赤翅",
+  "crop_code": "1162 ",
+  "qty_ton": 5.8,
+  "avg_price_kg": 249.8,
+  "trade_days": 152,
+  "markets": "台北/桃園/新竹",
+  "last_seen": "2026-11-11"
+ },
+ {
+  "crop_name": "勿仔(凍)",
+  "crop_code": "3106 ",
+  "qty_ton": 5.7,
+  "avg_price_kg": 178.9,
+  "trade_days": 160,
+  "markets": "三重/桃園",
+  "last_seen": "2026-11-11"
+ },
+ {
+  "crop_name": "象魚、臭肚",
+  "crop_code": "1170 ",
+  "qty_ton": 5.5,
+  "avg_price_kg": 108,
+  "trade_days": 134,
+  "markets": "台北/新竹",
+  "last_seen": "2026-11-06"
+ },
+ {
+  "crop_name": "沙腸",
+  "crop_code": "2551 ",
+  "qty_ton": 5,
+  "avg_price_kg": 100.9,
+  "trade_days": 137,
+  "markets": "桃園/新竹",
+  "last_seen": "2026-11-10"
+ },
+ {
+  "crop_name": "烏公",
+  "crop_code": "1062 ",
+  "qty_ton": 5,
+  "avg_price_kg": 124.7,
+  "trade_days": 70,
+  "markets": "三重/桃園/新竹",
+  "last_seen": "2026-11-11"
+ },
+ {
+  "crop_name": "太平洋黑鮪肉",
+  "crop_code": "2116 ",
+  "qty_ton": 4.9,
+  "avg_price_kg": 413.8,
+  "trade_days": 41,
+  "markets": "新竹",
+  "last_seen": "2026-07-14"
+ },
+ {
+  "crop_name": "其他烏魚",
+  "crop_code": "2609 ",
+  "qty_ton": 4.8,
+  "avg_price_kg": 77.7,
+  "trade_days": 140,
+  "markets": "桃園/新竹",
+  "last_seen": "2026-11-11"
+ },
+ {
+  "crop_name": "牛尾",
+  "crop_code": "2441 ",
+  "qty_ton": 4.8,
+  "avg_price_kg": 75.1,
+  "trade_days": 204,
+  "markets": "台北/桃園/新竹",
+  "last_seen": "2026-11-10"
+ },
+ {
+  "crop_name": "尖梭(凍)",
+  "crop_code": "3301 ",
+  "qty_ton": 4.3,
+  "avg_price_kg": 30,
+  "trade_days": 1,
+  "markets": "基隆",
+  "last_seen": "2026-07-13"
+ },
+ {
+  "crop_name": "其他鮪魚",
+  "crop_code": "2119 ",
+  "qty_ton": 4.1,
+  "avg_price_kg": 180.4,
+  "trade_days": 90,
+  "markets": "桃園/新竹",
+  "last_seen": "2026-10-02"
+ },
+ {
+  "crop_name": "胭脂蝦",
+  "crop_code": "4406 ",
+  "qty_ton": 4.1,
+  "avg_price_kg": 1113.9,
+  "trade_days": 4,
+  "markets": "基隆",
+  "last_seen": "2026-08-31"
+ },
+ {
+  "crop_name": "赤海",
+  "crop_code": "2031 ",
+  "qty_ton": 4.1,
+  "avg_price_kg": 270.5,
+  "trade_days": 187,
+  "markets": "台北/桃園/新竹",
+  "last_seen": "2026-11-11"
+ },
+ {
+  "crop_name": "太平洋黑鮪",
+  "crop_code": "2114 ",
+  "qty_ton": 4,
+  "avg_price_kg": 220.9,
+  "trade_days": 32,
+  "markets": "新竹",
+  "last_seen": "2026-07-08"
+ },
+ {
+  "crop_name": "鐵甲",
+  "crop_code": "2076 ",
+  "qty_ton": 4,
+  "avg_price_kg": 56.5,
+  "trade_days": 139,
+  "markets": "台北/桃園/新竹",
+  "last_seen": "2026-11-11"
+ },
+ {
+  "crop_name": "水針",
+  "crop_code": "2611 ",
+  "qty_ton": 3.8,
+  "avg_price_kg": 48.9,
+  "trade_days": 138,
+  "markets": "三重/桃園/新竹",
+  "last_seen": "2026-11-11"
+ },
+ {
+  "crop_name": "溪蝦",
+  "crop_code": "4010 ",
+  "qty_ton": 3.8,
+  "avg_price_kg": 254,
+  "trade_days": 107,
+  "markets": "桃園/新竹",
+  "last_seen": "2026-11-11"
+ },
+ {
+  "crop_name": "鳳螺(海)",
+  "crop_code": "5111 ",
+  "qty_ton": 3.8,
+  "avg_price_kg": 177.8,
+  "trade_days": 85,
+  "markets": "台北/桃園/新竹",
+  "last_seen": "2026-11-06"
+ },
+ {
+  "crop_name": "水鯊",
+  "crop_code": "2157 ",
+  "qty_ton": 3.6,
+  "avg_price_kg": 29.3,
+  "trade_days": 148,
+  "markets": "新竹",
+  "last_seen": "2026-11-10"
+ },
+ {
+  "crop_name": "烏魚子",
+  "crop_code": "6052 ",
+  "qty_ton": 3.6,
+  "avg_price_kg": 351.1,
+  "trade_days": 77,
+  "markets": "三重/桃園/新竹",
+  "last_seen": "2026-10-02"
+ },
+ {
+  "crop_name": "其他頭足(凍)",
+  "crop_code": "3179 ",
+  "qty_ton": 3.5,
+  "avg_price_kg": 94.2,
+  "trade_days": 82,
+  "markets": "新竹",
+  "last_seen": "2026-10-29"
+ },
+ {
+  "crop_name": "花身",
+  "crop_code": "2017 ",
+  "qty_ton": 3.2,
+  "avg_price_kg": 47.4,
+  "trade_days": 154,
+  "markets": "台北/桃園/新竹",
+  "last_seen": "2026-11-06"
+ },
+ {
+  "crop_name": "市仔管",
+  "crop_code": "4522 ",
+  "qty_ton": 3.2,
+  "avg_price_kg": 139.3,
+  "trade_days": 89,
+  "markets": "台北/三重/桃園",
+  "last_seen": "2026-11-10"
+ },
+ {
+  "crop_name": "油魽凍",
+  "crop_code": "3081 ",
+  "qty_ton": 3.1,
+  "avg_price_kg": 95.6,
+  "trade_days": 19,
+  "markets": "新竹",
+  "last_seen": "2026-07-30"
+ },
+ {
+  "crop_name": "草蝦養",
+  "crop_code": "4012 ",
+  "qty_ton": 2.9,
+  "avg_price_kg": 231.3,
+  "trade_days": 35,
+  "markets": "台北/三重/桃園/新竹",
+  "last_seen": "2026-10-07"
+ },
+ {
+  "crop_name": "角鯊",
+  "crop_code": "2155 ",
+  "qty_ton": 2.7,
+  "avg_price_kg": 57.2,
+  "trade_days": 93,
+  "markets": "新竹",
+  "last_seen": "2026-11-10"
+ },
+ {
+  "crop_name": "黃目帶",
+  "crop_code": "2342 ",
+  "qty_ton": 2.6,
+  "avg_price_kg": 148.5,
+  "trade_days": 61,
+  "markets": "新竹",
+  "last_seen": "2026-11-10"
+ },
+ {
+  "crop_name": "西鯧",
+  "crop_code": "2094 ",
+  "qty_ton": 2.6,
+  "avg_price_kg": 45.8,
+  "trade_days": 111,
+  "markets": "桃園/新竹",
+  "last_seen": "2026-11-11"
+ },
+ {
+  "crop_name": "其他頭足",
+  "crop_code": "2179 ",
+  "qty_ton": 2.6,
+  "avg_price_kg": 110.1,
+  "trade_days": 109,
+  "markets": "桃園/新竹",
+  "last_seen": "2026-11-05"
+ },
+ {
+  "crop_name": "蝦姑海",
+  "crop_code": "4141 ",
+  "qty_ton": 2.5,
+  "avg_price_kg": 354.4,
+  "trade_days": 40,
+  "markets": "基隆/桃園/新竹",
+  "last_seen": "2026-11-09"
+ },
+ {
+  "crop_name": "鱺魚",
+  "crop_code": "1081 ",
+  "qty_ton": 2.4,
+  "avg_price_kg": 159.1,
+  "trade_days": 129,
+  "markets": "台北/三重/桃園/新竹",
+  "last_seen": "2026-11-11"
+ },
+ {
+  "crop_name": "魚皮",
+  "crop_code": "6113 ",
+  "qty_ton": 2.3,
+  "avg_price_kg": 44.1,
+  "trade_days": 83,
+  "markets": "桃園",
+  "last_seen": "2026-11-11"
+ },
+ {
+  "crop_name": "香魚(凍)",
+  "crop_code": "3631 ",
+  "qty_ton": 2.2,
+  "avg_price_kg": 166.5,
+  "trade_days": 23,
+  "markets": "桃園/新竹",
+  "last_seen": "2026-11-11"
+ },
+ {
+  "crop_name": "紅魽(凍)",
+  "crop_code": "3079 ",
+  "qty_ton": 1.9,
+  "avg_price_kg": 138.5,
+  "trade_days": 3,
+  "markets": "基隆/桃園/新竹",
+  "last_seen": "2026-11-10"
+ },
+ {
+  "crop_name": "紅尾冬",
+  "crop_code": "2083 ",
+  "qty_ton": 1.9,
+  "avg_price_kg": 133.5,
+  "trade_days": 46,
+  "markets": "台北/桃園/新竹",
+  "last_seen": "2026-10-27"
+ },
+ {
+  "crop_name": "阿根廷魷魚",
+  "crop_code": "3170 ",
+  "qty_ton": 1.9,
+  "avg_price_kg": 292.9,
+  "trade_days": 102,
+  "markets": "新竹",
+  "last_seen": "2026-11-11"
+ },
+ {
+  "crop_name": "石蟳",
+  "crop_code": "4408 ",
+  "qty_ton": 1.8,
+  "avg_price_kg": 168.3,
+  "trade_days": 37,
+  "markets": "桃園/新竹",
+  "last_seen": "2026-11-04"
+ },
+ {
+  "crop_name": "油魽",
+  "crop_code": "2081 ",
+  "qty_ton": 1.8,
+  "avg_price_kg": 408.2,
+  "trade_days": 152,
+  "markets": "桃園/新竹",
+  "last_seen": "2026-11-10"
+ },
+ {
+  "crop_name": "沙蝦海",
+  "crop_code": "4021 ",
+  "qty_ton": 1.8,
+  "avg_price_kg": 120,
+  "trade_days": 50,
+  "markets": "台北",
+  "last_seen": "2026-09-15"
+ },
+ {
+  "crop_name": "赤宗(凍)",
+  "crop_code": "3012 ",
+  "qty_ton": 1.8,
+  "avg_price_kg": 68.5,
+  "trade_days": 32,
+  "markets": "台北/桃園/新竹",
+  "last_seen": "2026-11-04"
+ },
+ {
+  "crop_name": "斑節蝦海",
+  "crop_code": "4051 ",
+  "qty_ton": 1.8,
+  "avg_price_kg": 890,
+  "trade_days": 88,
+  "markets": "台北",
+  "last_seen": "2026-11-06"
+ },
+ {
+  "crop_name": "黑鯊(凍)",
+  "crop_code": "3156 ",
+  "qty_ton": 1.7,
+  "avg_price_kg": 49.3,
+  "trade_days": 2,
+  "markets": "基隆",
+  "last_seen": "2025-11-04"
+ },
+ {
+  "crop_name": "竹梭",
+  "crop_code": "2302 ",
+  "qty_ton": 1.7,
+  "avg_price_kg": 105.5,
+  "trade_days": 77,
+  "markets": "桃園/新竹",
+  "last_seen": "2026-11-06"
+ },
+ {
+  "crop_name": "肉栓",
+  "crop_code": "2568 ",
+  "qty_ton": 1.5,
+  "avg_price_kg": 114.2,
+  "trade_days": 44,
+  "markets": "桃園/新竹",
+  "last_seen": "2026-11-06"
+ },
+ {
+  "crop_name": "剝皮魚去頭",
+  "crop_code": "2572 ",
+  "qty_ton": 1.5,
+  "avg_price_kg": 217.2,
+  "trade_days": 65,
+  "markets": "桃園/新竹",
+  "last_seen": "2026-07-21"
+ },
+ {
+  "crop_name": "三點仔",
+  "crop_code": "4513 ",
+  "qty_ton": 1.3,
+  "avg_price_kg": 237.2,
+  "trade_days": 98,
+  "markets": "桃園/新竹",
+  "last_seen": "2026-11-10"
+ },
+ {
+  "crop_name": "其他石斑魚",
+  "crop_code": "1179 ",
+  "qty_ton": 1.2,
+  "avg_price_kg": 96.9,
+  "trade_days": 28,
+  "markets": "三重/桃園/新竹",
+  "last_seen": "2026-10-27"
+ },
+ {
+  "crop_name": "黑魽",
+  "crop_code": "2080 ",
+  "qty_ton": 1.2,
+  "avg_price_kg": 314.7,
+  "trade_days": 113,
+  "markets": "台北/桃園/新竹",
+  "last_seen": "2026-11-10"
+ },
+ {
+  "crop_name": "紅蟳",
+  "crop_code": "4512 ",
+  "qty_ton": 1.2,
+  "avg_price_kg": 566.6,
+  "trade_days": 117,
+  "markets": "台北/新竹",
+  "last_seen": "2026-11-11"
+ },
+ {
+  "crop_name": "草蝦海",
+  "crop_code": "4011 ",
+  "qty_ton": 1.1,
+  "avg_price_kg": 440.6,
+  "trade_days": 74,
+  "markets": "三重/桃園/新竹",
+  "last_seen": "2026-11-10"
+ },
+ {
+  "crop_name": "烏母(養)",
+  "crop_code": "1601 ",
+  "qty_ton": 1.1,
+  "avg_price_kg": 112.7,
+  "trade_days": 9,
+  "markets": "台北/三重/桃園",
+  "last_seen": "2026-01-30"
+ },
+ {
+  "crop_name": "海鰻(凍)",
+  "crop_code": "3221 ",
+  "qty_ton": 1.1,
+  "avg_price_kg": 15,
+  "trade_days": 3,
+  "markets": "基隆/桃園",
+  "last_seen": "2026-07-15"
+ },
+ {
+  "crop_name": "加志",
+  "crop_code": "2512 ",
+  "qty_ton": 1.1,
+  "avg_price_kg": 111.6,
+  "trade_days": 66,
+  "markets": "桃園",
+  "last_seen": "2026-11-06"
+ },
+ {
+  "crop_name": "真鰹(凍)",
+  "crop_code": "3121 ",
+  "qty_ton": 1.1,
+  "avg_price_kg": 18,
+  "trade_days": 1,
+  "markets": "基隆",
+  "last_seen": "2026-08-28"
+ },
+ {
+  "crop_name": "魚腸(凍)",
+  "crop_code": "3660 ",
+  "qty_ton": 1.1,
+  "avg_price_kg": 138.3,
+  "trade_days": 27,
+  "markets": "桃園",
+  "last_seen": "2026-11-11"
+ },
+ {
+  "crop_name": "魚肉",
+  "crop_code": "6114 ",
+  "qty_ton": 1,
+  "avg_price_kg": 55.7,
+  "trade_days": 17,
+  "markets": "三重/桃園",
+  "last_seen": "2026-10-16"
+ },
+ {
+  "crop_name": "馬頭魚(凍)",
+  "crop_code": "3181 ",
+  "qty_ton": 1,
+  "avg_price_kg": 148.2,
+  "trade_days": 19,
+  "markets": "新竹",
+  "last_seen": "2026-04-24"
+ },
+ {
+  "crop_name": "闊北",
+  "crop_code": "2146 ",
+  "qty_ton": 1,
+  "avg_price_kg": 405.3,
+  "trade_days": 24,
+  "markets": "新竹",
+  "last_seen": "2026-10-30"
+ },
+ {
+  "crop_name": "扁魚(凍)",
+  "crop_code": "3401 ",
+  "qty_ton": 0.9,
+  "avg_price_kg": 56.9,
+  "trade_days": 4,
+  "markets": "基隆/桃園",
+  "last_seen": "2026-07-17"
+ },
+ {
+  "crop_name": "蜊(養)",
+  "crop_code": "5032 ",
+  "qty_ton": 0.9,
+  "avg_price_kg": 66,
+  "trade_days": 12,
+  "markets": "新竹",
+  "last_seen": "2026-09-24"
+ },
+ {
+  "crop_name": "秋刀",
+  "crop_code": "2521 ",
+  "qty_ton": 0.8,
+  "avg_price_kg": 65,
+  "trade_days": 6,
+  "markets": "三重",
+  "last_seen": "2026-01-07"
+ },
+ {
+  "crop_name": "其他黃花",
+  "crop_code": "1799 ",
+  "qty_ton": 0.8,
+  "avg_price_kg": 34.8,
+  "trade_days": 56,
+  "markets": "三重/新竹",
+  "last_seen": "2026-11-06"
+ },
+ {
+  "crop_name": "魚卵",
+  "crop_code": "6112 ",
+  "qty_ton": 0.8,
+  "avg_price_kg": 79.9,
+  "trade_days": 31,
+  "markets": "三重/桃園/新竹",
+  "last_seen": "2026-11-06"
+ },
+ {
+  "crop_name": "甲魚",
+  "crop_code": "1151 ",
+  "qty_ton": 0.7,
+  "avg_price_kg": 183.2,
+  "trade_days": 14,
+  "markets": "桃園",
+  "last_seen": "2026-03-11"
+ },
+ {
+  "crop_name": "九岩",
+  "crop_code": "2532 ",
+  "qty_ton": 0.7,
+  "avg_price_kg": 208.6,
+  "trade_days": 42,
+  "markets": "桃園/新竹",
+  "last_seen": "2026-11-10"
+ },
+ {
+  "crop_name": "烏鞭",
+  "crop_code": "2371 ",
+  "qty_ton": 0.7,
+  "avg_price_kg": 46,
+  "trade_days": 31,
+  "markets": "桃園",
+  "last_seen": "2026-11-03"
+ },
+ {
+  "crop_name": "黑口(凍)",
+  "crop_code": "3063 ",
+  "qty_ton": 0.7,
+  "avg_price_kg": 20.6,
+  "trade_days": 16,
+  "markets": "桃園/新竹",
+  "last_seen": "2026-11-10"
+ },
+ {
+  "crop_name": "紅目鰱(凍)",
+  "crop_code": "3051 ",
+  "qty_ton": 0.7,
+  "avg_price_kg": 53.9,
+  "trade_days": 22,
+  "markets": "桃園/新竹",
+  "last_seen": "2026-10-22"
+ },
+ {
+  "crop_name": "鯰魚",
+  "crop_code": "1111 ",
+  "qty_ton": 0.7,
+  "avg_price_kg": 83.9,
+  "trade_days": 33,
+  "markets": "台北/桃園/新竹",
+  "last_seen": "2026-11-06"
+ },
+ {
+  "crop_name": "狗母(凍)",
+  "crop_code": "3211 ",
+  "qty_ton": 0.6,
+  "avg_price_kg": 23,
+  "trade_days": 2,
+  "markets": "基隆",
+  "last_seen": "2026-05-27"
+ },
+ {
+  "crop_name": "鰣魚",
+  "crop_code": "2561 ",
+  "qty_ton": 0.6,
+  "avg_price_kg": 18.3,
+  "trade_days": 21,
+  "markets": "桃園",
+  "last_seen": "2026-11-11"
+ },
+ {
+  "crop_name": "白松",
+  "crop_code": "2421 ",
+  "qty_ton": 0.6,
+  "avg_price_kg": 169.7,
+  "trade_days": 79,
+  "markets": "台北",
+  "last_seen": "2026-11-06"
+ },
+ {
+  "crop_name": "石鯽",
+  "crop_code": "2241 ",
+  "qty_ton": 0.6,
+  "avg_price_kg": 363,
+  "trade_days": 9,
+  "markets": "桃園/新竹",
+  "last_seen": "2026-03-19"
+ },
+ {
+  "crop_name": "其他鯛類",
+  "crop_code": "1169 ",
+  "qty_ton": 0.6,
+  "avg_price_kg": 177.1,
+  "trade_days": 59,
+  "markets": "三重/桃園/新竹",
+  "last_seen": "2026-11-10"
+ },
+ {
+  "crop_name": "紅魚(凍)",
+  "crop_code": "3042 ",
+  "qty_ton": 0.6,
+  "avg_price_kg": 19,
+  "trade_days": 10,
+  "markets": "桃園",
+  "last_seen": "2025-11-25"
+ },
+ {
+  "crop_name": "白口(凍)",
+  "crop_code": "3064 ",
+  "qty_ton": 0.5,
+  "avg_price_kg": 44.5,
+  "trade_days": 6,
+  "markets": "三重/桃園/新竹",
+  "last_seen": "2026-04-30"
+ },
+ {
+  "crop_name": "盤仔(凍)",
+  "crop_code": "3013 ",
+  "qty_ton": 0.5,
+  "avg_price_kg": 67.8,
+  "trade_days": 10,
+  "markets": "新竹",
+  "last_seen": "2026-11-04"
+ },
+ {
+  "crop_name": "油口",
+  "crop_code": "2066 ",
+  "qty_ton": 0.5,
+  "avg_price_kg": 177,
+  "trade_days": 70,
+  "markets": "桃園/新竹",
+  "last_seen": "2026-11-04"
+ },
+ {
+  "crop_name": "咬狗",
+  "crop_code": "2391 ",
+  "qty_ton": 0.5,
+  "avg_price_kg": 239.5,
+  "trade_days": 76,
+  "markets": "桃園/新竹",
+  "last_seen": "2026-11-10"
+ },
+ {
+  "crop_name": "三角仔、金錢仔【養】",
+  "crop_code": "1086 ",
+  "qty_ton": 0.5,
+  "avg_price_kg": 275.2,
+  "trade_days": 26,
+  "markets": "桃園",
+  "last_seen": "2026-11-10"
+ },
+ {
+  "crop_name": "其他烏魚(凍)",
+  "crop_code": "3609 ",
+  "qty_ton": 0.5,
+  "avg_price_kg": 229.7,
+  "trade_days": 2,
+  "markets": "三重/基隆",
+  "last_seen": "2026-02-12"
+ },
+ {
+  "crop_name": "鮟鱇魚",
+  "crop_code": "2905 ",
+  "qty_ton": 0.5,
+  "avg_price_kg": 17,
+  "trade_days": 52,
+  "markets": "桃園/新竹",
+  "last_seen": "2026-11-04"
+ },
+ {
+  "crop_name": "午仔魚(凍)",
+  "crop_code": "3271 ",
+  "qty_ton": 0.4,
+  "avg_price_kg": 190.8,
+  "trade_days": 16,
+  "markets": "三重/桃園/新竹",
+  "last_seen": "2026-11-05"
+ },
+ {
+  "crop_name": "其他旗魚",
+  "crop_code": "2139 ",
+  "qty_ton": 0.4,
+  "avg_price_kg": 83.4,
+  "trade_days": 21,
+  "markets": "桃園/新竹",
+  "last_seen": "2026-11-04"
+ },
+ {
+  "crop_name": "翻車魚",
+  "crop_code": "2901 ",
+  "qty_ton": 0.4,
+  "avg_price_kg": 64.7,
+  "trade_days": 14,
+  "markets": "桃園/新竹",
+  "last_seen": "2026-11-05"
+ },
+ {
+  "crop_name": "金線(凍)",
+  "crop_code": "3021 ",
+  "qty_ton": 0.4,
+  "avg_price_kg": 58.8,
+  "trade_days": 17,
+  "markets": "桃園/新竹",
+  "last_seen": "2026-10-14"
+ },
+ {
+  "crop_name": "萬引",
+  "crop_code": "2292 ",
+  "qty_ton": 0.4,
+  "avg_price_kg": 58.3,
+  "trade_days": 16,
+  "markets": "桃園",
+  "last_seen": "2026-06-05"
+ },
+ {
+  "crop_name": "變身苦",
+  "crop_code": "2242 ",
+  "qty_ton": 0.4,
+  "avg_price_kg": 129,
+  "trade_days": 40,
+  "markets": "桃園/新竹",
+  "last_seen": "2026-11-03"
+ },
+ {
+  "crop_name": "馬加(凍)",
+  "crop_code": "3142 ",
+  "qty_ton": 0.4,
+  "avg_price_kg": 83.3,
+  "trade_days": 6,
+  "markets": "新竹",
+  "last_seen": "2026-02-03"
+ },
+ {
+  "crop_name": "剝皮魚(凍)",
+  "crop_code": "3571 ",
+  "qty_ton": 0.4,
+  "avg_price_kg": 169.2,
+  "trade_days": 24,
+  "markets": "台北/桃園/新竹",
+  "last_seen": "2026-11-05"
+ },
+ {
+  "crop_name": "圓花鰹",
+  "crop_code": "2123 ",
+  "qty_ton": 0.3,
+  "avg_price_kg": 55.6,
+  "trade_days": 10,
+  "markets": "台北",
+  "last_seen": "2026-10-16"
+ },
+ {
+  "crop_name": "鰺魚",
+  "crop_code": "2085 ",
+  "qty_ton": 0.3,
+  "avg_price_kg": 150.8,
+  "trade_days": 51,
+  "markets": "桃園/新竹",
+  "last_seen": "2026-11-10"
+ },
+ {
+  "crop_name": "烏公(養)",
+  "crop_code": "1602 ",
+  "qty_ton": 0.3,
+  "avg_price_kg": 65.6,
+  "trade_days": 3,
+  "markets": "桃園",
+  "last_seen": "2026-01-15"
+ },
+ {
+  "crop_name": "黃鰭鮪",
+  "crop_code": "2113 ",
+  "qty_ton": 0.3,
+  "avg_price_kg": 76.1,
+  "trade_days": 5,
+  "markets": "新竹",
+  "last_seen": "2026-11-03"
+ },
+ {
+  "crop_name": "鱙仔",
+  "crop_code": "2103 ",
+  "qty_ton": 0.3,
+  "avg_price_kg": 72.1,
+  "trade_days": 10,
+  "markets": "桃園/新竹",
+  "last_seen": "2026-11-06"
+ },
+ {
+  "crop_name": "加鱲(凍)",
+  "crop_code": "3011 ",
+  "qty_ton": 0.3,
+  "avg_price_kg": 62.7,
+  "trade_days": 19,
+  "markets": "桃園/新竹",
+  "last_seen": "2026-08-27"
+ },
+ {
+  "crop_name": "文蛤(海)",
+  "crop_code": "5021 ",
+  "qty_ton": 0.3,
+  "avg_price_kg": 103.8,
+  "trade_days": 4,
+  "markets": "桃園/新竹",
+  "last_seen": "2026-09-15"
+ },
+ {
+  "crop_name": "紅鰽海",
+  "crop_code": "2048 ",
+  "qty_ton": 0.3,
+  "avg_price_kg": 226.4,
+  "trade_days": 95,
+  "markets": "桃園/新竹",
+  "last_seen": "2026-11-11"
+ },
+ {
+  "crop_name": "熟四破",
+  "crop_code": "6061 ",
+  "qty_ton": 0.3,
+  "avg_price_kg": 94.4,
+  "trade_days": 11,
+  "markets": "台北",
+  "last_seen": "2026-10-02"
+ },
+ {
+  "crop_name": "四破(凍)",
+  "crop_code": "3071 ",
+  "qty_ton": 0.3,
+  "avg_price_kg": 47.8,
+  "trade_days": 9,
+  "markets": "三重/桃園/新竹",
+  "last_seen": "2026-09-16"
+ },
+ {
+  "crop_name": "目斗",
+  "crop_code": "2168 ",
+  "qty_ton": 0.3,
+  "avg_price_kg": 81.3,
+  "trade_days": 20,
+  "markets": "新竹",
+  "last_seen": "2026-09-02"
+ },
+ {
+  "crop_name": "智仔(凍)",
+  "crop_code": "3361 ",
+  "qty_ton": 0.3,
+  "avg_price_kg": 179.9,
+  "trade_days": 3,
+  "markets": "新竹",
+  "last_seen": "2026-03-19"
+ },
+ {
+  "crop_name": "鱙仔(凍)",
+  "crop_code": "3103 ",
+  "qty_ton": 0.2,
+  "avg_price_kg": 87.4,
+  "trade_days": 6,
+  "markets": "桃園",
+  "last_seen": "2026-04-14"
+ },
+ {
+  "crop_name": "鯊條(凍)",
+  "crop_code": "3152 ",
+  "qty_ton": 0.2,
+  "avg_price_kg": 5.9,
+  "trade_days": 2,
+  "markets": "桃園",
+  "last_seen": "2026-02-04"
+ },
+ {
+  "crop_name": "鮸魚(凍)",
+  "crop_code": "3067 ",
+  "qty_ton": 0.2,
+  "avg_price_kg": 70.5,
+  "trade_days": 1,
+  "markets": "桃園",
+  "last_seen": "2025-12-31"
+ },
+ {
+  "crop_name": "火口",
+  "crop_code": "2065 ",
+  "qty_ton": 0.2,
+  "avg_price_kg": 202.9,
+  "trade_days": 51,
+  "markets": "台北/桃園/新竹",
+  "last_seen": "2026-11-04"
+ },
+ {
+  "crop_name": "白鯛",
+  "crop_code": "2016 ",
+  "qty_ton": 0.2,
+  "avg_price_kg": 116,
+  "trade_days": 32,
+  "markets": "桃園/新竹",
+  "last_seen": "2026-10-28"
+ },
+ {
+  "crop_name": "石狗公凍",
+  "crop_code": "3440 ",
+  "qty_ton": 0.2,
+  "avg_price_kg": 22.4,
+  "trade_days": 3,
+  "markets": "桃園",
+  "last_seen": "2025-11-15"
+ },
+ {
+  "crop_name": "小紅鱠",
+  "crop_code": "2202 ",
+  "qty_ton": 0.2,
+  "avg_price_kg": 346.1,
+  "trade_days": 26,
+  "markets": "桃園/新竹",
+  "last_seen": "2026-11-10"
+ },
+ {
+  "crop_name": "其他鯛類(凍)",
+  "crop_code": "3019 ",
+  "qty_ton": 0.2,
+  "avg_price_kg": 101.8,
+  "trade_days": 9,
+  "markets": "三重/新竹",
+  "last_seen": "2026-10-02"
+ },
+ {
+  "crop_name": "大眼鮪",
+  "crop_code": "2112 ",
+  "qty_ton": 0.2,
+  "avg_price_kg": 199,
+  "trade_days": 7,
+  "markets": "台北",
+  "last_seen": "2026-09-29"
+ },
+ {
+  "crop_name": "黑皮刀",
+  "crop_code": "2252 ",
+  "qty_ton": 0.2,
+  "avg_price_kg": 68.2,
+  "trade_days": 16,
+  "markets": "新竹",
+  "last_seen": "2026-10-28"
+ },
+ {
+  "crop_name": "青衣",
+  "crop_code": "2483 ",
+  "qty_ton": 0.2,
+  "avg_price_kg": 110.4,
+  "trade_days": 8,
+  "markets": "桃園",
+  "last_seen": "2026-10-27"
+ },
+ {
+  "crop_name": "臭肉",
+  "crop_code": "2101 ",
+  "qty_ton": 0.2,
+  "avg_price_kg": 116.1,
+  "trade_days": 8,
+  "markets": "台北",
+  "last_seen": "2026-10-02"
+ },
+ {
+  "crop_name": "泥鰍",
+  "crop_code": "1102 ",
+  "qty_ton": 0.1,
+  "avg_price_kg": 241.9,
+  "trade_days": 8,
+  "markets": "桃園",
+  "last_seen": "2026-08-07"
+ },
+ {
+  "crop_name": "丁香(凍)",
+  "crop_code": "3105 ",
+  "qty_ton": 0.1,
+  "avg_price_kg": 27.2,
+  "trade_days": 4,
+  "markets": "桃園",
+  "last_seen": "2026-05-29"
+ },
+ {
+  "crop_name": "土剎",
+  "crop_code": "1101 ",
+  "qty_ton": 0.1,
+  "avg_price_kg": 71.5,
+  "trade_days": 5,
+  "markets": "台北/桃園",
+  "last_seen": "2026-09-03"
+ },
+ {
+  "crop_name": "海鱺(凍)",
+  "crop_code": "3491 ",
+  "qty_ton": 0.1,
+  "avg_price_kg": 52.6,
+  "trade_days": 8,
+  "markets": "桃園/新竹",
+  "last_seen": "2026-11-10"
+ },
+ {
+  "crop_name": "干貝凍",
+  "crop_code": "3998 ",
+  "qty_ton": 0.1,
+  "avg_price_kg": 60.9,
+  "trade_days": 2,
+  "markets": "桃園",
+  "last_seen": "2026-07-15"
+ },
+ {
+  "crop_name": "鰣魚(凍)",
+  "crop_code": "3561 ",
+  "qty_ton": 0.1,
+  "avg_price_kg": 174.8,
+  "trade_days": 1,
+  "markets": "新竹",
+  "last_seen": "2026-03-06"
+ },
+ {
+  "crop_name": "石斑魚(凍)",
+  "crop_code": "3201 ",
+  "qty_ton": 0.1,
+  "avg_price_kg": 109.3,
+  "trade_days": 5,
+  "markets": "台北/三重/新竹",
+  "last_seen": "2026-03-18"
+ },
+ {
+  "crop_name": "白北(凍)",
+  "crop_code": "3143 ",
+  "qty_ton": 0.1,
+  "avg_price_kg": 169.7,
+  "trade_days": 12,
+  "markets": "桃園/新竹",
+  "last_seen": "2026-09-30"
+ },
+ {
+  "crop_name": "白鰻",
+  "crop_code": "1031 ",
+  "qty_ton": 0.1,
+  "avg_price_kg": 77.5,
+  "trade_days": 4,
+  "markets": "桃園",
+  "last_seen": "2026-10-28"
+ },
+ {
+  "crop_name": "雨傘旗",
+  "crop_code": "2135 ",
+  "qty_ton": 0.1,
+  "avg_price_kg": 50.9,
+  "trade_days": 5,
+  "markets": "桃園/新竹",
+  "last_seen": "2026-11-06"
+ },
+ {
+  "crop_name": "日月蟶(海)",
+  "crop_code": "5081 ",
+  "qty_ton": 0.1,
+  "avg_price_kg": 75,
+  "trade_days": 1,
+  "markets": "桃園",
+  "last_seen": "2026-09-18"
+ },
+ {
+  "crop_name": "厚唇(凍)",
+  "crop_code": "3431 ",
+  "qty_ton": 0.1,
+  "avg_price_kg": 122.9,
+  "trade_days": 7,
+  "markets": "新竹",
+  "last_seen": "2025-11-25"
+ },
+ {
+  "crop_name": "黃花凍",
+  "crop_code": "3061 ",
+  "qty_ton": 0.1,
+  "avg_price_kg": 194.6,
+  "trade_days": 6,
+  "markets": "新竹",
+  "last_seen": "2026-03-06"
+ },
+ {
+  "crop_name": "赤筆(凍)",
+  "crop_code": "3501 ",
+  "qty_ton": 0.1,
+  "avg_price_kg": 228.9,
+  "trade_days": 10,
+  "markets": "新竹",
+  "last_seen": "2026-11-06"
+ },
+ {
+  "crop_name": "肉栓(凍)",
+  "crop_code": "3568 ",
+  "qty_ton": 0.1,
+  "avg_price_kg": 12.5,
+  "trade_days": 2,
+  "markets": "桃園",
+  "last_seen": "2025-11-30"
+ },
+ {
+  "crop_name": "智仔",
+  "crop_code": "2361 ",
+  "qty_ton": 0.1,
+  "avg_price_kg": 240.1,
+  "trade_days": 1,
+  "markets": "新竹",
+  "last_seen": "2026-07-07"
+ },
+ {
+  "crop_name": "黑尾冬",
+  "crop_code": "2084 ",
+  "qty_ton": 0.1,
+  "avg_price_kg": 86,
+  "trade_days": 3,
+  "markets": "桃園",
+  "last_seen": "2026-04-30"
+ },
+ {
+  "crop_name": "甘瓜仔凍",
+  "crop_code": "3077 ",
+  "qty_ton": 0.1,
+  "avg_price_kg": 111.9,
+  "trade_days": 2,
+  "markets": "桃園",
+  "last_seen": "2026-09-18"
+ },
+ {
+  "crop_name": "長鰭鮪凍",
+  "crop_code": "3111 ",
+  "qty_ton": 0.1,
+  "avg_price_kg": 250,
+  "trade_days": 1,
+  "markets": "台北",
+  "last_seen": "2026-10-16"
+ },
+ {
+  "crop_name": "其他鰮類",
+  "crop_code": "2109 ",
+  "qty_ton": 0.1,
+  "avg_price_kg": 6.2,
+  "trade_days": 3,
+  "markets": "桃園/新竹",
+  "last_seen": "2026-05-15"
+ },
+ {
+  "crop_name": "青鱗(凍)",
+  "crop_code": "3102 ",
+  "qty_ton": 0.1,
+  "avg_price_kg": 30,
+  "trade_days": 1,
+  "markets": "桃園",
+  "last_seen": "2026-01-27"
+ },
+ {
+  "crop_name": "鯁魚",
+  "crop_code": "1026 ",
+  "qty_ton": 0.1,
+  "avg_price_kg": 30,
+  "trade_days": 1,
+  "markets": "桃園",
+  "last_seen": "2025-11-07"
+ },
+ {
+  "crop_name": "龍尖、青嘴凍",
+  "crop_code": "3191 ",
+  "qty_ton": 0.1,
+  "avg_price_kg": 82,
+  "trade_days": 3,
+  "markets": "桃園/新竹",
+  "last_seen": "2026-08-07"
+ },
+ {
+  "crop_name": "金龍、石鱸(凍)",
+  "crop_code": "3511 ",
+  "qty_ton": 0.1,
+  "avg_price_kg": 128.8,
+  "trade_days": 7,
+  "markets": "新竹",
+  "last_seen": "2026-04-15"
+ },
+ {
+  "crop_name": "小串仔凍",
+  "crop_code": "3115 ",
+  "qty_ton": 0.1,
+  "avg_price_kg": 20,
+  "trade_days": 1,
+  "markets": "三重",
+  "last_seen": "2025-10-16"
+ },
+ {
+  "crop_name": "鮭",
+  "crop_code": "6016 ",
+  "qty_ton": 0,
+  "avg_price_kg": 91.3,
+  "trade_days": 2,
+  "markets": "三重",
+  "last_seen": "2026-02-14"
+ },
+ {
+  "crop_name": "英哥凍",
+  "crop_code": "3481 ",
+  "qty_ton": 0,
+  "avg_price_kg": 216.6,
+  "trade_days": 4,
+  "markets": "新竹",
+  "last_seen": "2026-08-19"
+ },
+ {
+  "crop_name": "花螺(海)",
+  "crop_code": "5121 ",
+  "qty_ton": 0,
+  "avg_price_kg": 120,
+  "trade_days": 1,
+  "markets": "三重",
+  "last_seen": "2026-03-27"
+ },
+ {
+  "crop_name": "粗鱗油甘(凍)",
+  "crop_code": "3323 ",
+  "qty_ton": 0,
+  "avg_price_kg": 45,
+  "trade_days": 1,
+  "markets": "三重",
+  "last_seen": "2026-07-07"
+ },
+ {
+  "crop_name": "海參",
+  "crop_code": "6012 ",
+  "qty_ton": 0,
+  "avg_price_kg": 60,
+  "trade_days": 1,
+  "markets": "桃園",
+  "last_seen": "2026-01-31"
+ },
+ {
+  "crop_name": "斑節蝦養",
+  "crop_code": "4052 ",
+  "qty_ton": 0,
+  "avg_price_kg": 154.2,
+  "trade_days": 4,
+  "markets": "台北/新竹",
+  "last_seen": "2026-02-16"
+ },
+ {
+  "crop_name": "秋姑(凍)",
+  "crop_code": "3041 ",
+  "qty_ton": 0,
+  "avg_price_kg": 266,
+  "trade_days": 2,
+  "markets": "新竹",
+  "last_seen": "2025-11-05"
+ },
+ {
+  "crop_name": "西刀",
+  "crop_code": "2311 ",
+  "qty_ton": 0,
+  "avg_price_kg": 8.7,
+  "trade_days": 2,
+  "markets": "新竹",
+  "last_seen": "2026-09-18"
+ },
+ {
+  "crop_name": "加志(凍)",
+  "crop_code": "3512 ",
+  "qty_ton": 0,
+  "avg_price_kg": 20,
+  "trade_days": 2,
+  "markets": "桃園",
+  "last_seen": "2026-06-30"
+ },
+ {
+  "crop_name": "銀鯧(凍)",
+  "crop_code": "3093 ",
+  "qty_ton": 0,
+  "avg_price_kg": 8,
+  "trade_days": 1,
+  "markets": "桃園",
+  "last_seen": "2026-07-01"
+ },
+ {
+  "crop_name": "紅尾蝦養",
+  "crop_code": "4042 ",
+  "qty_ton": 0,
+  "avg_price_kg": 190,
+  "trade_days": 1,
+  "markets": "桃園",
+  "last_seen": "2026-08-04"
+ },
+ {
+  "crop_name": "咬狗(凍)",
+  "crop_code": "3391 ",
+  "qty_ton": 0,
+  "avg_price_kg": 20,
+  "trade_days": 2,
+  "markets": "新竹",
+  "last_seen": "2026-07-31"
+ },
+ {
+  "crop_name": "黑鯛(凍)",
+  "crop_code": "3015 ",
+  "qty_ton": 0,
+  "avg_price_kg": 19.1,
+  "trade_days": 2,
+  "markets": "新竹",
+  "last_seen": "2026-08-05"
+ },
+ {
+  "crop_name": "龍蝦海",
+  "crop_code": "4131 ",
+  "qty_ton": 0,
+  "avg_price_kg": 385.9,
+  "trade_days": 4,
+  "markets": "桃園/新竹",
+  "last_seen": "2026-09-23"
+ },
+ {
+  "crop_name": "闊弓",
+  "crop_code": "2167 ",
+  "qty_ton": 0,
+  "avg_price_kg": 20,
+  "trade_days": 1,
+  "markets": "新竹",
+  "last_seen": "2025-11-09"
+ },
+ {
+  "crop_name": "竹葉鰱",
+  "crop_code": "1025 ",
+  "qty_ton": 0,
+  "avg_price_kg": 40,
+  "trade_days": 1,
+  "markets": "台北",
+  "last_seen": "2025-12-12"
+ },
+ {
+  "crop_name": "其他旗魚(凍)",
+  "crop_code": "3139 ",
+  "qty_ton": 0,
+  "avg_price_kg": 40,
+  "trade_days": 1,
+  "markets": "新竹",
+  "last_seen": "2026-11-11"
+ },
+ {
+  "crop_name": "劍旗魚",
+  "crop_code": "2131 ",
+  "qty_ton": 0,
+  "avg_price_kg": 90.6,
+  "trade_days": 2,
+  "markets": "新竹",
+  "last_seen": "2026-10-28"
+ },
+ {
+  "crop_name": "鮟鱇魚凍",
+  "crop_code": "3905 ",
+  "qty_ton": 0,
+  "avg_price_kg": 12,
+  "trade_days": 1,
+  "markets": "桃園",
+  "last_seen": "2026-08-18"
+ },
+ {
+  "crop_name": "水鯊翅【凍】",
+  "crop_code": "3155 ",
+  "qty_ton": 0,
+  "avg_price_kg": 100,
+  "trade_days": 1,
+  "markets": "桃園",
+  "last_seen": "2026-02-13"
+ },
+ {
+  "crop_name": "三牙凍",
+  "crop_code": "3062 ",
+  "qty_ton": 0,
+  "avg_price_kg": 110,
+  "trade_days": 1,
+  "markets": "桃園",
+  "last_seen": "2026-03-14"
+ },
+ {
+  "crop_name": "國光(凍)",
+  "crop_code": "3531 ",
+  "qty_ton": 0,
+  "avg_price_kg": 18,
+  "trade_days": 1,
+  "markets": "桃園",
+  "last_seen": "2026-04-21"
+ },
+ {
+  "crop_name": "水針(凍)",
+  "crop_code": "3611 ",
+  "qty_ton": 0,
+  "avg_price_kg": 6,
+  "trade_days": 1,
+  "markets": "桃園",
+  "last_seen": "2026-06-05"
+ },
+ {
+  "crop_name": "花狗母",
+  "crop_code": "2212 ",
+  "qty_ton": 0,
+  "avg_price_kg": 87.1,
+  "trade_days": 4,
+  "markets": "桃園",
+  "last_seen": "2026-10-30"
+ },
+ {
+  "crop_name": "其他鰺類",
+  "crop_code": "2089 ",
+  "qty_ton": 0,
+  "avg_price_kg": 10,
+  "trade_days": 1,
+  "markets": "桃園",
+  "last_seen": "2026-04-09"
+ },
+ {
+  "crop_name": "沙腸(凍)",
+  "crop_code": "3551 ",
+  "qty_ton": 0,
+  "avg_price_kg": 70,
+  "trade_days": 1,
+  "markets": "桃園",
+  "last_seen": "2025-11-22"
+ },
+ {
+  "crop_name": "小紅鱠(凍)",
+  "crop_code": "3202 ",
+  "qty_ton": 0,
+  "avg_price_kg": 10,
+  "trade_days": 1,
+  "markets": "桃園",
+  "last_seen": "2025-11-13"
+ },
+ {
+  "crop_name": "青鞭",
+  "crop_code": "2381 ",
+  "qty_ton": 0,
+  "avg_price_kg": 30,
+  "trade_days": 1,
+  "markets": "台北",
+  "last_seen": "2025-10-16"
+ },
+ {
+  "crop_name": "鱔魚",
+  "crop_code": "1091 ",
+  "qty_ton": 0,
+  "avg_price_kg": 350,
+  "trade_days": 1,
+  "markets": "新竹",
+  "last_seen": "2026-06-30"
+ },
+ {
+  "crop_name": "海鯰(凍)",
+  "crop_code": "3231 ",
+  "qty_ton": 0,
+  "avg_price_kg": 8,
+  "trade_days": 1,
+  "markets": "桃園",
+  "last_seen": "2026-11-04"
+ },
+ {
+  "crop_name": "鯊翅",
+  "crop_code": "2154 ",
+  "qty_ton": 0,
+  "avg_price_kg": 300,
+  "trade_days": 1,
+  "markets": "桃園",
+  "last_seen": "2026-05-19"
+ },
+ {
+  "crop_name": "海鯽魚",
+  "crop_code": "2238 ",
+  "qty_ton": 0,
+  "avg_price_kg": 194,
+  "trade_days": 2,
+  "markets": "桃園",
+  "last_seen": "2026-11-06"
+ },
+ {
+  "crop_name": "西齒",
+  "crop_code": "2144 ",
+  "qty_ton": 0,
+  "avg_price_kg": 570,
+  "trade_days": 1,
+  "markets": "桃園",
+  "last_seen": "2026-05-29"
+ },
+ {
+  "crop_name": "紅新娘",
+  "crop_code": "2047 ",
+  "qty_ton": 0,
+  "avg_price_kg": 320,
+  "trade_days": 1,
+  "markets": "新竹",
+  "last_seen": "2026-04-22"
+ },
+ {
+  "crop_name": "龍舌(凍)",
+  "crop_code": "3411 ",
+  "qty_ton": 0,
+  "avg_price_kg": 80,
+  "trade_days": 1,
+  "markets": "新竹",
+  "last_seen": "2026-03-15"
+ }
+]
