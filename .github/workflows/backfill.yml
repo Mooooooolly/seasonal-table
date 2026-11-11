@@ -1,11 +1,20 @@
-name: 補歷史資料(手動)
+name: 補歷史資料
 
 on:
   workflow_dispatch:
     inputs:
+      category:
+        description: "類別"
+        type: choice
+        options: ["蔬菜", "海鮮"]
+        default: "蔬菜"
       days:
         description: "往回補幾天"
         default: "400"
+  # 修改 ops/backfill.json 並推上來也會觸發(讓維護者不用手動按)
+  push:
+    paths:
+      - "ops/backfill.json"
 
 permissions:
   contents: write
@@ -17,17 +26,31 @@ concurrency:
 jobs:
   backfill:
     runs-on: ubuntu-latest
-    timeout-minutes: 45
+    timeout-minutes: 60
     env:
       SUPABASE_URL: https://uahnndhsrztgdiwtkkyx.supabase.co
       SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
-      DAYS: ${{ inputs.days }}
+      SUPABASE_DB_URL: ${{ secrets.SUPABASE_DB_URL }}
+      PGOPTIONS: "-c client_min_messages=warning"
     steps:
       - uses: actions/checkout@v4
 
       - uses: actions/setup-node@v4
         with:
           node-version: "22"
+
+      - name: 決定參數
+        run: |
+          if [ "${{ github.event_name }}" = "push" ]; then
+            echo "CATEGORY=$(jq -r .category ops/backfill.json)" >> "$GITHUB_ENV"
+            echo "DAYS=$(jq -r .days ops/backfill.json)" >> "$GITHUB_ENV"
+          else
+            echo "CATEGORY=${{ inputs.category }}" >> "$GITHUB_ENV"
+            echo "DAYS=${{ inputs.days }}" >> "$GITHUB_ENV"
+          fi
+
+      - name: 更新資料表結構
+        run: bash scripts/migrate.sh
 
       - name: 補抓並寫入 Supabase
         run: node scripts/backfill.mjs
@@ -38,5 +61,5 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898283+github-actions[bot]@users.noreply.github.com"
           git add results/ || true
-          git commit -m "補歷史資料結果 $(date -u +%Y-%m-%dT%H:%MZ)" || echo "沒有變更"
+          git commit -m "補歷史資料結果($CATEGORY)$(date -u +%Y-%m-%dT%H:%MZ)" || echo "沒有變更"
           git pull --rebase -q && git push
