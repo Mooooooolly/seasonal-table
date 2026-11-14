@@ -51,6 +51,15 @@ jobs:
       - name: 寫檢查報告
         run: node scripts/compute-report.mjs
 
+      - name: 自動找食譜(前 10% 但食譜不足 2 道的群組,存成待審核)
+        continue-on-error: true   # 找食譜失敗不影響每日更新
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          MAX_GROUPS: "2"
+        run: |
+          npm ci --no-audit --no-fund
+          node scripts/find-recipes.mjs
+
       - name: 失敗時記一則提醒(後台收件匣會看到)
         if: failure()
         run: |

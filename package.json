@@ -1,0 +1,13 @@
+{
+  "name": "seasonal-table",
+  "private": true,
+  "type": "module",
+  "description": "時令食材:行情抓取、計算與自動找食譜的排程程式",
+  "engines": {
+    "node": ">=22"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^1.8.0",
+    "zod": "^4.6.7"
+  }
+}
