@@ -8,12 +8,8 @@ create table if not exists admins (
 );
 alter table admins enable row level security;
 
--- 第一個在 Supabase 建立的帳號自動成為管理者(只在 admins 還是空的時候)。
--- 之後要加人,在 SQL Editor 手動 insert。
-insert into admins (user_id, email)
-select id, email from auth.users
-where not exists (select 1 from admins)
-order by created_at limit 1;
+-- 管理者不自動指派。在 Supabase 建好帳號後,到 SQL Editor 手動加入:
+--   insert into admins (user_id, email) select id, email from auth.users where email = '你的 email';
 
 create or replace function is_admin() returns boolean
 language sql stable security definer set search_path = public as $$
