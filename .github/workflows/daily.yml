@@ -42,7 +42,11 @@ jobs:
         run: node scripts/daily.mjs
 
       - name: 重算並產出前台 JSON
-        run: bash scripts/recompute.sh
+        run: |
+          started=$(date -u +%Y-%m-%dT%H:%M:%SZ)
+          bash scripts/recompute.sh
+          # 每日重算也順便完成後台按的重算請求
+          psql "$SUPABASE_DB_URL" -q -c "update recompute_requests set done_at = now() where done_at is null and requested_at <= '$started'" || true
 
       - name: 寫檢查報告
         run: node scripts/compute-report.mjs

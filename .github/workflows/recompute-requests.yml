@@ -1,0 +1,63 @@
+name: 處理後台的重算請求
+
+on:
+  schedule:
+    # 每 20 分鐘檢查一次;沒有請求時幾秒就結束
+    - cron: "7,27,47 * * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: db-write
+  cancel-in-progress: false
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    env:
+      SUPABASE_URL: https://uahnndhsrztgdiwtkkyx.supabase.co
+      SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
+      SUPABASE_DB_URL: ${{ secrets.SUPABASE_DB_URL }}
+      PGOPTIONS: "-c client_min_messages=warning"
+    steps:
+      - name: 有沒有未處理的請求
+        id: q
+        run: |
+          # 資料表還沒建立(006 尚未執行)時當作沒有請求
+          n=$(psql "$SUPABASE_DB_URL" -At -c "select count(*) from recompute_requests where done_at is null" 2>/dev/null || echo 0)
+          echo "待處理:$n"
+          echo "pending=$n" >> "$GITHUB_OUTPUT"
+          echo "started=$(date -u +%Y-%m-%dT%H:%M:%SZ)" >> "$GITHUB_OUTPUT"
+
+      - uses: actions/checkout@v4
+        if: steps.q.outputs.pending != '0'
+      - uses: actions/setup-node@v4
+        if: steps.q.outputs.pending != '0'
+        with:
+          node-version: "22"
+
+      - name: 重算並產出前台 JSON
+        if: steps.q.outputs.pending != '0'
+        run: |
+          bash scripts/migrate.sh
+          bash scripts/recompute.sh
+          node scripts/compute-report.mjs
+
+      - name: 把結果 commit 回 repo(Netlify 會自動更新網站)
+        if: steps.q.outputs.pending != '0'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898283+github-actions[bot]@users.noreply.github.com"
+          git add results/ public/data/ || true
+          git commit -m "後台重算 $(date -u +%Y-%m-%dT%H:%MZ)" || echo "沒有變更"
+          git pull --rebase -q && git push
+
+      - name: 標記請求已完成
+        if: steps.q.outputs.pending != '0'
+        run: |
+          # 只結案這次開始前就存在的請求;執行期間新按的,下一輪再處理
+          psql "$SUPABASE_DB_URL" -v ON_ERROR_STOP=1 -q -c \
+            "update recompute_requests set done_at = now() where done_at is null and requested_at <= '${{ steps.q.outputs.started }}'"

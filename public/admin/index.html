@@ -1,0 +1,414 @@
+<!doctype html>
+<html lang="zh-Hant-TW">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex">
+<title>時令食材後台</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Noto+Sans+TC:wght@400;500;700;900&display=swap">
+<style>
+:root{
+  --bg:#EEF2EC; --card:#FFFFFF; --ink:#16281F; --muted:#5E7066; --line:#D8E0D6;
+  --accent:#1F6B4A; --accent-ink:#FFFFFF; --warn:#C8431B; --warn-bg:#FBE6DD; --chip:#E1E9DF;
+  --font:"Noto Sans TC",system-ui,-apple-system,"PingFang TC","Microsoft JhengHei",sans-serif;
+  --mono:"DM Mono",ui-monospace,Menlo,monospace;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#0F1A14; --card:#18271F; --ink:#E6EFE8; --muted:#97AA9E; --line:#2A3C32;
+  --accent:#6FCB9B; --accent-ink:#0F1A14; --warn:#FF9A73; --warn-bg:#3A221A; --chip:#223329; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0F1A14; --card:#18271F; --ink:#E6EFE8; --muted:#97AA9E; --line:#2A3C32;
+  --accent:#6FCB9B; --accent-ink:#0F1A14; --warn:#FF9A73; --warn-bg:#3A221A; --chip:#223329; color-scheme:dark}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--font);font-size:15px;line-height:1.5;
+  padding:0 max(16px,env(safe-area-inset-right,0px)) 40px max(16px,env(safe-area-inset-left,0px))}
+.wrap{max-width:860px;margin:0 auto}
+header{display:flex;align-items:center;gap:10px;flex-wrap:wrap;padding:16px 0 10px}
+h1{font-size:22px;font-weight:900;margin:0;flex:1 0 auto;white-space:nowrap}
+header .muted{flex:1 1 100%;order:3}
+h2{font-size:18px;margin:18px 0 8px}
+nav.tabs{display:flex;gap:6px;flex-wrap:wrap;border-bottom:1px solid var(--line);margin-bottom:14px}
+nav.tabs button{background:none;border:0;border-bottom:3px solid transparent;padding:8px 10px;font:inherit;color:var(--muted);cursor:pointer;position:relative}
+nav.tabs button[aria-current="true"]{color:var(--accent);border-color:var(--accent);font-weight:700}
+.badge{display:inline-block;min-width:18px;padding:0 6px;border-radius:999px;background:var(--warn);color:#fff;font-size:11px;font-weight:700;margin-left:4px;text-align:center}
+button,.btn{font:inherit;cursor:pointer}
+.btn{border:1px solid var(--accent);background:var(--accent);color:var(--accent-ink);border-radius:10px;padding:7px 12px;font-weight:700;font-size:14px;text-decoration:none;display:inline-block}
+.btn.alt{background:transparent;color:var(--accent)}
+.btn.warn{background:transparent;color:var(--warn);border-color:var(--warn)}
+.btn.sm{padding:3px 9px;font-size:13px;font-weight:500}
+.btn[disabled]{opacity:.5;cursor:default}
+input,select,textarea{font:inherit;font-size:16px;color:var(--ink);background:var(--card);border:1px solid var(--line);border-radius:8px;padding:7px 9px;max-width:100%}
+textarea{width:100%;min-height:60px}
+input:focus-visible,select:focus-visible,textarea:focus-visible,button:focus-visible,.btn:focus-visible{outline:2px solid var(--accent);outline-offset:1px}
+label{font-size:13px;color:var(--muted)}
+.row{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.bar{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-bottom:12px}
+.list{display:flex;flex-direction:column;gap:8px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:10px 12px}
+.card.hl{border-color:var(--warn)}
+.t{font-weight:700}
+.muted{color:var(--muted);font-size:13px}
+.mono{font-family:var(--mono);font-variant-numeric:tabular-nums}
+.tag{font-size:11px;font-weight:700;border-radius:999px;padding:1px 7px;background:var(--chip);color:var(--muted);white-space:nowrap}
+.tag.warn{background:var(--warn-bg);color:var(--warn)}
+.tag.ok{background:var(--accent);color:var(--accent-ink)}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:8px;margin-top:8px}
+.grid>div{display:flex;flex-direction:column;gap:2px}
+.grid input,.grid select{width:100%}
+table{border-collapse:collapse;width:100%;font-size:14px}
+th,td{text-align:left;padding:6px 8px;border-bottom:1px solid var(--line);vertical-align:top;white-space:nowrap}
+th{font-size:12px;color:var(--muted);font-weight:500}
+.scroll{overflow-x:auto;background:var(--card);border:1px solid var(--line);border-radius:12px}
+.ing{display:grid;grid-template-columns:2fr 2fr 2fr auto;gap:6px;align-items:center;margin-bottom:6px}
+.ing input{width:100%}
+@media (max-width:560px){.ing{grid-template-columns:1fr 1fr}.ing .grp{grid-column:1/2}}
+.toast{position:fixed;left:50%;bottom:20px;transform:translateX(-50%);background:var(--ink);color:var(--bg);padding:8px 14px;border-radius:10px;font-size:14px;z-index:20;max-width:90vw}
+.empty{color:var(--muted);text-align:center;padding:24px 0}
+.login{max-width:360px;margin:60px auto}
+.login input{width:100%;margin-bottom:10px}
+.err{background:var(--warn-bg);color:var(--warn);border-radius:10px;padding:10px;font-size:14px;margin:10px 0}
+</style>
+</head>
+<body>
+<div class="wrap" id="app"><p class="empty">載入中…</p></div>
+<div id="toast" class="toast" hidden role="status" aria-live="polite"></div>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.js"></script>
+<script>
+// ---- 設定:Supabase 網址與「公開金鑰」(publishable / anon key,本來就是給網頁用的,放這裡沒關係)----
+const SUPABASE_URL = "https://uahnndhsrztgdiwtkkyx.supabase.co";
+const SUPABASE_KEY = "PUBLISHABLE_KEY_HERE";
+
+const EQUIP = ["電鍋", "炒鍋", "湯鍋", "烤箱", "免開火"];
+const ROLES = ["主食材", "佐料", "不適用(加工品)", "不適用(非蔬菜或不明)"];
+const CONF = ["高", "中", "低"];
+const sb = window.supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
+const $ = (s, el = document) => el.querySelector(s);
+const esc = (s) => String(s ?? "").replace(/[&<>"']/g, (c) => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const app = $("#app");
+const fmtDate = (s) => (s ? new Date(s).toLocaleString("zh-TW", {month:"numeric", day:"numeric", hour:"2-digit", minute:"2-digit"}) : "");
+const ton = (kg) => (kg == null ? "—" : (Number(kg) / 1000).toFixed(1));
+
+function toast(msg, ms = 2600) {
+  const t = $("#toast"); t.textContent = msg; t.hidden = false;
+  clearTimeout(toast.h); toast.h = setTimeout(() => (t.hidden = true), ms);
+}
+async function q(p) { const { data, error } = await p; if (error) throw new Error(error.message); return data; }
+// Supabase 單次最多回 1000 列,分頁讀完
+async function all(table, cols = "*", build = (x) => x) {
+  const out = [];
+  for (let from = 0; ; from += 1000) {
+    const rows = await q(build(sb.from(table).select(cols)).range(from, from + 999));
+    out.push(...rows);
+    if (rows.length < 1000) return out;
+  }
+}
+
+const S = { tab: "alerts", alerts: [], groups: [], crops: [], cropStats: {}, groupStats: {}, recipes: [], ings: [], req: null,
+  mapFilter: { cat: "全部", status: "待處理", q: "" }, mapLimit: 60, recFilter: "待審核", editing: null, grpCat: "蔬菜" };
+
+// ---------------- 登入 ----------------
+async function boot() {
+  if (SUPABASE_KEY.startsWith("PUBLISHABLE")) {
+    app.innerHTML = `<div class="login"><div class="err">後台尚未設定公開金鑰(SUPABASE_KEY)。</div></div>`; return;
+  }
+  const { data } = await sb.auth.getSession();
+  if (!data.session) return renderLogin();
+  try {
+    const ok = await q(sb.rpc("is_admin"));
+    if (!ok) { app.innerHTML = `<div class="login"><div class="err">這個帳號沒有後台權限。</div><button class="btn alt" id="lo">登出</button></div>`; $("#lo").onclick = logout; return; }
+    await loadAll();
+    render();
+  } catch (e) { app.innerHTML = `<div class="err">讀取失敗:${esc(e.message)}</div>`; }
+}
+function renderLogin(msg = "") {
+  app.innerHTML = `<form class="login" id="lf"><h1>時令食材後台</h1><p class="muted">用 Supabase 建立的帳號登入</p>
+    ${msg ? `<div class="err">${esc(msg)}</div>` : ""}
+    <label for="em">Email</label><input id="em" type="email" autocomplete="username" required>
+    <label for="pw">密碼</label><input id="pw" type="password" autocomplete="current-password" required>
+    <button class="btn" type="submit">登入</button></form>`;
+  $("#lf").onsubmit = async (e) => {
+    e.preventDefault();
+    const { error } = await sb.auth.signInWithPassword({ email: $("#em").value.trim(), password: $("#pw").value });
+    if (error) return renderLogin("登入失敗:" + error.message);
+    boot();
+  };
+}
+async function logout() { await sb.auth.signOut(); renderLogin(); }
+
+// ---------------- 讀資料 ----------------
+async function loadAll() {
+  const [alerts, groups, crops, cs, gs, recipes, ings, req] = await Promise.all([
+    q(sb.from("alerts").select("*").is("resolved_at", null).order("created_at", { ascending: false })),
+    all("groups", "id,name,category,seasonal"),
+    all("crops", "*"),
+    all("crop_stats", "crop_name,vol_30d_kg,market_days_12m,is_season,eligible"),
+    all("group_stats", "*"),
+    all("recipes", "*"),
+    all("recipe_ingredients", "*"),
+    q(sb.from("recompute_requests").select("*").order("requested_at", { ascending: false }).limit(1)),
+  ]);
+  Object.assign(S, { alerts, groups, crops, recipes, ings, req: req[0] || null });
+  S.cropStats = Object.fromEntries(cs.map((c) => [c.crop_name, c]));
+  S.groupStats = Object.fromEntries(gs.map((g) => [g.group_id, g]));
+}
+const groupById = (id) => S.groups.find((g) => g.id === id);
+const groupByName = (n, cat) => S.groups.find((g) => g.name === n && (!cat || g.category === cat));
+
+// ---------------- 外框 ----------------
+function render() {
+  const pendingRecipes = S.recipes.filter((r) => r.review_status === "pending").length;
+  const unmapped = S.crops.filter((c) => c.status === "unmapped").length;
+  const tabs = [["alerts", "提醒", S.alerts.length], ["map", "食材對照表", unmapped], ["recipes", "食譜", pendingRecipes], ["groups", "群組總覽", 0]];
+  const req = S.req;
+  const reqTxt = !req ? "" : req.done_at ? `上次重算:${fmtDate(req.done_at)}` : `已排入重算(${fmtDate(req.requested_at)}),約 20 分鐘內更新網站`;
+  app.innerHTML = `<header><h1>時令食材後台</h1>
+    <span class="muted">${esc(reqTxt)}</span>
+    <button class="btn" id="rc" ${req && !req.done_at ? "disabled" : ""}>重算並更新網站</button>
+    <a class="btn alt" href="../" target="_blank" rel="noopener">看前台</a>
+    <button class="btn alt" id="lo">登出</button></header>
+    <nav class="tabs" aria-label="後台分頁">${tabs.map(([k, l, n]) =>
+      `<button data-t="${k}" aria-current="${S.tab === k}">${l}${n ? `<span class="badge">${n}</span>` : ""}</button>`).join("")}</nav>
+    <main id="main"></main>`;
+  $("#lo").onclick = logout;
+  $("#rc").onclick = requestRecompute;
+  app.querySelectorAll("[data-t]").forEach((b) => (b.onclick = () => { S.tab = b.dataset.t; S.editing = null; render(); }));
+  ({ alerts: renderAlerts, map: renderMap, recipes: renderRecipes, groups: renderGroups })[S.tab]();
+}
+async function requestRecompute() {
+  try {
+    const r = await q(sb.from("recompute_requests").insert({ note: "後台按鈕" }).select().single());
+    S.req = r; toast("已排入重算,約 20 分鐘內網站會更新"); render();
+  } catch (e) { toast("失敗:" + e.message); }
+}
+
+// ---------------- 提醒收件匣 ----------------
+function alertText(a) {
+  const p = a.payload || {};
+  switch (a.type) {
+    case "new_crop": return { t: `新品名:${p.crop_name}`, d: `${p.category || "蔬菜"}・代號 ${p.crop_code || "?"}・首次出現 ${p.first_seen || "?"}・交易 ${p.trade_days ?? "?"} 天・約 ${ton(p.qty_kg)} 公噸`, act: "map", label: "去歸類" };
+    case "job_failed": return { t: "排程失敗", d: `${p.stage || ""}${p.failed != null ? `・失敗 ${p.failed}/${p.total} 個請求` : ""}`, link: p.run };
+    case "stale_data": return { t: "資料過期", d: `最新資料 ${p.latest_date || "?"},距今 ${p.age_days} 天` };
+    case "recipe_draft": return { t: `自動找到食譜待審核:${p.group || ""}`, d: `${(p.recipe_ids || []).length} 道`, act: "recipes", label: "去審核" };
+    case "unmatched_ingredient": return { t: `食譜食材對不到群組:${p.name || ""}`, d: p.recipe_id || "", act: "recipes", label: "去看食譜" };
+    default: return { t: a.type, d: JSON.stringify(p) };
+  }
+}
+function renderAlerts() {
+  const m = $("#main");
+  if (!S.alerts.length) { m.innerHTML = `<p class="empty">沒有未處理的提醒。</p>`; return; }
+  m.innerHTML = `<div class="list">${S.alerts.map((a) => { const x = alertText(a);
+    return `<div class="card"><div class="row"><span class="t">${esc(x.t)}</span><span class="muted">${fmtDate(a.created_at)}</span></div>
+      <div class="muted">${esc(x.d)}</div>
+      <div class="row" style="margin-top:6px">${x.act ? `<button class="btn sm" data-go="${x.act}" data-crop="${esc(a.payload?.crop_name || "")}">${x.label}</button>` : ""}
+      ${x.link ? `<a class="btn sm alt" href="${esc(x.link)}" target="_blank" rel="noopener">看執行紀錄</a>` : ""}
+      <button class="btn sm alt" data-done="${a.id}">標為已處理</button></div></div>`; }).join("")}</div>`;
+  m.querySelectorAll("[data-done]").forEach((b) => (b.onclick = async () => {
+    try { await q(sb.from("alerts").update({ resolved_at: new Date().toISOString() }).eq("id", +b.dataset.done));
+      S.alerts = S.alerts.filter((a) => a.id !== +b.dataset.done); render(); } catch (e) { toast("失敗:" + e.message); }
+  }));
+  m.querySelectorAll("[data-go]").forEach((b) => (b.onclick = () => {
+    S.tab = b.dataset.go;
+    if (b.dataset.go === "map") S.mapFilter = { cat: "全部", status: "全部", q: b.dataset.crop };
+    if (b.dataset.go === "recipes") S.recFilter = "待審核";
+    render();
+  }));
+}
+
+// ---------------- 食材對照表 ----------------
+function renderMap() {
+  const f = S.mapFilter, m = $("#main");
+  const cats = ["全部", ...new Set(S.crops.map((c) => c.category || "蔬菜"))];
+  const list = S.crops.filter((c) =>
+    (f.cat === "全部" || (c.category || "蔬菜") === f.cat) &&
+    (f.status === "全部" || (f.status === "待處理" ? c.status === "unmapped" || c.confidence === "低" : f.status === "未歸類" ? c.status === "unmapped" : c.confidence === "低")) &&
+    (!f.q || c.crop_name.includes(f.q) || (groupById(c.group_id)?.name || "").includes(f.q)))
+    .sort((a, b) => (a.status === "unmapped" ? 0 : 1) - (b.status === "unmapped" ? 0 : 1) || (S.cropStats[b.crop_name]?.vol_30d_kg || 0) - (S.cropStats[a.crop_name]?.vol_30d_kg || 0));
+  m.innerHTML = `<div class="bar">
+      <select id="fc" aria-label="類別">${cats.map((c) => `<option ${c === f.cat ? "selected" : ""}>${esc(c)}</option>`).join("")}</select>
+      <select id="fs" aria-label="篩選">${["待處理", "未歸類", "低信心", "全部"].map((s) => `<option ${s === f.status ? "selected" : ""}>${s}</option>`).join("")}</select>
+      <input id="fq" type="search" placeholder="搜尋品名或群組" value="${esc(f.q)}" aria-label="搜尋品名或群組">
+      <span class="muted">${list.length} 筆</span></div>
+    <p class="muted">「待處理」= 未歸類或信心低。改完按「儲存」,再按上方「重算並更新網站」。群組欄可以輸入新的名稱,會自動新增群組。</p>
+    <datalist id="gl">${S.groups.map((g) => `<option value="${esc(g.name)}">${esc(g.category)}</option>`).join("")}</datalist>
+    <div class="list">${list.slice(0, S.mapLimit).map(cropCard).join("") || `<p class="empty">沒有符合的品名。</p>`}</div>
+    ${list.length > S.mapLimit ? `<p style="text-align:center"><button class="btn alt" id="more">再顯示 60 筆</button></p>` : ""}`;
+  $("#fc").onchange = (e) => { f.cat = e.target.value; S.mapLimit = 60; renderMap(); };
+  $("#fs").onchange = (e) => { f.status = e.target.value; S.mapLimit = 60; renderMap(); };
+  $("#fq").oninput = (e) => { f.q = e.target.value; const p = e.target.selectionStart; renderMap(); const n = $("#fq"); n.focus(); n.setSelectionRange(p, p); };
+  if ($("#more")) $("#more").onclick = () => { S.mapLimit += 60; renderMap(); };
+  m.querySelectorAll("[data-save]").forEach((b) => (b.onclick = () => saveCrop(b.dataset.save, b.closest(".card"))));
+}
+function cropCard(c) {
+  const st = S.cropStats[c.crop_name] || {}, g = groupById(c.group_id);
+  const id = encodeURIComponent(c.crop_name);
+  return `<div class="card ${c.status === "unmapped" ? "hl" : ""}">
+    <div class="row"><span class="t">${esc(c.crop_name)}</span><span class="muted mono">${esc(c.crop_code || "")}</span>
+      <span class="tag">${esc(c.category || "蔬菜")}</span>
+      ${c.status === "unmapped" ? `<span class="tag warn">未歸類</span>` : ""}${c.is_import ? `<span class="tag">進口</span>` : ""}
+      <span class="muted">近 30 天 ${ton(st.vol_30d_kg)} 公噸・一年成交 ${st.market_days_12m ?? 0} 市場日</span></div>
+    ${c.note ? `<div class="muted">備註:${esc(c.note)}</div>` : ""}
+    <div class="grid">
+      <div><label for="g-${id}">群組</label><input id="g-${id}" list="gl" data-f="group" value="${esc(g?.name || "")}"></div>
+      <div><label for="r-${id}">角色</label><select id="r-${id}" data-f="role">${["", ...ROLES].map((r) => `<option ${r === (c.role || "") ? "selected" : ""}>${r}</option>`).join("")}</select></div>
+      <div><label for="c-${id}">信心</label><select id="c-${id}" data-f="conf">${CONF.map((r) => `<option ${r === c.confidence ? "selected" : ""}>${r}</option>`).join("")}</select></div>
+      <div><label for="i-${id}">進口</label><select id="i-${id}" data-f="imp"><option value="0">否</option><option value="1" ${c.is_import ? "selected" : ""}>是</option></select></div>
+    </div>
+    <div class="row" style="margin-top:8px"><button class="btn sm" data-save="${esc(c.crop_name)}">儲存</button></div></div>`;
+}
+async function saveCrop(name, card) {
+  const c = S.crops.find((x) => x.crop_name === name);
+  const gname = $('[data-f="group"]', card).value.trim(), role = $('[data-f="role"]', card).value;
+  const conf = $('[data-f="conf"]', card).value, imp = $('[data-f="imp"]', card).value === "1";
+  if (!gname || !role) return toast("群組和角色都要填");
+  const cat = c.category || "蔬菜";
+  try {
+    let g = groupByName(gname, cat) || groupByName(gname);
+    if (g && g.category !== cat) return toast(`「${gname}」是${g.category}的群組,請換個名稱`);
+    if (!g) {
+      g = await q(sb.from("groups").insert({ name: gname, category: cat }).select().single());
+      S.groups.push(g);
+    }
+    // 同群組裡的角色要一致
+    const other = S.crops.find((x) => x.group_id === g.id && x.crop_name !== name && x.role && x.role !== role);
+    if (other && !confirm(`群組「${gname}」裡的「${other.crop_name}」角色是「${other.role}」,和這裡的「${role}」不同。還是要儲存嗎?`)) return;
+    const patch = { group_id: g.id, role, confidence: conf, is_import: imp, status: "mapped" };
+    await q(sb.from("crops").update(patch).eq("crop_name", name));
+    Object.assign(c, patch);
+    // 這個品名的「新品名」提醒一併結案
+    const ids = S.alerts.filter((a) => a.type === "new_crop" && a.payload?.crop_name === name).map((a) => a.id);
+    if (ids.length) { await q(sb.from("alerts").update({ resolved_at: new Date().toISOString() }).in("id", ids)); S.alerts = S.alerts.filter((a) => !ids.includes(a.id)); }
+    toast(`已儲存「${name}」→ ${gname}。記得按「重算」讓網站更新`);
+    render();
+  } catch (e) { toast("儲存失敗:" + e.message); }
+}
+
+// ---------------- 食譜 ----------------
+function recState(r) { return r.review_status === "pending" ? "待審核" : r.review_status === "rejected" ? "已退回" : r.active ? "上架中" : "已停用"; }
+function renderRecipes() {
+  if (S.editing) return renderRecipeForm();
+  const m = $("#main"), f = S.recFilter;
+  const list = S.recipes.filter((r) => f === "全部" || recState(r) === f).sort((a, b) => a.id.localeCompare(b.id, "en", { numeric: true }));
+  const counts = Object.fromEntries(["待審核", "上架中", "已停用", "已退回"].map((k) => [k, S.recipes.filter((r) => recState(r) === k).length]));
+  m.innerHTML = `<div class="bar">${["待審核", "上架中", "已停用", "已退回", "全部"].map((k) =>
+      `<button class="btn sm ${f === k ? "" : "alt"}" data-rf="${k}">${k}${counts[k] != null ? `(${counts[k]})` : ""}</button>`).join("")}
+      <button class="btn sm" id="newr">新增食譜</button></div>
+    <div class="list">${list.map((r) => { const g = groupById(r.main_group_id);
+      return `<div class="card ${r.review_status === "pending" ? "hl" : ""}"><div class="row"><span class="t">${esc(r.id)} ${esc(r.name)}</span>
+        <span class="tag ${r.active ? "ok" : r.review_status === "pending" ? "warn" : ""}">${recState(r)}</span>${r.auto_found ? `<span class="tag">自動找到</span>` : ""}</div>
+        <div class="muted">主食材:${esc(g?.name || "未設定")}・${(r.equipment || []).join("、") || "器材未確認"}・${S.ings.filter((i) => i.recipe_id === r.id).length} 項食材</div>
+        <div class="row" style="margin-top:6px"><button class="btn sm" data-ed="${esc(r.id)}">${r.review_status === "pending" ? "審核" : "編輯"}</button>
+        ${r.source_url ? `<a class="btn sm alt" href="${esc(r.source_url)}" target="_blank" rel="noopener">原食譜</a>` : ""}</div></div>`; }).join("") || `<p class="empty">沒有「${esc(f)}」的食譜。</p>`}</div>`;
+  m.querySelectorAll("[data-rf]").forEach((b) => (b.onclick = () => { S.recFilter = b.dataset.rf; renderRecipes(); }));
+  m.querySelectorAll("[data-ed]").forEach((b) => (b.onclick = () => { S.editing = b.dataset.ed; renderRecipes(); }));
+  $("#newr").onclick = () => {
+    const n = Math.max(0, ...S.recipes.map((r) => +(r.id.match(/\d+/)?.[0] || 0))) + 1;
+    S.editing = { new: true, id: "R" + String(n).padStart(2, "0") }; renderRecipes();
+  };
+}
+function renderRecipeForm() {
+  const isNew = typeof S.editing === "object";
+  const r = isNew ? { id: S.editing.id, name: "", equipment: [], review_status: "approved", active: true } : S.recipes.find((x) => x.id === S.editing);
+  const ings = isNew ? [{ name: "", qty_text: "", group_id: null }] : S.ings.filter((i) => i.recipe_id === r.id).sort((a, b) => a.ord - b.ord);
+  const m = $("#main"), mg = groupById(r.main_group_id);
+  m.innerHTML = `<p><button class="btn sm alt" id="back">← 回列表</button></p>
+    <div class="card"><div class="row"><span class="t">${esc(r.id)}</span><span class="tag">${isNew ? "新食譜" : recState(r)}</span>${r.auto_found ? `<span class="tag">自動找到,請對照原網址確認</span>` : ""}</div>
+    <datalist id="gl">${S.groups.map((g) => `<option value="${esc(g.name)}">${esc(g.category)}</option>`).join("")}</datalist>
+    <div class="grid">
+      <div><label for="rn">菜名</label><input id="rn" value="${esc(r.name)}"></div>
+      <div><label for="rmg">主食材群組</label><input id="rmg" list="gl" value="${esc(mg?.name || "")}"></div>
+      <div><label for="rs">份數</label><input id="rs" value="${esc(r.servings_text || "")}" placeholder="例如:2人份、未標示"></div>
+      <div><label for="ru">原食譜網址</label><input id="ru" type="url" value="${esc(r.source_url || "")}"></div>
+    </div>
+    <h2>器材</h2><div class="row">${EQUIP.map((e) => `<label><input type="checkbox" data-eq="${e}" ${(r.equipment || []).includes(e) ? "checked" : ""}> ${e}</label>`).join("")}</div>
+    <h2>食材</h2><p class="muted">「群組」對得到才會顯示價格;肉、蛋、乾貨等留空。</p>
+    <div id="ings">${ings.map(ingRow).join("")}</div>
+    <button class="btn sm alt" id="addi">+ 加一列</button>
+    <h2>佐料</h2><textarea id="rse">${esc(r.seasonings_text || "")}</textarea>
+    <h2>備註(不會顯示在前台)</h2><textarea id="rno">${esc(r.notes || "")}</textarea>
+    <div class="row" style="margin-top:12px">
+      ${r.review_status === "pending" || isNew
+        ? `<button class="btn" data-act="publish">${isNew ? "儲存並上架" : "上架"}</button><button class="btn alt" data-act="draft">${isNew ? "存成停用" : "先存著不上架"}</button>${isNew ? "" : `<button class="btn warn" data-act="reject">退回</button>`}`
+        : `<button class="btn" data-act="save">儲存</button>${r.active ? `<button class="btn warn" data-act="off">停用</button>` : `<button class="btn alt" data-act="publish">重新上架</button>`}`}
+    </div></div>`;
+  $("#back").onclick = () => { S.editing = null; renderRecipes(); };
+  $("#addi").onclick = () => $("#ings").insertAdjacentHTML("beforeend", ingRow({ name: "", qty_text: "", group_id: null }));
+  $("#ings").onclick = (e) => { if (e.target.matches("[data-del]")) e.target.closest(".ing").remove(); };
+  m.querySelectorAll("[data-act]").forEach((b) => (b.onclick = () => saveRecipe(r, isNew, b.dataset.act)));
+}
+function ingRow(i) {
+  return `<div class="ing"><input aria-label="食材名稱" data-i="name" value="${esc(i.name)}" placeholder="食材">
+    <input aria-label="份量" data-i="qty" value="${esc(i.qty_text || "")}" placeholder="份量">
+    <input class="grp" aria-label="對應群組" data-i="grp" list="gl" value="${esc(groupById(i.group_id)?.name || "")}" placeholder="群組(可空)">
+    <button class="btn sm warn" data-del type="button" aria-label="刪除這列">刪</button></div>`;
+}
+async function saveRecipe(r, isNew, act) {
+  const name = $("#rn").value.trim();
+  if (!name) return toast("請填菜名");
+  const mgName = $("#rmg").value.trim(), mg = mgName ? groupByName(mgName) : null;
+  if (mgName && !mg) return toast(`找不到群組「${mgName}」`);
+  const rows = [...document.querySelectorAll("#ings .ing")].map((el, k) => {
+    const gname = $('[data-i="grp"]', el).value.trim();
+    return { name: $('[data-i="name"]', el).value.trim(), qty: $('[data-i="qty"]', el).value.trim(), gname, g: gname ? groupByName(gname) : null, k };
+  }).filter((x) => x.name);
+  const bad = rows.find((x) => x.gname && !x.g);
+  if (bad) return toast(`食材「${bad.name}」的群組「${bad.gname}」不存在`);
+  const status = { publish: { review_status: "approved", active: true }, draft: { review_status: isNew ? "approved" : "pending", active: false },
+    reject: { review_status: "rejected", active: false }, off: { active: false }, save: {} }[act];
+  const rec = { id: r.id, name, main_group_id: mg?.id ?? null, servings_text: $("#rs").value.trim() || null,
+    equipment: [...document.querySelectorAll("[data-eq]:checked")].map((x) => x.dataset.eq), source_url: $("#ru").value.trim() || null,
+    seasonings_text: $("#rse").value.trim() || null, notes: $("#rno").value.trim() || null, ...status };
+  try {
+    await q(sb.from("recipes").upsert(rec, { onConflict: "id" }));
+    await q(sb.from("recipe_ingredients").delete().eq("recipe_id", r.id));
+    if (rows.length) await q(sb.from("recipe_ingredients").insert(rows.map((x) => ({ recipe_id: r.id, ord: x.k + 1, name: x.name, qty_text: x.qty || null, group_id: x.g?.id ?? null, group_is_guess: false }))));
+    // 審核完成 → 對應的「待審核」提醒,若該群組已沒有待審核食譜就結案
+    if (act === "publish" || act === "reject") {
+      const pend = new Set(S.recipes.filter((x) => x.review_status === "pending" && x.id !== r.id).map((x) => x.id));
+      const ids = S.alerts.filter((a) => a.type === "recipe_draft" && !(a.payload?.recipe_ids || []).some((id) => pend.has(id))).map((a) => a.id);
+      if (ids.length) await q(sb.from("alerts").update({ resolved_at: new Date().toISOString() }).in("id", ids));
+    }
+    await loadAll();
+    S.editing = null;
+    toast({ publish: "已上架", draft: "已儲存(未上架)", reject: "已退回", off: "已停用", save: "已儲存" }[act] + "。記得按「重算」讓網站更新");
+    render();
+  } catch (e) { toast("儲存失敗:" + e.message); }
+}
+
+// ---------------- 群組總覽 ----------------
+function renderGroups() {
+  const m = $("#main");
+  const cats = [...new Set(S.groups.map((g) => g.category))];
+  const recipeCount = (gid) => S.recipes.filter((r) => r.active && (r.main_group_id === gid || S.ings.some((i) => i.recipe_id === r.id && i.group_id === gid))).length;
+  const rows = S.groups.filter((g) => g.category === S.grpCat).map((g) => {
+    const st = S.groupStats[g.id] || {};
+    const roles = [...new Set(S.crops.filter((c) => c.group_id === g.id).map((c) => c.role).filter(Boolean))];
+    return { g, st, roles, n: S.crops.filter((c) => c.group_id === g.id).length, rc: recipeCount(g.id) };
+  }).filter((x) => x.n > 0).sort((a, b) => (a.st.rank ?? 1e9) - (b.st.rank ?? 1e9) || (b.st.vol_30d_kg || 0) - (a.st.vol_30d_kg || 0));
+  const pct = (d) => (d == null ? "—" : (d > 0 ? "+" : "") + Math.round(d * 100) + "%");
+  m.innerHTML = `<div class="bar">${cats.map((c) => `<button class="btn sm ${c === S.grpCat ? "" : "alt"}" data-gc="${esc(c)}">${esc(c)}</button>`).join("")}
+    <span class="muted">${rows.length} 個群組・數字為上次重算的結果</span></div>
+    <div class="scroll"><table><thead><tr><th>名次</th><th>群組</th><th>角色</th><th>近 30 天(公噸)</th><th>價格(元/台斤)</th><th>較中位數</th><th>盛產</th><th>食譜</th><th>判斷盛產</th></tr></thead><tbody>
+    ${rows.map(({ g, st, roles, n, rc }) => `<tr>
+      <td class="mono">${st.rank ?? "—"}${st.is_top10 ? ' <span class="tag ok">前10%</span>' : ""}</td>
+      <td>${esc(g.name)} <span class="muted">(${n})</span></td>
+      <td>${roles.length > 1 ? `<span class="tag warn">角色不一致</span> ` : ""}${esc(roles.join("/"))}</td>
+      <td class="mono">${ton(st.vol_30d_kg)}</td>
+      <td class="mono">${st.price_lo != null ? `${st.price_lo}–${st.price_hi}` : "—"}</td>
+      <td class="mono">${pct(st.delta_pct)}</td>
+      <td>${st.is_season === true ? '<span class="tag ok">盛產</span>' : st.is_season === false ? "—" : '<span class="muted">不判斷</span>'}</td>
+      <td class="mono">${st.is_top10 && rc < 2 ? `<span class="tag warn">${rc}</span>` : rc}</td>
+      <td><input type="checkbox" data-sea="${g.id}" ${g.seasonal ? "checked" : ""} aria-label="${esc(g.name)} 是否判斷盛產"></td></tr>`).join("")}
+    </tbody></table></div>
+    <p class="muted">「判斷盛產」取消勾選的群組(例如冷凍品)不會標盛產。名次只在主食材群組中排。食譜數紅色 = 前 10% 但不到 2 道。</p>`;
+  m.querySelectorAll("[data-gc]").forEach((b) => (b.onclick = () => { S.grpCat = b.dataset.gc; renderGroups(); }));
+  m.querySelectorAll("[data-sea]").forEach((c) => (c.onchange = async () => {
+    try { await q(sb.from("groups").update({ seasonal: c.checked }).eq("id", +c.dataset.sea)); groupById(+c.dataset.sea).seasonal = c.checked; toast("已儲存。記得按「重算」"); }
+    catch (e) { c.checked = !c.checked; toast("失敗:" + e.message); }
+  }));
+}
+
+boot();
+</script>
+</body>
+</html>
