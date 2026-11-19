@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-18T16:29:08.855939+00:00",
+  "generated_at": "2026-11-19T16:34:23.252861+00:00",
   "recipes": [
     {
       "id": "R01",
@@ -524,7 +524,7 @@
       "id": "R15",
       "name": "涼拌小黃瓜",
       "main_group": "小黃瓜",
-      "is_season": true,
+      "is_season": false,
       "servings_text": "未標示",
       "equipment": [
         "免開火"
@@ -553,7 +553,7 @@
       "id": "R16",
       "name": "梅漬小黃瓜",
       "main_group": "小黃瓜",
-      "is_season": true,
+      "is_season": false,
       "servings_text": "未標示",
       "equipment": [],
       "seasonings_text": "麻油、鹽巴（份量來源未列）",
@@ -706,7 +706,7 @@
       "id": "R21",
       "name": "腐乾西蘭花",
       "main_group": "青花菜",
-      "is_season": false,
+      "is_season": true,
       "servings_text": "未標示",
       "equipment": [
         "炒鍋",
@@ -746,7 +746,7 @@
       "id": "R22",
       "name": "蒜香烤青花菜",
       "main_group": "青花菜",
-      "is_season": false,
+      "is_season": true,
       "servings_text": "未標示",
       "equipment": [
         "烤箱"
