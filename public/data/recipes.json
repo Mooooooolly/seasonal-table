@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-19T16:34:23.252861+00:00",
+  "generated_at": "2026-11-20T16:10:18.607573+00:00",
   "recipes": [
     {
       "id": "R01",
@@ -89,7 +89,7 @@
       "id": "R03",
       "name": "白蘿蔔玉米排骨湯",
       "main_group": "白蘿蔔",
-      "is_season": false,
+      "is_season": true,
       "servings_text": "4人份",
       "equipment": [
         "湯鍋"
@@ -128,7 +128,7 @@
       "id": "R04",
       "name": "白蘿蔔魚片湯",
       "main_group": "白蘿蔔",
-      "is_season": false,
+      "is_season": true,
       "servings_text": "4人份",
       "equipment": [
         "炒鍋",
@@ -252,7 +252,7 @@
       "id": "R07",
       "name": "玉米濃湯",
       "main_group": "玉米",
-      "is_season": false,
+      "is_season": true,
       "servings_text": "3–4人份",
       "equipment": [
         "湯鍋"
@@ -286,7 +286,7 @@
       "id": "R08",
       "name": "紅蘿蔔玉米豬腱湯",
       "main_group": "紅蘿蔔",
-      "is_season": false,
+      "is_season": true,
       "servings_text": "未標示",
       "equipment": [
         "湯鍋"
@@ -1027,7 +1027,7 @@
       "id": "R31",
       "name": "玉米濃湯(新鮮玉米版)",
       "main_group": "玉米",
-      "is_season": false,
+      "is_season": true,
       "servings_text": "約4人份",
       "equipment": [
         "湯鍋"
