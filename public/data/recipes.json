@@ -1,11 +1,11 @@
 {
-  "generated_at": "2026-11-22T15:17:39.251836+00:00",
+  "generated_at": "2026-11-23T19:16:02.641959+00:00",
   "recipes": [
     {
       "id": "R01",
       "name": "電鍋高麗菜飯",
       "main_group": "高麗菜",
-      "is_season": false,
+      "is_season": true,
       "servings_text": "3–4人份",
       "equipment": [
         "電鍋",
@@ -55,7 +55,7 @@
       "id": "R02",
       "name": "鹽昆布高麗菜（涼拌小菜）",
       "main_group": "高麗菜",
-      "is_season": false,
+      "is_season": true,
       "servings_text": "未標示（小菜，冷藏可放 2–3 天）",
       "equipment": [
         "湯鍋"
