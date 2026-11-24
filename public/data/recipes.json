@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-23T19:16:02.641959+00:00",
+  "generated_at": "2026-11-24T18:55:30.372665+00:00",
   "recipes": [
     {
       "id": "R01",
@@ -706,7 +706,7 @@
       "id": "R21",
       "name": "腐乾西蘭花",
       "main_group": "青花菜",
-      "is_season": true,
+      "is_season": false,
       "servings_text": "未標示",
       "equipment": [
         "炒鍋",
@@ -746,7 +746,7 @@
       "id": "R22",
       "name": "蒜香烤青花菜",
       "main_group": "青花菜",
-      "is_season": true,
+      "is_season": false,
       "servings_text": "未標示",
       "equipment": [
         "烤箱"
